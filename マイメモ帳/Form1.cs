@@ -32,6 +32,7 @@ namespace マイメモ帳
             }
         }
         private string filePath { get; set; }
+        private PageSetupDialog pageSetupDialog { get; set; } = new PageSetupDialog();
 
         public Form1(string[] argv)
         {
@@ -55,12 +56,12 @@ namespace マイメモ帳
             {
                 CustomMassegeBoxInfo customMassegeBoxInfo = new CustomMassegeBoxInfo
                 {
-                    message = $"{title} への変更内容を保存しますか?",
+                    message = $"{Title} への変更内容を保存しますか?",
                     choose = new string[] { "　保存する(&H)　", "　保存しない(&N)　", "　キャンセル　" },
                     title = "マイメモ帳",
                     CancelChoose = 2
                 };
-                Form2 form = new Form2(customMassegeBoxInfo);
+                CustomDialogBox form = new CustomDialogBox(customMassegeBoxInfo);
                 form.ShowDialog();
                 customMassegeBoxInfo.result = form.result;
                 form.Dispose();
@@ -117,10 +118,7 @@ namespace マイメモ帳
 
         private void 終了ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (保存しますか() == 0)
-            {
-                Close();
-            }
+            Close();
         }
 
         private void もとに戻すUToolStripMenuItem_Click(object sender, EventArgs e)
@@ -167,6 +165,32 @@ namespace マイメモ帳
             if (保存しますか() != 0)
             {
                 e.Cancel = true;
+            }
+        }
+
+        private void txt_memo_TextChanged(object sender, EventArgs e)
+        {
+            Text = title;
+        }
+
+        private void ページ設定toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            pageSetupDialog1.PageSettings = new System.Drawing.Printing.PageSettings();
+            pageSetupDialog1.Document = new System.Drawing.Printing.PrintDocument();
+            if (pageSetupDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pageSetupDialog = pageSetupDialog1;
+            }
+            pageSetupDialog1.Dispose();
+        }
+
+        private void 印刷toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (printDialog1.ShowDialog() == DialogResult.OK)
+            {
+                printDocument1.PrinterSettings = printDialog1.PrinterSettings;
+                printDocument1.DefaultPageSettings = pageSetupDialog.PageSettings;
+                printDocument1.Print();
             }
         }
     }

@@ -1,7 +1,7 @@
 ﻿
 namespace マイメモ帳
 {
-    partial class Form2
+    partial class CustomDialogBox
     {
         /// <summary>
         /// Required designer variable.
@@ -54,7 +54,7 @@ namespace マイメモ帳
             this.panel1.Size = new System.Drawing.Size(528, 64);
             this.panel1.TabIndex = 1;
             // 
-            // Form2
+            // CustomDialogBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -65,9 +65,9 @@ namespace マイメモ帳
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form2";
+            this.Name = "CustomDialogBox";
             this.ShowIcon = false;
-            this.Text = "Form2";
+            this.Text = "Any";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

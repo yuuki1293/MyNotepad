@@ -29,6 +29,7 @@ namespace マイメモ帳
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.txt_memo = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ファイルToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,8 +70,9 @@ namespace マイメモ帳
             this.ヘルプの表示ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.バージョン情報AToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hScrollBar1 = new System.Windows.Forms.HScrollBar();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
+            this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,11 +80,14 @@ namespace マイメモ帳
             // 
             this.txt_memo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txt_memo.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.txt_memo.Location = new System.Drawing.Point(0, 36);
+            this.txt_memo.Location = new System.Drawing.Point(0, 33);
             this.txt_memo.Multiline = true;
             this.txt_memo.Name = "txt_memo";
-            this.txt_memo.Size = new System.Drawing.Size(800, 414);
+            this.txt_memo.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txt_memo.Size = new System.Drawing.Size(800, 417);
             this.txt_memo.TabIndex = 0;
+            this.txt_memo.WordWrap = false;
+            this.txt_memo.TextChanged += new System.EventHandler(this.txt_memo_TextChanged);
             // 
             // menuStrip1
             // 
@@ -95,9 +100,10 @@ namespace マイメモ帳
             this.書式OToolStripMenuItem,
             this.表示ToolStripMenuItem,
             this.ヘルプHToolStripMenuItem});
+            this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 33);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -170,6 +176,7 @@ namespace マイメモ帳
             this.ページ設定toolStripMenuItem1.Name = "ページ設定toolStripMenuItem1";
             this.ページ設定toolStripMenuItem1.Size = new System.Drawing.Size(388, 34);
             this.ページ設定toolStripMenuItem1.Text = "ページ設定(&U)...";
+            this.ページ設定toolStripMenuItem1.Click += new System.EventHandler(this.ページ設定toolStripMenuItem1_Click);
             // 
             // 印刷toolStripMenuItem1
             // 
@@ -177,6 +184,7 @@ namespace マイメモ帳
             this.印刷toolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
             this.印刷toolStripMenuItem1.Size = new System.Drawing.Size(388, 34);
             this.印刷toolStripMenuItem1.Text = "印刷(&P)...";
+            this.印刷toolStripMenuItem1.Click += new System.EventHandler(this.印刷toolStripMenuItem1_Click);
             // 
             // toolStripSeparator2
             // 
@@ -389,21 +397,9 @@ namespace マイメモ帳
             this.バージョン情報AToolStripMenuItem.Size = new System.Drawing.Size(238, 34);
             this.バージョン情報AToolStripMenuItem.Text = "バージョン情報(&A)";
             // 
-            // hScrollBar1
+            // printDialog1
             // 
-            this.hScrollBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.hScrollBar1.Location = new System.Drawing.Point(0, 424);
-            this.hScrollBar1.Name = "hScrollBar1";
-            this.hScrollBar1.Size = new System.Drawing.Size(800, 26);
-            this.hScrollBar1.TabIndex = 2;
-            // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.vScrollBar1.Location = new System.Drawing.Point(774, 36);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(26, 388);
-            this.vScrollBar1.TabIndex = 3;
+            this.printDialog1.UseEXDialog = true;
             // 
             // Form1
             // 
@@ -411,10 +407,9 @@ namespace マイメモ帳
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.vScrollBar1);
-            this.Controls.Add(this.hScrollBar1);
             this.Controls.Add(this.txt_memo);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "マイメモ帳";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
@@ -445,8 +440,6 @@ namespace マイメモ帳
         private System.Windows.Forms.ToolStripMenuItem ページ設定toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem 印刷toolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.HScrollBar hScrollBar1;
-        private System.Windows.Forms.VScrollBar vScrollBar1;
         private System.Windows.Forms.ToolStripMenuItem もとに戻すUToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 切り取りCToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
@@ -470,6 +463,9 @@ namespace マイメモ帳
         private System.Windows.Forms.ToolStripMenuItem ヘルプの表示ToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripMenuItem バージョン情報AToolStripMenuItem;
+        private System.Windows.Forms.PageSetupDialog pageSetupDialog1;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintDialog printDialog1;
     }
 }
 

@@ -4,11 +4,11 @@ using System.Windows.Forms;
 
 namespace マイメモ帳
 {
-    public partial class Form2 : Form
+    public partial class CustomDialogBox : Form
     {
         public int result { get; set; }
 
-        public Form2(CustomMassegeBoxInfo info)
+        public CustomDialogBox(CustomMassegeBoxInfo info)
         {
             InitializeComponent();
             Text = info.title;
