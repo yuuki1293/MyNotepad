@@ -78,10 +78,10 @@ namespace マイメモ帳
             // 
             this.txt_memo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txt_memo.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.txt_memo.Location = new System.Drawing.Point(0, 33);
+            this.txt_memo.Location = new System.Drawing.Point(0, 36);
             this.txt_memo.Multiline = true;
             this.txt_memo.Name = "txt_memo";
-            this.txt_memo.Size = new System.Drawing.Size(800, 417);
+            this.txt_memo.Size = new System.Drawing.Size(800, 414);
             this.txt_memo.TabIndex = 0;
             // 
             // menuStrip1
@@ -97,7 +97,7 @@ namespace マイメモ帳
             this.ヘルプHToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 36);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -117,7 +117,6 @@ namespace マイメモ帳
             this.ファイルToolStripMenuItem.Name = "ファイルToolStripMenuItem";
             this.ファイルToolStripMenuItem.Size = new System.Drawing.Size(98, 29);
             this.ファイルToolStripMenuItem.Text = "ファイル(&F)";
-            this.ファイルToolStripMenuItem.Click += new System.EventHandler(this.ファイルToolStripMenuItem_Click);
             // 
             // 新規toolStripMenuItem1
             // 
@@ -150,6 +149,7 @@ namespace マイメモ帳
             this.上書き保存toolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.上書き保存toolStripMenuItem1.Size = new System.Drawing.Size(388, 34);
             this.上書き保存toolStripMenuItem1.Text = "上書き保存(&S)";
+            this.上書き保存toolStripMenuItem1.Click += new System.EventHandler(this.上書き保存toolStripMenuItem1_Click);
             // 
             // 名前を付けて保存ToolStripMenuItem
             // 
@@ -400,9 +400,9 @@ namespace マイメモ帳
             // vScrollBar1
             // 
             this.vScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.vScrollBar1.Location = new System.Drawing.Point(774, 33);
+            this.vScrollBar1.Location = new System.Drawing.Point(774, 36);
             this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(26, 391);
+            this.vScrollBar1.Size = new System.Drawing.Size(26, 388);
             this.vScrollBar1.TabIndex = 3;
             // 
             // Form1
@@ -417,6 +417,8 @@ namespace マイメモ帳
             this.Controls.Add(this.menuStrip1);
             this.Name = "Form1";
             this.Text = "マイメモ帳";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

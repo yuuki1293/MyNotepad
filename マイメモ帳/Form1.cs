@@ -9,7 +9,28 @@ namespace マイメモ帳
     public partial class Form1 : Form
     {
         private string savedText { get; set; } = "";
-        private string title { get; set; } = "無題";
+        private string Title;
+        private string title
+        {
+            set
+            {
+                savedText = txt_memo.Text;
+                filePath = value;
+                Title = Path.GetFileName(filePath);
+                Text = title;
+            }
+            get
+            {
+                if (savedText == txt_memo.Text)
+                {
+                    return $"{Title} - マイメモ帳";
+                }
+                else
+                {
+                    return $"*{Title} - マイメモ帳";
+                }
+            }
+        }
         private string filePath { get; set; }
 
         public Form1(string[] argv)
@@ -18,11 +39,15 @@ namespace マイメモ帳
             if (argv.Length > 0)
             {
                 txt_memo.Text = File.ReadAllText(argv[0]);
-                savedText = txt_memo.Text;
-                filePath = argv[0];
+                title = argv[0];
+            }
+            else
+            {
+                Title = "無題";
+                Text = title;
             }
         }
-        
+
         //保存するor保存しない：0　キャンセル：-1
         private int 保存しますか()
         {
@@ -30,7 +55,7 @@ namespace マイメモ帳
             {
                 CustomMassegeBoxInfo customMassegeBoxInfo = new CustomMassegeBoxInfo
                 {
-                    message = $"{this.title} への変更内容を保存しますか?",
+                    message = $"{title} への変更内容を保存しますか?",
                     choose = new string[] { "　保存する(&H)　", "　保存しない(&N)　", "　キャンセル　" },
                     title = "マイメモ帳",
                     CancelChoose = 2
@@ -42,11 +67,12 @@ namespace マイメモ帳
                 //MessageBox.Show(customMassegeBoxInfo.result.ToString());
                 if (customMassegeBoxInfo.result == 0)
                 {
-                    if (filePath == null) { 名前を付けて保存ToolStripMenuItem_Click(new object(), new EventArgs()); }
-                    else
+                    if (filePath == null)
                     {
-                        File.WriteAllText(filePath, txt_memo.Text);
+                        if (名前を付けて保存ToolStripMenuItem_Click() == 0) { return 0; }
+                        else { return -1; }
                     }
+                    else { File.WriteAllText(filePath, txt_memo.Text); }
                 }
                 else if (customMassegeBoxInfo.result == 2) { return -1; }
             }
@@ -66,12 +92,16 @@ namespace マイメモ帳
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 txt_memo.Text = File.ReadAllText(dialog.FileName, Encoding.UTF8);
-                savedText = txt_memo.Text;
-                filePath = dialog.FileName;
+                title = dialog.FileName;
             }
         }
 
         private void 名前を付けて保存ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            名前を付けて保存ToolStripMenuItem_Click();
+        }
+
+        private int 名前を付けて保存ToolStripMenuItem_Click()
         {
             SaveFileDialog dialog = new SaveFileDialog();
             //dialog.Filter = "テキストファイル(*.txt)|*.txt";
@@ -79,13 +109,15 @@ namespace マイメモ帳
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 File.WriteAllText(dialog.FileName, txt_memo.Text);
+                title = dialog.FileName;
+                return 0;
             }
+            else { return -1; }
         }
 
         private void 終了ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("メモ帳を終了します", "終了", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
+            if (保存しますか() == 0)
             {
                 Close();
             }
@@ -96,25 +128,46 @@ namespace マイメモ帳
 
         }
 
-        private void ファイルToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void 新規toolStripMenuItem1_Click(object sender, EventArgs e)
         {
             if (保存しますか() == 0)
             {
                 savedText = "";
-                title = "無題";
+                Title = "無題";
                 filePath = null;
                 txt_memo.Text = "";
-            } 
+                Text = title;
+            }
         }
 
         private void 新しいウィンドウtoolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Process.Start(AppDomain.CurrentDomain.BaseDirectory.TrimEnd('\\')+ "\\マイメモ帳.exe");
+            Process.Start(AppDomain.CurrentDomain.BaseDirectory.TrimEnd('\\') + "\\マイメモ帳.exe");
+        }
+
+        private void 上書き保存toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (filePath == null)
+            {
+                名前を付けて保存ToolStripMenuItem_Click();
+            }
+            else
+            {
+                File.WriteAllText(filePath, txt_memo.Text);
+                title = filePath;
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (保存しますか() != 0)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }
