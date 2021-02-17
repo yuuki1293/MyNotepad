@@ -156,7 +156,7 @@ namespace マイメモ帳
             | System.Windows.Forms.Keys.S)));
             this.名前を付けて保存ToolStripMenuItem.Size = new System.Drawing.Size(388, 34);
             this.名前を付けて保存ToolStripMenuItem.Text = "名前を付けて保存(&A)...";
-            this.名前を付けて保存ToolStripMenuItem.Click += new System.EventHandler(this.保存ToolStripMenuItem_Click);
+            this.名前を付けて保存ToolStripMenuItem.Click += new System.EventHandler(this.名前を付けて保存ToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
