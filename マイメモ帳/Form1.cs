@@ -38,15 +38,12 @@ namespace マイメモ帳
                 form.ShowDialog();
                 customMassegeBoxInfo.result = form.result;
                 form.Dispose();
-                MessageBox.Show(customMassegeBoxInfo.result.ToString());
+                //MessageBox.Show(customMassegeBoxInfo.result.ToString());
                 if (customMassegeBoxInfo.result == 0)
                 {
-                    if (filePath == null)
-                    {
-                        名前を付けて保存ToolStripMenuItem_Click(new object(), new EventArgs());
-                    }
+                    if (filePath == null) { 名前を付けて保存ToolStripMenuItem_Click(new object(), new EventArgs()); }
                     else
-                    { 
+                    {
                         File.WriteAllText(filePath, txt_memo.Text);
                         openFile();
                     }
