@@ -63,18 +63,19 @@ namespace マイメモ帳
             CustomMassegeBoxInfo customMassegeBoxInfo = new CustomMassegeBoxInfo
             {
                 title = "メモ帳",
-                choose = new string[] { "はい", "いいえ", "キャンセル" },
+                choose = new string[] { "はい", "いいえ", "キャンセル","Hoge"},
                 message="保存しますか",
+                defaultChoose = 2,
             };
             
             //DialogResult dr = MessageBox.Show("本当によろしいですか？", "確認", MessageBoxButtons.YesNoCancel);
-            Form2 form = new Form2(ref customMassegeBoxInfo);
+            Form2 form = new Form2(customMassegeBoxInfo);
             if (form.ShowDialog() == DialogResult.OK)
             {
-                
             }
+            customMassegeBoxInfo.result = form.result;
             form.Dispose();
-            customMassegeBoxInfo
+            MessageBox.Show(customMassegeBoxInfo.choose[customMassegeBoxInfo.result]);
         }
     }
 }
