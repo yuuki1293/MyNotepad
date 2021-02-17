@@ -78,14 +78,15 @@ namespace マイメモ帳
             // 
             this.txt_memo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txt_memo.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.txt_memo.Location = new System.Drawing.Point(0, 36);
+            this.txt_memo.Location = new System.Drawing.Point(0, 33);
             this.txt_memo.Multiline = true;
             this.txt_memo.Name = "txt_memo";
-            this.txt_memo.Size = new System.Drawing.Size(800, 414);
+            this.txt_memo.Size = new System.Drawing.Size(800, 417);
             this.txt_memo.TabIndex = 0;
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.White;
             this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -96,7 +97,7 @@ namespace マイメモ帳
             this.ヘルプHToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 33);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -114,7 +115,7 @@ namespace マイメモ帳
             this.toolStripSeparator2,
             this.終了ToolStripMenuItem});
             this.ファイルToolStripMenuItem.Name = "ファイルToolStripMenuItem";
-            this.ファイルToolStripMenuItem.Size = new System.Drawing.Size(98, 30);
+            this.ファイルToolStripMenuItem.Size = new System.Drawing.Size(98, 29);
             this.ファイルToolStripMenuItem.Text = "ファイル(&F)";
             this.ファイルToolStripMenuItem.Click += new System.EventHandler(this.ファイルToolStripMenuItem_Click);
             // 
@@ -133,6 +134,7 @@ namespace マイメモ帳
             | System.Windows.Forms.Keys.N)));
             this.新しいウィンドウtoolStripMenuItem1.Size = new System.Drawing.Size(388, 34);
             this.新しいウィンドウtoolStripMenuItem1.Text = "新しいウィンドウ(&W)";
+            this.新しいウィンドウtoolStripMenuItem1.Click += new System.EventHandler(this.新しいウィンドウtoolStripMenuItem1_Click);
             // 
             // 開くToolStripMenuItem
             // 
@@ -208,7 +210,7 @@ namespace マイメモ帳
             this.すべて選択AToolStripMenuItem,
             this.日付と時刻DToolStripMenuItem});
             this.編集ToolStripMenuItem.Name = "編集ToolStripMenuItem";
-            this.編集ToolStripMenuItem.Size = new System.Drawing.Size(83, 30);
+            this.編集ToolStripMenuItem.Size = new System.Drawing.Size(83, 29);
             this.編集ToolStripMenuItem.Text = "編集(&E)";
             // 
             // もとに戻すUToolStripMenuItem
@@ -324,7 +326,7 @@ namespace マイメモ帳
             this.右端で折り返すWToolStripMenuItem,
             this.フォントFToolStripMenuItem});
             this.書式OToolStripMenuItem.Name = "書式OToolStripMenuItem";
-            this.書式OToolStripMenuItem.Size = new System.Drawing.Size(88, 30);
+            this.書式OToolStripMenuItem.Size = new System.Drawing.Size(88, 29);
             this.書式OToolStripMenuItem.Text = "書式(&O)";
             // 
             // 右端で折り返すWToolStripMenuItem
@@ -345,7 +347,7 @@ namespace マイメモ帳
             this.ズームZToolStripMenuItem,
             this.ステータスバーSToolStripMenuItem});
             this.表示ToolStripMenuItem.Name = "表示ToolStripMenuItem";
-            this.表示ToolStripMenuItem.Size = new System.Drawing.Size(85, 30);
+            this.表示ToolStripMenuItem.Size = new System.Drawing.Size(85, 29);
             this.表示ToolStripMenuItem.Text = "表示(&V)";
             // 
             // ズームZToolStripMenuItem
@@ -367,7 +369,7 @@ namespace マイメモ帳
             this.toolStripSeparator6,
             this.バージョン情報AToolStripMenuItem});
             this.ヘルプHToolStripMenuItem.Name = "ヘルプHToolStripMenuItem";
-            this.ヘルプHToolStripMenuItem.Size = new System.Drawing.Size(95, 30);
+            this.ヘルプHToolStripMenuItem.Size = new System.Drawing.Size(95, 29);
             this.ヘルプHToolStripMenuItem.Text = "ヘルプ(&H)";
             // 
             // ヘルプの表示ToolStripMenuItem
@@ -398,9 +400,9 @@ namespace マイメモ帳
             // vScrollBar1
             // 
             this.vScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.vScrollBar1.Location = new System.Drawing.Point(774, 36);
+            this.vScrollBar1.Location = new System.Drawing.Point(774, 33);
             this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(26, 388);
+            this.vScrollBar1.Size = new System.Drawing.Size(26, 391);
             this.vScrollBar1.TabIndex = 3;
             // 
             // Form1

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
@@ -21,11 +22,11 @@ namespace マイメモ帳
                 filePath = argv[0];
             }
         }
-
-        private void 開くToolStripMenuItem_Click(object sender, EventArgs e)
+        
+        //保存するor保存しない：0　キャンセル：-1
+        private int 保存しますか()
         {
-            if (savedText.Equals(txt_memo.Text)) { openFile(); }
-            else
+            if (!savedText.Equals(txt_memo.Text))
             {
                 CustomMassegeBoxInfo customMassegeBoxInfo = new CustomMassegeBoxInfo
                 {
@@ -45,11 +46,16 @@ namespace マイメモ帳
                     else
                     {
                         File.WriteAllText(filePath, txt_memo.Text);
-                        openFile();
                     }
                 }
-                else if (customMassegeBoxInfo.result == 1) { openFile(); }
+                else if (customMassegeBoxInfo.result == 2) { return -1; }
             }
+            return 0;
+        }
+
+        private void 開くToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (保存しますか() == 0) { openFile(); }
         }
 
         private void openFile()
@@ -97,23 +103,18 @@ namespace マイメモ帳
 
         private void 新規toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            CustomMassegeBoxInfo customMassegeBoxInfo = new CustomMassegeBoxInfo
+            if (保存しますか() == 0)
             {
-                title = "メモ帳",
-                choose = new string[] { "    保存する(&S)    ", "    保存しない(&N)    ", "    キャンセル    " },
-                message = "無題 への変更内容を保存しますか?",
-                CancelChoose = 2,
-            };
+                savedText = "";
+                title = "無題";
+                filePath = null;
+                txt_memo.Text = "";
+            } 
+        }
 
-            //DialogResult dr = MessageBox.Show("本当によろしいですか？", "確認", MessageBoxButtons.YesNoCancel);
-            Form2 form = new Form2(customMassegeBoxInfo);
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-            }
-            customMassegeBoxInfo.result = form.result;
-            form.Dispose();
-            //MessageBox.Show(customMassegeBoxInfo.choose[customMassegeBoxInfo.result]);
-            txt_memo.Text = customMassegeBoxInfo.choose[customMassegeBoxInfo.result];
+        private void 新しいウィンドウtoolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Process.Start(AppDomain.CurrentDomain.BaseDirectory.TrimEnd('\\')+ "\\マイメモ帳.exe");
         }
     }
 }
