@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "マイメモ帳", "マイメモ帳\マイメモ帳.csproj", "{DBBF3F00-7206-4020-8629-E0305D483BD1}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "MyNotePad_installer", "MyNotePad_installer\MyNotePad_installer.vdproj", "{EB7F3F7C-1E66-460A-8626-2EBBA814B73D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{DBBF3F00-7206-4020-8629-E0305D483BD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBBF3F00-7206-4020-8629-E0305D483BD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBBF3F00-7206-4020-8629-E0305D483BD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB7F3F7C-1E66-460A-8626-2EBBA814B73D}.Debug|Any CPU.ActiveCfg = Debug
+		{EB7F3F7C-1E66-460A-8626-2EBBA814B73D}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

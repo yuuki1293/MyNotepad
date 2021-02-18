@@ -78,6 +78,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.manifest" />
     <None Include="Properties\Settings.settings">
@@ -94,6 +95,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\notepad_0_10.ico" />
     <Content Include="Value\Color\Dark.xml" />
     <Content Include="Value\Color\Nomal.xml" />
     <Content Include="Value\Color\Custom.xml" />
