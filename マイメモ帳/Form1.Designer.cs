@@ -45,6 +45,7 @@ namespace マイメモ帳
             this.終了ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.編集ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.もとに戻すUToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.やり直すYToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.切り取りCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.コピーCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,7 +72,7 @@ namespace マイメモ帳
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.バージョン情報AToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument = new System.Drawing.Printing.PrintDocument();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -80,14 +81,15 @@ namespace マイメモ帳
             // 
             this.txt_memo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txt_memo.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.txt_memo.Location = new System.Drawing.Point(0, 33);
+            this.txt_memo.Location = new System.Drawing.Point(0, 35);
             this.txt_memo.Multiline = true;
             this.txt_memo.Name = "txt_memo";
             this.txt_memo.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txt_memo.Size = new System.Drawing.Size(800, 417);
+            this.txt_memo.Size = new System.Drawing.Size(800, 415);
             this.txt_memo.TabIndex = 0;
             this.txt_memo.WordWrap = false;
             this.txt_memo.TextChanged += new System.EventHandler(this.txt_memo_TextChanged);
+            this.txt_memo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_memo_KeyDown);
             // 
             // menuStrip1
             // 
@@ -103,7 +105,7 @@ namespace マイメモ帳
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 35);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -183,7 +185,7 @@ namespace マイメモ帳
             this.印刷toolStripMenuItem1.Name = "印刷toolStripMenuItem1";
             this.印刷toolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
             this.印刷toolStripMenuItem1.Size = new System.Drawing.Size(388, 34);
-            this.印刷toolStripMenuItem1.Text = "印刷(&P)...";
+            this.印刷toolStripMenuItem1.Text = "印刷(&P)...(未実装)";
             this.印刷toolStripMenuItem1.Click += new System.EventHandler(this.印刷toolStripMenuItem1_Click);
             // 
             // toolStripSeparator2
@@ -202,6 +204,7 @@ namespace マイメモ帳
             // 
             this.編集ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.もとに戻すUToolStripMenuItem,
+            this.やり直すYToolStripMenuItem,
             this.toolStripSeparator3,
             this.切り取りCToolStripMenuItem,
             this.コピーCToolStripMenuItem,
@@ -228,6 +231,14 @@ namespace マイメモ帳
             this.もとに戻すUToolStripMenuItem.Size = new System.Drawing.Size(296, 34);
             this.もとに戻すUToolStripMenuItem.Text = "もとに戻す(&U)";
             this.もとに戻すUToolStripMenuItem.Click += new System.EventHandler(this.もとに戻すUToolStripMenuItem_Click);
+            // 
+            // やり直すYToolStripMenuItem
+            // 
+            this.やり直すYToolStripMenuItem.Name = "やり直すYToolStripMenuItem";
+            this.やり直すYToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
+            this.やり直すYToolStripMenuItem.Size = new System.Drawing.Size(296, 34);
+            this.やり直すYToolStripMenuItem.Text = "やり直す(&R)";
+            this.やり直すYToolStripMenuItem.Click += new System.EventHandler(this.やり直すYToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
@@ -399,6 +410,7 @@ namespace マイメモ帳
             // 
             // printDialog1
             // 
+            this.printDialog1.Document = this.printDocument;
             this.printDialog1.UseEXDialog = true;
             // 
             // Form1
@@ -464,8 +476,9 @@ namespace マイメモ帳
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripMenuItem バージョン情報AToolStripMenuItem;
         private System.Windows.Forms.PageSetupDialog pageSetupDialog1;
-        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Drawing.Printing.PrintDocument printDocument;
         private System.Windows.Forms.PrintDialog printDialog1;
+        private System.Windows.Forms.ToolStripMenuItem やり直すYToolStripMenuItem;
     }
 }
 

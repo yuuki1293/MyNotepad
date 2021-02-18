@@ -68,7 +68,6 @@ namespace マイメモ帳
             this.Name = "CustomDialogBox";
             this.ShowIcon = false;
             this.Text = "Any";
-            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

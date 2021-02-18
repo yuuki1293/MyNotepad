@@ -1,27 +1,29 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace マイメモ帳
 {
     public partial class Form1 : Form
     {
-        private string savedText { get; set; } = "";
+        private string SavedText { get; set; } = "";
         private string Title;
-        private string title
+        private string SetTitle
         {
             set
             {
-                savedText = txt_memo.Text;
-                filePath = value;
-                Title = Path.GetFileName(filePath);
-                Text = title;
+                SavedText = txt_memo.Text;
+                FilePath = value;
+                Title = Path.GetFileName(FilePath);
+                Text = SetTitle;
             }
             get
             {
-                if (savedText == txt_memo.Text)
+                if (SavedText == txt_memo.Text)
                 {
                     return $"{Title} - マイメモ帳";
                 }
@@ -31,8 +33,11 @@ namespace マイメモ帳
                 }
             }
         }
-        private string filePath { get; set; }
-        private PageSetupDialog pageSetupDialog { get; set; } = new PageSetupDialog();
+        private string FilePath { get; set; }
+        private PageSetupDialog PageSetupDialog { get; set; } = new PageSetupDialog();
+        private TextHistory TextHistory { get; set; }
+
+        static public XElement xml { get; set; }
 
         public Form1(string[] argv)
         {
@@ -40,19 +45,20 @@ namespace マイメモ帳
             if (argv.Length > 0)
             {
                 txt_memo.Text = File.ReadAllText(argv[0]);
-                title = argv[0];
+                SetTitle = argv[0];
             }
             else
             {
                 Title = "無題";
-                Text = title;
+                Text = SetTitle;
             }
+            //BackColor = System.Drawing.Color.FromArgb();
         }
 
         //保存するor保存しない：0　キャンセル：-1
         private int 保存しますか()
         {
-            if (!savedText.Equals(txt_memo.Text))
+            if (!SavedText.Equals(txt_memo.Text))
             {
                 CustomMassegeBoxInfo customMassegeBoxInfo = new CustomMassegeBoxInfo
                 {
@@ -63,17 +69,16 @@ namespace マイメモ帳
                 };
                 CustomDialogBox form = new CustomDialogBox(customMassegeBoxInfo);
                 form.ShowDialog();
-                customMassegeBoxInfo.result = form.result;
                 form.Dispose();
                 //MessageBox.Show(customMassegeBoxInfo.result.ToString());
                 if (customMassegeBoxInfo.result == 0)
                 {
-                    if (filePath == null)
+                    if (FilePath == null)
                     {
                         if (名前を付けて保存ToolStripMenuItem_Click() == 0) { return 0; }
                         else { return -1; }
                     }
-                    else { File.WriteAllText(filePath, txt_memo.Text); }
+                    else { File.WriteAllText(FilePath, txt_memo.Text); }
                 }
                 else if (customMassegeBoxInfo.result == 2) { return -1; }
             }
@@ -82,7 +87,11 @@ namespace マイメモ帳
 
         private void 開くToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (保存しますか() == 0) { openFile(); }
+            if (保存しますか() == 0)
+            {
+                openFile();
+                TextHistory.Reset();
+            }
         }
 
         private void openFile()
@@ -93,7 +102,7 @@ namespace マイメモ帳
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 txt_memo.Text = File.ReadAllText(dialog.FileName, Encoding.UTF8);
-                title = dialog.FileName;
+                SetTitle = dialog.FileName;
             }
         }
 
@@ -110,7 +119,7 @@ namespace マイメモ帳
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 File.WriteAllText(dialog.FileName, txt_memo.Text);
-                title = dialog.FileName;
+                SetTitle = dialog.FileName;
                 return 0;
             }
             else { return -1; }
@@ -123,18 +132,19 @@ namespace マイメモ帳
 
         private void もとに戻すUToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            TextHistory.Undo();
         }
 
         private void 新規toolStripMenuItem1_Click(object sender, EventArgs e)
         {
             if (保存しますか() == 0)
             {
-                savedText = "";
+                SavedText = "";
                 Title = "無題";
-                filePath = null;
+                FilePath = null;
                 txt_memo.Text = "";
-                Text = title;
+                Text = SetTitle;
+                TextHistory.Reset();
             }
         }
 
@@ -145,19 +155,20 @@ namespace マイメモ帳
 
         private void 上書き保存toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (filePath == null)
+            if (FilePath == null)
             {
                 名前を付けて保存ToolStripMenuItem_Click();
             }
             else
             {
-                File.WriteAllText(filePath, txt_memo.Text);
-                title = filePath;
+                File.WriteAllText(FilePath, txt_memo.Text);
+                SetTitle = FilePath;
             }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            TextHistory = new TextHistory(txt_memo);
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -170,16 +181,19 @@ namespace マイメモ帳
 
         private void txt_memo_TextChanged(object sender, EventArgs e)
         {
-            Text = title;
+            if (!TextHistory.UseUndoRedo)
+            {
+                TextHistory.Add();
+            }
+            Text = SetTitle;
         }
 
         private void ページ設定toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            pageSetupDialog1.PageSettings = new System.Drawing.Printing.PageSettings();
-            pageSetupDialog1.Document = new System.Drawing.Printing.PrintDocument();
+            pageSetupDialog1 = PageSetupDialog;
             if (pageSetupDialog1.ShowDialog() == DialogResult.OK)
             {
-                pageSetupDialog = pageSetupDialog1;
+                PageSetupDialog = pageSetupDialog1;
             }
             pageSetupDialog1.Dispose();
         }
@@ -188,10 +202,96 @@ namespace マイメモ帳
         {
             if (printDialog1.ShowDialog() == DialogResult.OK)
             {
-                printDocument1.PrinterSettings = printDialog1.PrinterSettings;
-                printDocument1.DefaultPageSettings = pageSetupDialog.PageSettings;
-                printDocument1.Print();
+                printDocument.DocumentName = SetTitle;
+                printDocument.PrinterSettings = printDialog1.PrinterSettings;
+                printDocument.DefaultPageSettings = PageSetupDialog.PageSettings;
+                printDocument.Print();
+            }
+        }
+
+        private void やり直すYToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TextHistory.Redo();
+        }
+
+        private void Txt_memo_KeyDown(object sender, KeyEventArgs e)
+        {
+            //MessageBox.Show(txt_memo.SelectionStart.ToString());
+            TextHistory.SelectionStart = txt_memo.SelectionStart;
+            TextHistory.SelectionLength = txt_memo.SelectionLength;
+        }
+    }
+
+    public class TextHistory
+    {
+        private List<string> History { get; set; } = new List<string>();
+        private int HistoryNum { get; set; } = 0;
+        private TextBox Txt_memo { get; set; }
+        private List<int> CursorStartPosition { get; set; } = new List<int>();
+        private List<int> CursorLengthPosition { get; set; } = new List<int>();
+        public int SelectionStart { get; set; } = 0;
+        public int SelectionLength { get; set; } = 0;
+
+        public bool UseUndoRedo { get; set; } = false;
+
+        public TextHistory(TextBox txt_memo)
+        {
+            Txt_memo = txt_memo;
+            Reset();
+        }
+
+        public void Add()
+        {
+            //txt_memo.Text = "Addされたよ！";
+            if (HistoryNum != History.Count - 1)
+            {
+                History.RemoveRange(HistoryNum + 1, History.Count - 1 - HistoryNum);
+            }
+            History.Add(Txt_memo.Text);
+            CursorStartPosition.Add(Txt_memo.SelectionStart);
+            CursorLengthPosition.Add(Txt_memo.SelectionLength);
+            HistoryNum++;
+        }
+
+        public void Reset()
+        {
+            History = new List<string> { Txt_memo.Text };
+            CursorStartPosition = new List<int> { Txt_memo.SelectionStart };
+            CursorLengthPosition = new List<int> { Txt_memo.SelectionLength };
+            HistoryNum = 0;
+            UseUndoRedo = false;
+        }
+
+        public int Undo()
+        {
+            if (HistoryNum == 0) { return -1; }
+            else
+            {
+                UseUndoRedo = true;
+                Txt_memo.Text = History[--HistoryNum];
+                Txt_memo.SelectionStart = CursorStartPosition[HistoryNum];
+                Txt_memo.SelectionLength = CursorLengthPosition[HistoryNum];
+                UseUndoRedo = false;
+                return 0;
+            }
+        }
+
+        public int Redo()
+        {
+            //MessageBox.Show(historyNum.ToString());
+            //MessageBox.Show(history.Count.ToString());
+            if (HistoryNum == History.Count - 1) { return 0; }
+            else
+            {
+                UseUndoRedo = true;
+                Txt_memo.Text = History[++HistoryNum];
+                Txt_memo.SelectionStart = CursorStartPosition[HistoryNum];
+                Txt_memo.SelectionLength = CursorLengthPosition[HistoryNum];
+                UseUndoRedo = false;
+                return 0;
             }
         }
     }
 }
+
+
