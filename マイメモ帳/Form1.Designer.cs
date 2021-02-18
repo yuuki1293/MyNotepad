@@ -81,11 +81,11 @@ namespace マイメモ帳
             // 
             this.txt_memo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txt_memo.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.txt_memo.Location = new System.Drawing.Point(0, 35);
+            this.txt_memo.Location = new System.Drawing.Point(0, 33);
             this.txt_memo.Multiline = true;
             this.txt_memo.Name = "txt_memo";
             this.txt_memo.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txt_memo.Size = new System.Drawing.Size(800, 415);
+            this.txt_memo.Size = new System.Drawing.Size(800, 417);
             this.txt_memo.TabIndex = 0;
             this.txt_memo.WordWrap = false;
             this.txt_memo.TextChanged += new System.EventHandler(this.txt_memo_TextChanged);
@@ -105,7 +105,7 @@ namespace マイメモ帳
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 35);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 33);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -175,13 +175,15 @@ namespace マイメモ帳
             // 
             // ページ設定toolStripMenuItem1
             // 
+            this.ページ設定toolStripMenuItem1.Enabled = false;
             this.ページ設定toolStripMenuItem1.Name = "ページ設定toolStripMenuItem1";
             this.ページ設定toolStripMenuItem1.Size = new System.Drawing.Size(388, 34);
-            this.ページ設定toolStripMenuItem1.Text = "ページ設定(&U)...";
+            this.ページ設定toolStripMenuItem1.Text = "ページ設定(&U)...(未実装)";
             this.ページ設定toolStripMenuItem1.Click += new System.EventHandler(this.ページ設定toolStripMenuItem1_Click);
             // 
             // 印刷toolStripMenuItem1
             // 
+            this.印刷toolStripMenuItem1.Enabled = false;
             this.印刷toolStripMenuItem1.Name = "印刷toolStripMenuItem1";
             this.印刷toolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
             this.印刷toolStripMenuItem1.Size = new System.Drawing.Size(388, 34);
@@ -226,6 +228,7 @@ namespace マイメモ帳
             // 
             // もとに戻すUToolStripMenuItem
             // 
+            this.もとに戻すUToolStripMenuItem.Enabled = false;
             this.もとに戻すUToolStripMenuItem.Name = "もとに戻すUToolStripMenuItem";
             this.もとに戻すUToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
             this.もとに戻すUToolStripMenuItem.Size = new System.Drawing.Size(296, 34);
@@ -234,6 +237,7 @@ namespace マイメモ帳
             // 
             // やり直すYToolStripMenuItem
             // 
+            this.やり直すYToolStripMenuItem.Enabled = false;
             this.やり直すYToolStripMenuItem.Name = "やり直すYToolStripMenuItem";
             this.やり直すYToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
             this.やり直すYToolStripMenuItem.Size = new System.Drawing.Size(296, 34);

@@ -133,6 +133,8 @@ namespace マイメモ帳
         private void もとに戻すUToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TextHistory.Undo();
+            if (TextHistory.CanUndo) { もとに戻すUToolStripMenuItem.Enabled = true; }
+            else { もとに戻すUToolStripMenuItem.Enabled = false; }
         }
 
         private void 新規toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -186,6 +188,10 @@ namespace マイメモ帳
                 TextHistory.Add();
             }
             Text = SetTitle;
+            if (TextHistory.CanUndo) { もとに戻すUToolStripMenuItem.Enabled = true; }
+            else { もとに戻すUToolStripMenuItem.Enabled = false; }
+            if (TextHistory.CanRedo) { やり直すYToolStripMenuItem.Enabled = true; }
+            else { やり直すYToolStripMenuItem.Enabled = false; }
         }
 
         private void ページ設定toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -212,13 +218,13 @@ namespace マイメモ帳
         private void やり直すYToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TextHistory.Redo();
+            if (TextHistory.CanRedo) { やり直すYToolStripMenuItem.Enabled = true; }
+            else { やり直すYToolStripMenuItem.Enabled = false; }
         }
 
         private void Txt_memo_KeyDown(object sender, KeyEventArgs e)
         {
             //MessageBox.Show(txt_memo.SelectionStart.ToString());
-            TextHistory.SelectionStart = txt_memo.SelectionStart;
-            TextHistory.SelectionLength = txt_memo.SelectionLength;
         }
     }
 
@@ -229,10 +235,10 @@ namespace マイメモ帳
         private TextBox Txt_memo { get; set; }
         private List<int> CursorStartPosition { get; set; } = new List<int>();
         private List<int> CursorLengthPosition { get; set; } = new List<int>();
-        public int SelectionStart { get; set; } = 0;
-        public int SelectionLength { get; set; } = 0;
 
         public bool UseUndoRedo { get; set; } = false;
+        public bool CanUndo { get { return HistoryNum != 0; } }
+        public bool CanRedo { get { return HistoryNum != History.Count - 1; } }
 
         public TextHistory(TextBox txt_memo)
         {
