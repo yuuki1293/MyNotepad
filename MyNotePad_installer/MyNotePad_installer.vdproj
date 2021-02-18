@@ -15,6 +15,12 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_20078455FDC04B49962478FB4A8158F8"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_577CFBA79A114C5AA280456A91C4A051"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -22,13 +28,7 @@
         "Entry"
         {
         "MsmKey" = "8:_ABFD92B4159E7A8327BBE410F953124A"
-        "OwnerKey" = "8:_EA078604D9E840D594F5FFEDC40CAE03"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_EA078604D9E840D594F5FFEDC40CAE03"
-        "OwnerKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_20078455FDC04B49962478FB4A8158F8"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -40,7 +40,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_EA078604D9E840D594F5FFEDC40CAE03"
+        "OwnerKey" = "8:_20078455FDC04B49962478FB4A8158F8"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -61,6 +61,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -77,6 +93,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -167,7 +191,7 @@
             {
             "DefaultLocation" = "8:[ProgramFilesFolder][Manufacturer]\\[ProductName]"
             "Name" = "8:#1925"
-            "AlwaysCreate" = "11:TRUE"
+            "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Property" = "8:TARGETDIR"
@@ -178,23 +202,12 @@
             "{1525181F-901A-416C-8A58-119130FE478E}:_8F9D66FE17AF43599C6699C21F5B6EC6"
             {
             "Name" = "8:#1919"
-            "AlwaysCreate" = "11:FALSE"
+            "AlwaysCreate" = "11:TRUE"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Property" = "8:ProgramMenuFolder"
                 "Folders"
                 {
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_D4E209AD33064BEC81DF37D071FAD90F"
-                    {
-                    "Name" = "8:installer"
-                    "AlwaysCreate" = "11:FALSE"
-                    "Condition" = "8:"
-                    "Transitive" = "11:FALSE"
-                    "Property" = "8:_244E5D8FC03D4B05B3B727A9522FCDD2"
-                        "Folders"
-                        {
-                        }
-                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_AC9693E5C4494A0B99B8F5E93B0A3C09"
@@ -223,9 +236,9 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:MyNotePad_installer"
+        "ProductName" = "8:MyNotePad"
         "ProductCode" = "8:{2C22CDE4-F566-43B0-8D92-1E93BFFEBBEC}"
-        "PackageCode" = "8:{3AEC530C-052C-45EC-9EBC-51B8CF6BF343}"
+        "PackageCode" = "8:{8D76D075-746C-4781-9DEE-496328148BF1}"
         "UpgradeCode" = "8:{6FF277A9-CA96-4A65-BF0C-DAB8D7120E71}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -233,12 +246,12 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:yuuki1293@outlook.jp"
+        "Manufacturer" = "8:None"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:MyNotePad_installer"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:yuuki1293@outlook.jp"
+        "ARPCONTACT" = "8:yuuki1293"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
@@ -353,13 +366,13 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_EA078604D9E840D594F5FFEDC40CAE03"
+            "Target" = "8:_20078455FDC04B49962478FB4A8158F8"
             "Folder" = "8:_AC9693E5C4494A0B99B8F5E93B0A3C09"
             "WorkingFolder" = "8:_89DB3BB7312349D9AAA99538E1A28F6A"
             "Icon" = "8:_577CFBA79A114C5AA280456A91C4A051"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_2015124D078743089795C9B59F7FF563"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_B9FF2BF929724D4DAEEEE18E5D06557E"
             {
             "Name" = "8:マイメモ帳"
             "Arguments" = "8:"
@@ -367,8 +380,8 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_EA078604D9E840D594F5FFEDC40CAE03"
-            "Folder" = "8:_D4E209AD33064BEC81DF37D071FAD90F"
+            "Target" = "8:_20078455FDC04B49962478FB4A8158F8"
+            "Folder" = "8:_8F9D66FE17AF43599C6699C21F5B6EC6"
             "WorkingFolder" = "8:_89DB3BB7312349D9AAA99538E1A28F6A"
             "Icon" = "8:_577CFBA79A114C5AA280456A91C4A051"
             "Feature" = "8:"
@@ -772,7 +785,7 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_EA078604D9E840D594F5FFEDC40CAE03"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_20078455FDC04B49962478FB4A8158F8"
             {
             "SourcePath" = "8:..\\マイメモ帳\\obj\\Debug\\マイメモ帳.exe"
             "TargetName" = "8:"
@@ -792,7 +805,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             "ProjectOutputGroupRegister" = "3:1"
-            "OutputConfiguration" = "8:Release|Any CPU"
+            "OutputConfiguration" = "8:"
             "OutputGroupCanonicalName" = "8:Built"
             "OutputProjectGuid" = "8:{DBBF3F00-7206-4020-8629-E0305D483BD1}"
             "ShowKeyOutput" = "11:TRUE"
