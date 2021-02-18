@@ -74,6 +74,7 @@ namespace マイメモ帳
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
             this.printDocument = new System.Drawing.Printing.PrintDocument();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.フィードバックを送信FToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -251,6 +252,7 @@ namespace マイメモ帳
             // 
             // 切り取りCToolStripMenuItem
             // 
+            this.切り取りCToolStripMenuItem.Enabled = false;
             this.切り取りCToolStripMenuItem.Name = "切り取りCToolStripMenuItem";
             this.切り取りCToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
             this.切り取りCToolStripMenuItem.Size = new System.Drawing.Size(296, 34);
@@ -258,6 +260,7 @@ namespace マイメモ帳
             // 
             // コピーCToolStripMenuItem
             // 
+            this.コピーCToolStripMenuItem.Enabled = false;
             this.コピーCToolStripMenuItem.Name = "コピーCToolStripMenuItem";
             this.コピーCToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
             this.コピーCToolStripMenuItem.Size = new System.Drawing.Size(296, 34);
@@ -272,6 +275,7 @@ namespace マイメモ帳
             // 
             // 削除LToolStripMenuItem
             // 
+            this.削除LToolStripMenuItem.Enabled = false;
             this.削除LToolStripMenuItem.Name = "削除LToolStripMenuItem";
             this.削除LToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
             this.削除LToolStripMenuItem.Size = new System.Drawing.Size(296, 34);
@@ -284,6 +288,7 @@ namespace マイメモ帳
             // 
             // bingで検索SToolStripMenuItem
             // 
+            this.bingで検索SToolStripMenuItem.Enabled = false;
             this.bingで検索SToolStripMenuItem.Name = "bingで検索SToolStripMenuItem";
             this.bingで検索SToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
             this.bingで検索SToolStripMenuItem.Size = new System.Drawing.Size(296, 34);
@@ -291,6 +296,7 @@ namespace マイメモ帳
             // 
             // 検索FToolStripMenuItem
             // 
+            this.検索FToolStripMenuItem.Enabled = false;
             this.検索FToolStripMenuItem.Name = "検索FToolStripMenuItem";
             this.検索FToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
             this.検索FToolStripMenuItem.Size = new System.Drawing.Size(296, 34);
@@ -298,6 +304,7 @@ namespace マイメモ帳
             // 
             // 次を検索NToolStripMenuItem
             // 
+            this.次を検索NToolStripMenuItem.Enabled = false;
             this.次を検索NToolStripMenuItem.Name = "次を検索NToolStripMenuItem";
             this.次を検索NToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F3;
             this.次を検索NToolStripMenuItem.Size = new System.Drawing.Size(296, 34);
@@ -305,6 +312,7 @@ namespace マイメモ帳
             // 
             // 前を検索VToolStripMenuItem
             // 
+            this.前を検索VToolStripMenuItem.Enabled = false;
             this.前を検索VToolStripMenuItem.Name = "前を検索VToolStripMenuItem";
             this.前を検索VToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.F3)));
             this.前を検索VToolStripMenuItem.Size = new System.Drawing.Size(296, 34);
@@ -355,13 +363,13 @@ namespace マイメモ帳
             // 右端で折り返すWToolStripMenuItem
             // 
             this.右端で折り返すWToolStripMenuItem.Name = "右端で折り返すWToolStripMenuItem";
-            this.右端で折り返すWToolStripMenuItem.Size = new System.Drawing.Size(254, 34);
+            this.右端で折り返すWToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.右端で折り返すWToolStripMenuItem.Text = "右端で折り返す(&W)";
             // 
             // フォントFToolStripMenuItem
             // 
             this.フォントFToolStripMenuItem.Name = "フォントFToolStripMenuItem";
-            this.フォントFToolStripMenuItem.Size = new System.Drawing.Size(254, 34);
+            this.フォントFToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.フォントFToolStripMenuItem.Text = "フォント(&F)...";
             // 
             // 表示ToolStripMenuItem
@@ -376,19 +384,20 @@ namespace マイメモ帳
             // ズームZToolStripMenuItem
             // 
             this.ズームZToolStripMenuItem.Name = "ズームZToolStripMenuItem";
-            this.ズームZToolStripMenuItem.Size = new System.Drawing.Size(229, 34);
+            this.ズームZToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.ズームZToolStripMenuItem.Text = "ズーム(&Z)";
             // 
             // ステータスバーSToolStripMenuItem
             // 
             this.ステータスバーSToolStripMenuItem.Name = "ステータスバーSToolStripMenuItem";
-            this.ステータスバーSToolStripMenuItem.Size = new System.Drawing.Size(229, 34);
+            this.ステータスバーSToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.ステータスバーSToolStripMenuItem.Text = "ステータスバー(&S)";
             // 
             // ヘルプHToolStripMenuItem
             // 
             this.ヘルプHToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ヘルプの表示ToolStripMenuItem,
+            this.フィードバックを送信FToolStripMenuItem,
             this.toolStripSeparator6,
             this.バージョン情報AToolStripMenuItem});
             this.ヘルプHToolStripMenuItem.Name = "ヘルプHToolStripMenuItem";
@@ -398,24 +407,31 @@ namespace マイメモ帳
             // ヘルプの表示ToolStripMenuItem
             // 
             this.ヘルプの表示ToolStripMenuItem.Name = "ヘルプの表示ToolStripMenuItem";
-            this.ヘルプの表示ToolStripMenuItem.Size = new System.Drawing.Size(238, 34);
+            this.ヘルプの表示ToolStripMenuItem.Size = new System.Drawing.Size(272, 34);
             this.ヘルプの表示ToolStripMenuItem.Text = "ヘルプの表示(&H)";
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(235, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(269, 6);
             // 
             // バージョン情報AToolStripMenuItem
             // 
             this.バージョン情報AToolStripMenuItem.Name = "バージョン情報AToolStripMenuItem";
-            this.バージョン情報AToolStripMenuItem.Size = new System.Drawing.Size(238, 34);
+            this.バージョン情報AToolStripMenuItem.Size = new System.Drawing.Size(272, 34);
             this.バージョン情報AToolStripMenuItem.Text = "バージョン情報(&A)";
             // 
             // printDialog1
             // 
             this.printDialog1.Document = this.printDocument;
             this.printDialog1.UseEXDialog = true;
+            // 
+            // フィードバックを送信FToolStripMenuItem
+            // 
+            this.フィードバックを送信FToolStripMenuItem.Name = "フィードバックを送信FToolStripMenuItem";
+            this.フィードバックを送信FToolStripMenuItem.Size = new System.Drawing.Size(272, 34);
+            this.フィードバックを送信FToolStripMenuItem.Text = "フィードバックを送信(&F)";
+            this.フィードバックを送信FToolStripMenuItem.Click += new System.EventHandler(this.フィードバックを送信FToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -483,6 +499,7 @@ namespace マイメモ帳
         private System.Drawing.Printing.PrintDocument printDocument;
         private System.Windows.Forms.PrintDialog printDialog1;
         private System.Windows.Forms.ToolStripMenuItem やり直すYToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem フィードバックを送信FToolStripMenuItem;
     }
 }
 

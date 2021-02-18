@@ -226,6 +226,11 @@ namespace マイメモ帳
         {
             //MessageBox.Show(txt_memo.SelectionStart.ToString());
         }
+
+        private void フィードバックを送信FToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://github.com/yuuki1293/MyNotepad/issues/new");
+        }
     }
 
     public class TextHistory
