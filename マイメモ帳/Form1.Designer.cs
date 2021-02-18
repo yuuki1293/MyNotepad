@@ -69,12 +69,13 @@ namespace マイメモ帳
             this.ステータスバーSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ヘルプHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ヘルプの表示ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.フィードバックを送信FToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.バージョン情報AToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
             this.printDocument = new System.Drawing.Printing.PrintDocument();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
-            this.フィードバックを送信FToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.色CToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -355,7 +356,8 @@ namespace マイメモ帳
             // 
             this.書式OToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.右端で折り返すWToolStripMenuItem,
-            this.フォントFToolStripMenuItem});
+            this.フォントFToolStripMenuItem,
+            this.色CToolStripMenuItem});
             this.書式OToolStripMenuItem.Name = "書式OToolStripMenuItem";
             this.書式OToolStripMenuItem.Size = new System.Drawing.Size(88, 29);
             this.書式OToolStripMenuItem.Text = "書式(&O)";
@@ -365,6 +367,7 @@ namespace マイメモ帳
             this.右端で折り返すWToolStripMenuItem.Name = "右端で折り返すWToolStripMenuItem";
             this.右端で折り返すWToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.右端で折り返すWToolStripMenuItem.Text = "右端で折り返す(&W)";
+            this.右端で折り返すWToolStripMenuItem.Click += new System.EventHandler(this.右端で折り返すWToolStripMenuItem_Click);
             // 
             // フォントFToolStripMenuItem
             // 
@@ -410,6 +413,13 @@ namespace マイメモ帳
             this.ヘルプの表示ToolStripMenuItem.Size = new System.Drawing.Size(272, 34);
             this.ヘルプの表示ToolStripMenuItem.Text = "ヘルプの表示(&H)";
             // 
+            // フィードバックを送信FToolStripMenuItem
+            // 
+            this.フィードバックを送信FToolStripMenuItem.Name = "フィードバックを送信FToolStripMenuItem";
+            this.フィードバックを送信FToolStripMenuItem.Size = new System.Drawing.Size(272, 34);
+            this.フィードバックを送信FToolStripMenuItem.Text = "フィードバックを送信(&F)";
+            this.フィードバックを送信FToolStripMenuItem.Click += new System.EventHandler(this.フィードバックを送信FToolStripMenuItem_Click);
+            // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
@@ -426,12 +436,11 @@ namespace マイメモ帳
             this.printDialog1.Document = this.printDocument;
             this.printDialog1.UseEXDialog = true;
             // 
-            // フィードバックを送信FToolStripMenuItem
+            // 色CToolStripMenuItem
             // 
-            this.フィードバックを送信FToolStripMenuItem.Name = "フィードバックを送信FToolStripMenuItem";
-            this.フィードバックを送信FToolStripMenuItem.Size = new System.Drawing.Size(272, 34);
-            this.フィードバックを送信FToolStripMenuItem.Text = "フィードバックを送信(&F)";
-            this.フィードバックを送信FToolStripMenuItem.Click += new System.EventHandler(this.フィードバックを送信FToolStripMenuItem_Click);
+            this.色CToolStripMenuItem.Name = "色CToolStripMenuItem";
+            this.色CToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.色CToolStripMenuItem.Text = "色(&C)...";
             // 
             // Form1
             // 
@@ -500,6 +509,7 @@ namespace マイメモ帳
         private System.Windows.Forms.PrintDialog printDialog1;
         private System.Windows.Forms.ToolStripMenuItem やり直すYToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem フィードバックを送信FToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 色CToolStripMenuItem;
     }
 }
 

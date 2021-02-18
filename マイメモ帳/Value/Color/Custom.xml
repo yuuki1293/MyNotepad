@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?> 
 
 <resources>
-	<item name="textBackColor">0xFFFFFFFF</item>
+	<item name="textBackColor">FF000000</item>
+	<item name="textForeColor">FFFFFFFF</item>
 </resources>

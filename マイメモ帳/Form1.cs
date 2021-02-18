@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
-using System.Xml.Linq;
+using System.Xml;
 
 namespace マイメモ帳
 {
@@ -36,8 +37,9 @@ namespace マイメモ帳
         private string FilePath { get; set; }
         private PageSetupDialog PageSetupDialog { get; set; } = new PageSetupDialog();
         private TextHistory TextHistory { get; set; }
+        private XmlDocument document { get; set; } = new XmlDocument();
 
-        static public XElement xml { get; set; }
+        delegate Color setcolor(string name);
 
         public Form1(string[] argv)
         {
@@ -52,7 +54,18 @@ namespace マイメモ帳
                 Title = "無題";
                 Text = SetTitle;
             }
+
+            document.Load(@"C:\Users\i2011430\OneDrive - 独立行政法人 国立高等専門学校機構\ドキュメント\application\C#\マイメモ帳\マイメモ帳\Value\Color\Custom.xml");
+            var root = document.SelectSingleNode(@"//resources");
+            setcolor set = delegate (string name)
+            {
+                int clorbaf = Convert.ToInt32(root.SelectSingleNode($@"//item[@name='{name}']").InnerText.Split(',')[0], 16);
+                return Color.FromArgb(clorbaf);
+            };
+            txt_memo.BackColor = set("textBackColor");
+            txt_memo.ForeColor = set("textForeColor");
             //BackColor = System.Drawing.Color.FromArgb();
+
         }
 
         //保存するor保存しない：0　キャンセル：-1
@@ -230,6 +243,20 @@ namespace マイメモ帳
         private void フィードバックを送信FToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Process.Start("https://github.com/yuuki1293/MyNotepad/issues/new");
+        }
+
+        private void 右端で折り返すWToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (右端で折り返すWToolStripMenuItem.Checked)
+            {
+                txt_memo.WordWrap = false;
+                右端で折り返すWToolStripMenuItem.Checked = false;
+            }
+            else
+            {
+                txt_memo.WordWrap = true;
+                右端で折り返すWToolStripMenuItem.Checked = true;
+            }
         }
     }
 
