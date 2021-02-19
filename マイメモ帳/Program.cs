@@ -16,7 +16,7 @@ namespace マイメモ帳
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1(argv));
+            Application.Run(new MainForm(argv));
         }
     }
 }

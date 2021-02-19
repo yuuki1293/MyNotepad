@@ -2,7 +2,7 @@
 
 namespace マイメモ帳
 {
-    public class CustomMassegeBoxInfo
+    public class CustomMessageBoxInfo
     {
         public string title { get; set; }  //必須
         public string[] choose { get; set; }  //必須

@@ -117,10 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Form1_OpenFile_開く" xml:space="preserve">
-	  <value>開く</value>
+  <data name="menuStripBackColor" xml:space="preserve">
+    <value>FF000000</value>
+    <comment>メニューバーの背景色</comment>
   </data>
-  <data name="Form1_名前を付けて保存ToolStripMenuItem_Click_名前を付けて保存" xml:space="preserve">
-	  <value>名前を付けて保存</value>
+  <data name="menuStripForeColor" xml:space="preserve">
+    <value>FFFFFFFF</value>
+    <comment>メニューバーの文字色</comment>
+  </data>
+  <data name="textBackColor" xml:space="preserve">
+    <value>FFFFFFFF</value>
+    <comment>テキストボックスの背景色</comment>
+  </data>
+  <data name="textForeColor" xml:space="preserve">
+    <value>FF000000</value>
+    <comment>テキストボックスの文字色</comment>
   </data>
 </root>

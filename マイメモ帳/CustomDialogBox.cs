@@ -6,14 +6,13 @@ namespace マイメモ帳
 {
     public partial class CustomDialogBox : Form
     {
-        private Button[] button { get; set; }
-        CustomMassegeBoxInfo info{get;set;}
-        public new int DialogResult { get; set; }
+        private Button[] Button { get; }
+        private CustomMessageBoxInfo Info{get; }
 
-        public CustomDialogBox(CustomMassegeBoxInfo info)
+        public CustomDialogBox(CustomMessageBoxInfo info)
         {
             InitializeComponent();
-            this.info = info;
+            Info = info;
             Text = info.title;
             ShowIcon = info.showicon;
             label1.Text = info.message;
@@ -21,46 +20,43 @@ namespace マイメモ帳
             label1.Font = info.messageFont;
             label1.Location = new Point(Location.X + 10, 20);
             info.result = info.CancelChoose;
-            button = new Button[info.choose.Length];
+            Button = new Button[info.choose.Length];
 
-            for (int i = info.choose.Length - 1; i >= 0; i--)
+            for (var i = info.choose.Length - 1; i >= 0; i--)
             {
-                button[i] = new Button
+                Button[i] = new Button
                 {
                     Text = info.choose[i],
                     AutoSize = true,
-                    AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly,
+                    AutoSizeMode = AutoSizeMode.GrowOnly,
                     Name = i.ToString(),
                     Font = info.chooseFont,
+                    Anchor = (AnchorStyles.Bottom|AnchorStyles.Right)
                 };
-                panel1.Controls.Add(button[i]);
-                if (i == info.choose.Length - 1)
-                {
-                    button[i].Location = new Point(panel1.Width - 20 - button[i].Width, (panel1.Height - button[i].Height) / 2);
-                }
-                else
-                {
-                    button[i].Location = new Point(button[i + 1].Location.X - 10 - button[i].Width, (panel1.Height - button[i].Height) / 2);
-                }
+                panel1.Controls.Add(Button[i]);
+                Button[i].Location = i == info.choose.Length - 1 ? new Point(panel1.Width - 20 - Button[i].Width, (panel1.Height - Button[i].Height) / 2) : new Point(Button[i + 1].Location.X - 10 - Button[i].Width, (panel1.Height - Button[i].Height) / 2);
                 //MessageBox.Show(button[i].Size.ToString());
-                button[i].Click += new EventHandler(ButtonClick);
-                button[i].BringToFront();
+                Button[i].Click += ButtonClick;
+                Button[i].BringToFront();
             }
-            if (button[0].Location.X < 30)
+
+            if (Button[0].Location.X < 30)
             {
-                int dx = 30 - button[0].Location.X;
+                var dx = 30 - Button[0].Location.X;
                 Width += dx;
-                for (int i = 0; i < button.Length; i++)
-                {
-                    button[i].Location = new Point(button[i].Location.X + dx, button[i].Location.Y);
-                }
             }
+        }
+
+        public sealed override string Text
+        {
+            get => base.Text;
+            set => base.Text = value;
         }
 
         private void ButtonClick(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
-            info.result = int.Parse(button.Name);
+            var button = (Button)sender;
+            Info.result = int.Parse(button.Name);
             Close();
         }
 

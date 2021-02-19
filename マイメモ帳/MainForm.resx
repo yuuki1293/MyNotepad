@@ -1,0 +1,973 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="menuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="新規toolStripMenuItem1.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+N</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="新規toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>388, 34</value>
+  </data>
+  <data name="新規toolStripMenuItem1.Text" xml:space="preserve">
+    <value>新規(&amp;N)</value>
+  </data>
+  <data name="新しいウィンドウtoolStripMenuItem1.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+Shift+N</value>
+  </data>
+  <data name="新しいウィンドウtoolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>388, 34</value>
+  </data>
+  <data name="新しいウィンドウtoolStripMenuItem1.Text" xml:space="preserve">
+    <value>新しいウィンドウ(&amp;W)</value>
+  </data>
+  <data name="開くToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+O</value>
+  </data>
+  <data name="開くToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>388, 34</value>
+  </data>
+  <data name="開くToolStripMenuItem.Text" xml:space="preserve">
+    <value>開く(&amp;O)...</value>
+  </data>
+  <data name="上書き保存toolStripMenuItem1.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+S</value>
+  </data>
+  <data name="上書き保存toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>388, 34</value>
+  </data>
+  <data name="上書き保存toolStripMenuItem1.Text" xml:space="preserve">
+    <value>上書き保存(&amp;S)</value>
+  </data>
+  <data name="名前を付けて保存ToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+Shift+S</value>
+  </data>
+  <data name="名前を付けて保存ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>388, 34</value>
+  </data>
+  <data name="名前を付けて保存ToolStripMenuItem.Text" xml:space="preserve">
+    <value>名前を付けて保存(&amp;A)...</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>385, 6</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ページ設定toolStripMenuItem1.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ページ設定toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>388, 34</value>
+  </data>
+  <data name="ページ設定toolStripMenuItem1.Text" xml:space="preserve">
+    <value>ページ設定(&amp;U)...(未実装)</value>
+  </data>
+  <data name="印刷toolStripMenuItem1.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="印刷toolStripMenuItem1.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+P</value>
+  </data>
+  <data name="印刷toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>388, 34</value>
+  </data>
+  <data name="印刷toolStripMenuItem1.Text" xml:space="preserve">
+    <value>印刷(&amp;P)...(未実装)</value>
+  </data>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>385, 6</value>
+  </data>
+  <data name="終了ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>388, 34</value>
+  </data>
+  <data name="終了ToolStripMenuItem.Text" xml:space="preserve">
+    <value>終了(&amp;X)</value>
+  </data>
+  <data name="ファイルToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 29</value>
+  </data>
+  <data name="ファイルToolStripMenuItem.Text" xml:space="preserve">
+    <value>ファイル(&amp;F)</value>
+  </data>
+  <data name="もとに戻すUToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="もとに戻すUToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+Z</value>
+  </data>
+  <data name="もとに戻すUToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>296, 34</value>
+  </data>
+  <data name="もとに戻すUToolStripMenuItem.Text" xml:space="preserve">
+    <value>もとに戻す(&amp;U)</value>
+  </data>
+  <data name="やり直すYToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="やり直すYToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+Y</value>
+  </data>
+  <data name="やり直すYToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>296, 34</value>
+  </data>
+  <data name="やり直すYToolStripMenuItem.Text" xml:space="preserve">
+    <value>やり直す(&amp;R)</value>
+  </data>
+  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>293, 6</value>
+  </data>
+  <data name="切り取りCToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="切り取りCToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+X</value>
+  </data>
+  <data name="切り取りCToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>296, 34</value>
+  </data>
+  <data name="切り取りCToolStripMenuItem.Text" xml:space="preserve">
+    <value>切り取り(&amp;T)</value>
+  </data>
+  <data name="コピーCToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="コピーCToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+C</value>
+  </data>
+  <data name="コピーCToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>296, 34</value>
+  </data>
+  <data name="コピーCToolStripMenuItem.Text" xml:space="preserve">
+    <value>コピー(&amp;C)</value>
+  </data>
+  <data name="貼り付けPToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+V</value>
+  </data>
+  <data name="貼り付けPToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>296, 34</value>
+  </data>
+  <data name="貼り付けPToolStripMenuItem.Text" xml:space="preserve">
+    <value>貼り付け(&amp;P)</value>
+  </data>
+  <data name="削除LToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="削除LToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Del</value>
+  </data>
+  <data name="削除LToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>296, 34</value>
+  </data>
+  <data name="削除LToolStripMenuItem.Text" xml:space="preserve">
+    <value>削除(&amp;L)</value>
+  </data>
+  <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>293, 6</value>
+  </data>
+  <data name="bingで検索SToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="bingで検索SToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+E</value>
+  </data>
+  <data name="bingで検索SToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>296, 34</value>
+  </data>
+  <data name="bingで検索SToolStripMenuItem.Text" xml:space="preserve">
+    <value>Bing で検索(&amp;S)...</value>
+  </data>
+  <data name="検索FToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="検索FToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+F</value>
+  </data>
+  <data name="検索FToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>296, 34</value>
+  </data>
+  <data name="検索FToolStripMenuItem.Text" xml:space="preserve">
+    <value>検索(&amp;F)...</value>
+  </data>
+  <data name="次を検索NToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="次を検索NToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>F3</value>
+  </data>
+  <data name="次を検索NToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>296, 34</value>
+  </data>
+  <data name="次を検索NToolStripMenuItem.Text" xml:space="preserve">
+    <value>次を検索(&amp;N)</value>
+  </data>
+  <data name="前を検索VToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="前を検索VToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Shift+F3</value>
+  </data>
+  <data name="前を検索VToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>296, 34</value>
+  </data>
+  <data name="前を検索VToolStripMenuItem.Text" xml:space="preserve">
+    <value>前を検索(&amp;V)</value>
+  </data>
+  <data name="置換ToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+H</value>
+  </data>
+  <data name="置換ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>296, 34</value>
+  </data>
+  <data name="置換ToolStripMenuItem.Text" xml:space="preserve">
+    <value>置換(&amp;R)...</value>
+  </data>
+  <data name="行へ移動GToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+G</value>
+  </data>
+  <data name="行へ移動GToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>296, 34</value>
+  </data>
+  <data name="行へ移動GToolStripMenuItem.Text" xml:space="preserve">
+    <value>行へ移動(&amp;G)...</value>
+  </data>
+  <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>293, 6</value>
+  </data>
+  <data name="すべて選択AToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+A</value>
+  </data>
+  <data name="すべて選択AToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>296, 34</value>
+  </data>
+  <data name="すべて選択AToolStripMenuItem.Text" xml:space="preserve">
+    <value>すべて選択(&amp;A)</value>
+  </data>
+  <data name="日付と時刻DToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>F5</value>
+  </data>
+  <data name="日付と時刻DToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>296, 34</value>
+  </data>
+  <data name="日付と時刻DToolStripMenuItem.Text" xml:space="preserve">
+    <value>日付と時刻(&amp;D)</value>
+  </data>
+  <data name="編集ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 29</value>
+  </data>
+  <data name="編集ToolStripMenuItem.Text" xml:space="preserve">
+    <value>編集(&amp;E)</value>
+  </data>
+  <data name="右端で折り返すWToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 34</value>
+  </data>
+  <data name="右端で折り返すWToolStripMenuItem.Text" xml:space="preserve">
+    <value>右端で折り返す(&amp;W)</value>
+  </data>
+  <data name="フォントFToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 34</value>
+  </data>
+  <data name="フォントFToolStripMenuItem.Text" xml:space="preserve">
+    <value>フォント(&amp;F)...</value>
+  </data>
+  <data name="色CToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 34</value>
+  </data>
+  <data name="色CToolStripMenuItem.Text" xml:space="preserve">
+    <value>色(&amp;C)...</value>
+  </data>
+  <data name="書式OToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 29</value>
+  </data>
+  <data name="書式OToolStripMenuItem.Text" xml:space="preserve">
+    <value>書式(&amp;O)</value>
+  </data>
+  <data name="ズームZToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 34</value>
+  </data>
+  <data name="ズームZToolStripMenuItem.Text" xml:space="preserve">
+    <value>ズーム(&amp;Z)</value>
+  </data>
+  <data name="ステータスバーSToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 34</value>
+  </data>
+  <data name="ステータスバーSToolStripMenuItem.Text" xml:space="preserve">
+    <value>ステータスバー(&amp;S)</value>
+  </data>
+  <data name="タイトルバーTToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 34</value>
+  </data>
+  <data name="タイトルバーTToolStripMenuItem.Text" xml:space="preserve">
+    <value>タイトルバー(&amp;T)</value>
+  </data>
+  <data name="表示ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 29</value>
+  </data>
+  <data name="表示ToolStripMenuItem.Text" xml:space="preserve">
+    <value>表示(&amp;V)</value>
+  </data>
+  <data name="ヘルプの表示ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>272, 34</value>
+  </data>
+  <data name="ヘルプの表示ToolStripMenuItem.Text" xml:space="preserve">
+    <value>ヘルプの表示(&amp;H)</value>
+  </data>
+  <data name="フィードバックを送信FToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>272, 34</value>
+  </data>
+  <data name="フィードバックを送信FToolStripMenuItem.Text" xml:space="preserve">
+    <value>フィードバックを送信(&amp;F)</value>
+  </data>
+  <data name="toolStripSeparator6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>269, 6</value>
+  </data>
+  <data name="バージョン情報AToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>272, 34</value>
+  </data>
+  <data name="バージョン情報AToolStripMenuItem.Text" xml:space="preserve">
+    <value>バージョン情報(&amp;A)</value>
+  </data>
+  <data name="ヘルプHToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 29</value>
+  </data>
+  <data name="ヘルプHToolStripMenuItem.Text" xml:space="preserve">
+    <value>ヘルプ(&amp;H)</value>
+  </data>
+  <data name="menuStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="menuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>800, 33</value>
+  </data>
+  <data name="menuStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip.Name" xml:space="preserve">
+    <value>menuStrip</value>
+  </data>
+  <data name="&gt;&gt;menuStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuStrip.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;menuStrip.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="pageSetupDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>173, 17</value>
+  </metadata>
+  <metadata name="printDocument.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>386, 17</value>
+  </metadata>
+  <metadata name="printDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>581, 17</value>
+  </metadata>
+  <metadata name="fontDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>744, 17</value>
+  </metadata>
+  <data name="text.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="text.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="text.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="text.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Both</value>
+  </data>
+  <data name="text.Size" type="System.Drawing.Size, System.Drawing">
+    <value>800, 388</value>
+  </data>
+  <data name="text.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="text.WordWrap" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;text.Name" xml:space="preserve">
+    <value>text</value>
+  </data>
+  <data name="&gt;&gt;text.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;text.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;text.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="splitContainer1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="splitContainer1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 33</value>
+  </data>
+  <data name="splitContainer1.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
+    <value>Horizontal</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel1.Name" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel1.Parent" xml:space="preserve">
+    <value>splitContainer1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>892, 17</value>
+  </metadata>
+  <data name="statusStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, -3</value>
+  </data>
+  <data name="statusStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>800, 28</value>
+  </data>
+  <data name="statusStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="statusStrip1.Text" xml:space="preserve">
+    <value>statusStrip1</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.Name" xml:space="preserve">
+    <value>statusStrip1</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;statusStrip1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.Name" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.Parent" xml:space="preserve">
+    <value>splitContainer1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>800, 417</value>
+  </data>
+  <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
+    <value>388</value>
+  </data>
+  <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Name" xml:space="preserve">
+    <value>splitContainer1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>60</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>10, 18</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>800, 450</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAICAgAAAAAACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFxdWhI0NTQzISEgQhMVEgcAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKyspH4uMiUhjZGN9mZuZw9XU1PrOzcf+WVtSpSQl
+        IS8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAFlYWgcYFRUrgH5/d6enp7W5uLfa1NLQ/vDt5f/t6dv/4drJ/93a
+        z/+ysaH/goBz6DAwLHcAAAAJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAeEg0EeXVyOlFOT1uYlZamysvL5uDf3fnj39f/6OTW/+vm1f/k3cn/3tjF/97Z
+        yP/e2Mb/4d/Y/7i3r/+loY//paKS/xYSD2wAAAAfCxITEwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAB8gJAeTiodWw8DEmqikprja19b79PDl/+rjzP/a0Kv/z8GK/8u6cv/FtW7/4dvH/+rm
+        2v/g3Mv/3tnH/9rSu//c1sT/x8jB/5mVhf+rpZT/MkNM2iVKXM4eOkmuAAUIDgAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAABmX10n2tjY6eTf0/3h2r//5dy2/9bJk//KuXP/yLZl/8m2Y//ItF//xbBc/7+r
+        Wv/IvIr/5N7P/+Ldzf/i39D/4NzK/+Dcy//V08v/nZqK/6mijv89XW3/MXCQ/yZbde4BEhw6AAAAAgAA
+        AAAAAAAAAAAAALerYhfKvHdB4tKGZtbGf5jUx4z/zbx3/8m2Zf/Kt2P/yLZh/8azYv/Br2D/vate/7qp
+        Xf+3pVr/s6JP/7qpXv/h28X/5+LV/9/Zx//d18P/29S9/9vYzP+mpJf/qaGM/0lha/8iXXz/Il154AMY
+        IyIAAAAAzMCGJcS4fHPNv32uz75vz9K+ZdfSvVzbyrFBysWuSt3ItWf/xLFk/7+tYf+8qVz/uaZZ/7im
+        V/+2pFf/tqVX/7elWv+3p1//t6Ze/8q/kf/p5dr/5+TW/+Xh0v/i3cv/5uXe/7Kxpf+poY3/V2lw/xpT
+        c/8dV3TWCj9bFQAAAADPvnG90btX68y0Sc/FrDzBvqU0urefK7OxlyGmr5gsub2sX/y7qVz/uaha/7mo
+        Xv+6qGD/u6ph/7urZf+8q2X/vKti/72rXv+8q1v/vKtk/+HcyP/l4NH/4NvH/9zVvv/h3Mv/xMO7/6uj
+        kP9nc3X/D0Vl/xhRbtALRmUQAAAAAMCsT4i7oCnAs5olp66VIqWqkR2ipo0YnqOKEpmhhg6WtqRU6MCw
+        bP++rmb/v69m/7+vZf+/sGX/v7Bk/7+vZf+/r2j/wK9s/8Cvbf++rWf/zcGU/+vm3P/n4tT/5N7M/+jl
+        2P/Qz8f/raaT/3Z/fP8IPFv/E0xpzQxEYQwAAAAAuqlYIrKbMamliw+cpYwWlaWMF5WnjhiVqI8blaeN
+        FIe1oUXLxrd0/8Ozbv/Ds27/w7Nv/8O0cP/EtHH/xLVw/8W1bv/FtW3/xLRt/8S0bf/CtHb/4drI/+bg
+        0P/f2ML/4NnD/9fUyv+vqJn/hoyD/ww8WP8NRmTIDERiBgAAAAC6qVgCu6hTY6ySHaSrkh+Rr5Ynk7GZ
+        KpSymy6VspoqiLmlR7PLvH//ybp7/8q7ev/Ju3j/ybp2/8i6df/IuHX/x7d2/8a3dv/HuHf/x7p2/8S0
+        b//Rx57/7urh/+rl1v/p5NP/4uHZ/7Gsnv+Vl4n/EjtV/wlBYMUMRGIBAAAAAAAAAAC+rWEUvalMmrWd
+        MJe5ozySu6ZBlL2oRZW9qEWOv6xOn87Bhf7PwYX/zsCE/82/g//NvoL/zb+B/82/fv/Mvnz/zL14/8u7
+        eP/Ku3n/yrt3/8S2ev/f2MT/4t3K/+DZwv/n5dr/ubSp/6CekP8cQFj/BT5ewwAAAAAAAAAAAAAAAAAA
+        AADArV5IxK9TqMGtUJTEsViWxrNbl8a0XJXGtF2V0MKI8dbIkf/Ux4z/08aL/9LFiP/Qw4X/zsCD/8y+
+        gP/NvoH/zL1//8u8ff/MvH3/xbVt/9XMp//w7eb/6ePR/+3r4P/AvLD/pKCQ/yRHXf8EPF3EAAAAAAAA
+        AAAAAAAAAAAAALmmVgvKum6Ry7poqMq6apzNvW6fzb1xn8y8bpbRxInc18uY/9TJkv/TyJH/1MeQ/9TH
+        jf/Txor/08WK/9HEif/Rw4X/z8CA/8u8e//Lu3n/xbd9/+DYxf/k3cn/7uvd/8jFu/+jno7/K05j/wM9
+        XcMAAAAAAAAAAAAAAAAAAAAAAAAAAL+tXz7TxYC20cN7ptLEgKfTxYOo08WBoNXJkdPc0qL/29Ce/9rP
+        m//Xy5b/1cqT/9XJlP/VyJT/08aQ/9DDif/PwIH/zr9+/82/ev/Ht27/186q/+rn2v/n4s3/zMi6/6Se
+        jv83WWv/BT9gvgAAAAAAAAAAAAAAAAAAAAAAAAAAuadUAc/BgIjbz5a+2MyRrdnOlbDazpSq2c6azdvR
+        pf/b0KP/29Ch/9zRo//e1Kf/3tOl/9zQnv/Xy5T/1MeL/9HDhv/OwIP/zb+B/8u8fP/HuH//493J//Dr
+        2//a183/pqCP/z5fcf8FQGC5AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAvqtcJ97SocLg1qW939SjuODV
+        pLTg1afK49my/+HYrf/g1qz/4Nex/+DXr//d0qb/2Myb/9XJlP/Vx5D/1ceO/9XIj//UyIv/1MeG/8i5
+        dP/Yz67/6uTT/9/bz/+ropL/O11v/wVAYLMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAzL58eOjh
+        u9jk27LB5dyzvePZsMvh17P+5Ny4/+fgwP/n37//49u1/9/VqP/d0qH/29Cc/9rOnP/ZzJv/1cmV/9LF
+        jv/Rw4n/z8GC/8a4ff/p5NP/7evi/66mlv85XW7/BUBgqwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAC6qVUX49qyvuzmx9bp4b/G6OG/zevkx/rs5sz/6+TI/+Xdu//g1q//3dSp/93Uqv/f1q3/4Nat/93T
+        pv/c0Z//2c2X/9bJj//Uxon/y7x8/9rSs//w7eP/ta6f/zhca/8DP2CiAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAADPwYZk8+7Z7e3ozdDv6tPZ7ujT+u7oz//p4cT/5d27/+beu//o4cD/6uLD/+bf
+        vP/i2LL/3tOp/9nOoP/YzJr/1cmT/9PFiv/Ov37/yrqA//Ht4v+/uKz/Oltp/wI+XpoAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAL+uYQni2rS++vju8PXx4uLw69j46+bM/+njxv/p48b/6uTL/+rj
+        yv/o4MP/5uDA/+beu//k27T/4das/97SpP/YzJf/1MaM/9HChP/Lu3z/4tvC/8jAuP8+XWn8Aj5ekAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMi5dE/7+fH89vXn6O7o0/Xt6NL/8ezZ//Pw
+        3//y7t3/8ezX/+3o0P/o4sX/5dy7/+HYs//e1a3/2s+h/9fKl//Vx5D/08WJ/8/Aev/g1qr/z8nE/z5e
+        afIDPl2HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsp0+AdzSpqP+/fj79PDh9/Pw
+        4v/z7+H/8Ovb/+7p1v/t6NT/7ejS/+zmzf/r5Mn/6eLD/+betv/l263/5Nik/+LVm//f0ZL/28yF/9jK
+        h//Ivqj/QmFw6AM+XX0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAvKlXK/f2
+        7Pf7+PT++Pbr//n47f/7+O///Prv//z56//9+en//fjj//jz2v/y6sv/6eC6/9vSp//TyZz/w7mK/7et
+        fv+elGz/saZ7/9LAkf9GZHDpAj1ceQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAA1suaiP////////v/+/v3//Tz7v/u7eT/6eXX/9jUwf/Gwa//trCc/6miif+noYv/nZZ+/6mj
+        jP+noIj/qaWR/6Seif+goI/2sa2b+k1xe7YDPlsyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAADDsGAd8u7a4tLQzv/Au6//sq2h/7OuoP+xrJz/o5+S/6ShlP+Wlon/paWZ/5SU
+        iPmrqZ79l5eN+qmqov6XmJL9lZaQ/ZSdm95cenGMRYiRGQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADMwpV9xMS/9ZaZivqkpZz/h4Z5/qinnv+IjIH9pKmi/4OI
+        gPioq6b1nqGZ4bG2rtOwtKzBp7Gko7LGtIStxrJrvdnBVbjhwBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL3eyy3T3NLJl6CR2rS5seKdppvBuci6pbnD
+        to28vbR/xtLDbbnPuk+52sMuu+zPCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPD18kHX0Ms9x87CLMjn
+        0xUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAA////////+H///8A///wAD//AAAP+AAAB/AAAAOAAAAEAAAABAAAAAQAA
+        AAEAAAABAAAAAYAAAAPAAAADwAAAA+AAAAPgAAAD8AAAA/gAAAP4AAAD/AAAA/wAAAP+AAAD/gAAA/8A
+        AAP/gAAD/4AAB//AAA//wAP//+H///////8=
+</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>マイメモ帳</value>
+  </data>
+  <data name="&gt;&gt;ファイルToolStripMenuItem.Name" xml:space="preserve">
+    <value>ファイルToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;ファイルToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;新規toolStripMenuItem1.Name" xml:space="preserve">
+    <value>新規toolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;新規toolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;新しいウィンドウtoolStripMenuItem1.Name" xml:space="preserve">
+    <value>新しいウィンドウtoolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;新しいウィンドウtoolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;開くToolStripMenuItem.Name" xml:space="preserve">
+    <value>開くToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;開くToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;上書き保存toolStripMenuItem1.Name" xml:space="preserve">
+    <value>上書き保存toolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;上書き保存toolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;名前を付けて保存ToolStripMenuItem.Name" xml:space="preserve">
+    <value>名前を付けて保存ToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;名前を付けて保存ToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
+    <value>toolStripSeparator1</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ページ設定toolStripMenuItem1.Name" xml:space="preserve">
+    <value>ページ設定toolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;ページ設定toolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;印刷toolStripMenuItem1.Name" xml:space="preserve">
+    <value>印刷toolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;印刷toolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
+    <value>toolStripSeparator2</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;終了ToolStripMenuItem.Name" xml:space="preserve">
+    <value>終了ToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;終了ToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;編集ToolStripMenuItem.Name" xml:space="preserve">
+    <value>編集ToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;編集ToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;もとに戻すUToolStripMenuItem.Name" xml:space="preserve">
+    <value>もとに戻すUToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;もとに戻すUToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;やり直すYToolStripMenuItem.Name" xml:space="preserve">
+    <value>やり直すYToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;やり直すYToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator3.Name" xml:space="preserve">
+    <value>toolStripSeparator3</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;切り取りCToolStripMenuItem.Name" xml:space="preserve">
+    <value>切り取りCToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;切り取りCToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;コピーCToolStripMenuItem.Name" xml:space="preserve">
+    <value>コピーCToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;コピーCToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;貼り付けPToolStripMenuItem.Name" xml:space="preserve">
+    <value>貼り付けPToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;貼り付けPToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;削除LToolStripMenuItem.Name" xml:space="preserve">
+    <value>削除LToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;削除LToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator4.Name" xml:space="preserve">
+    <value>toolStripSeparator4</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bingで検索SToolStripMenuItem.Name" xml:space="preserve">
+    <value>bingで検索SToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;bingで検索SToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;検索FToolStripMenuItem.Name" xml:space="preserve">
+    <value>検索FToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;検索FToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;次を検索NToolStripMenuItem.Name" xml:space="preserve">
+    <value>次を検索NToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;次を検索NToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;前を検索VToolStripMenuItem.Name" xml:space="preserve">
+    <value>前を検索VToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;前を検索VToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;置換ToolStripMenuItem.Name" xml:space="preserve">
+    <value>置換ToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;置換ToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;行へ移動GToolStripMenuItem.Name" xml:space="preserve">
+    <value>行へ移動GToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;行へ移動GToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator5.Name" xml:space="preserve">
+    <value>toolStripSeparator5</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;すべて選択AToolStripMenuItem.Name" xml:space="preserve">
+    <value>すべて選択AToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;すべて選択AToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;日付と時刻DToolStripMenuItem.Name" xml:space="preserve">
+    <value>日付と時刻DToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;日付と時刻DToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;書式OToolStripMenuItem.Name" xml:space="preserve">
+    <value>書式OToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;書式OToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;右端で折り返すWToolStripMenuItem.Name" xml:space="preserve">
+    <value>右端で折り返すWToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;右端で折り返すWToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;フォントFToolStripMenuItem.Name" xml:space="preserve">
+    <value>フォントFToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;フォントFToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;色CToolStripMenuItem.Name" xml:space="preserve">
+    <value>色CToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;色CToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;表示ToolStripMenuItem.Name" xml:space="preserve">
+    <value>表示ToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;表示ToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ズームZToolStripMenuItem.Name" xml:space="preserve">
+    <value>ズームZToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;ズームZToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ステータスバーSToolStripMenuItem.Name" xml:space="preserve">
+    <value>ステータスバーSToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;ステータスバーSToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ヘルプHToolStripMenuItem.Name" xml:space="preserve">
+    <value>ヘルプHToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;ヘルプHToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ヘルプの表示ToolStripMenuItem.Name" xml:space="preserve">
+    <value>ヘルプの表示ToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;ヘルプの表示ToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;フィードバックを送信FToolStripMenuItem.Name" xml:space="preserve">
+    <value>フィードバックを送信FToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;フィードバックを送信FToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator6.Name" xml:space="preserve">
+    <value>toolStripSeparator6</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;バージョン情報AToolStripMenuItem.Name" xml:space="preserve">
+    <value>バージョン情報AToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;バージョン情報AToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pageSetupDialog1.Name" xml:space="preserve">
+    <value>pageSetupDialog1</value>
+  </data>
+  <data name="&gt;&gt;pageSetupDialog1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PageSetupDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;printDocument.Name" xml:space="preserve">
+    <value>printDocument</value>
+  </data>
+  <data name="&gt;&gt;printDocument.Type" xml:space="preserve">
+    <value>System.Drawing.Printing.PrintDocument, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;printDialog1.Name" xml:space="preserve">
+    <value>printDialog1</value>
+  </data>
+  <data name="&gt;&gt;printDialog1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PrintDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fontDialog.Name" xml:space="preserve">
+    <value>fontDialog</value>
+  </data>
+  <data name="&gt;&gt;fontDialog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FontDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;タイトルバーTToolStripMenuItem.Name" xml:space="preserve">
+    <value>タイトルバーTToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;タイトルバーTToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>MainForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>
