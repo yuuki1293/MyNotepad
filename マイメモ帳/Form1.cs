@@ -258,6 +258,12 @@ namespace マイメモ帳
                 右端で折り返すWToolStripMenuItem.Checked = true;
             }
         }
+
+        private void すべて選択AToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            txt_memo.SelectionStart = 0;
+            txt_memo.SelectionLength = txt_memo.Text.Length;
+        }
     }
 
     public class TextHistory

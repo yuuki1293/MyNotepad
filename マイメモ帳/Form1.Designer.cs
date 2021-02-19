@@ -64,6 +64,7 @@ namespace マイメモ帳
             this.書式OToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.右端で折り返すWToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.フォントFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.色CToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.表示ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ズームZToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ステータスバーSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,7 +76,6 @@ namespace マイメモ帳
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
             this.printDocument = new System.Drawing.Printing.PrintDocument();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
-            this.色CToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -344,6 +344,7 @@ namespace マイメモ帳
             this.すべて選択AToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
             this.すべて選択AToolStripMenuItem.Size = new System.Drawing.Size(296, 34);
             this.すべて選択AToolStripMenuItem.Text = "すべて選択(&A)";
+            this.すべて選択AToolStripMenuItem.Click += new System.EventHandler(this.すべて選択AToolStripMenuItem_Click);
             // 
             // 日付と時刻DToolStripMenuItem
             // 
@@ -375,6 +376,12 @@ namespace マイメモ帳
             this.フォントFToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.フォントFToolStripMenuItem.Text = "フォント(&F)...";
             // 
+            // 色CToolStripMenuItem
+            // 
+            this.色CToolStripMenuItem.Name = "色CToolStripMenuItem";
+            this.色CToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.色CToolStripMenuItem.Text = "色(&C)...";
+            // 
             // 表示ToolStripMenuItem
             // 
             this.表示ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -387,13 +394,13 @@ namespace マイメモ帳
             // ズームZToolStripMenuItem
             // 
             this.ズームZToolStripMenuItem.Name = "ズームZToolStripMenuItem";
-            this.ズームZToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.ズームZToolStripMenuItem.Size = new System.Drawing.Size(229, 34);
             this.ズームZToolStripMenuItem.Text = "ズーム(&Z)";
             // 
             // ステータスバーSToolStripMenuItem
             // 
             this.ステータスバーSToolStripMenuItem.Name = "ステータスバーSToolStripMenuItem";
-            this.ステータスバーSToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.ステータスバーSToolStripMenuItem.Size = new System.Drawing.Size(229, 34);
             this.ステータスバーSToolStripMenuItem.Text = "ステータスバー(&S)";
             // 
             // ヘルプHToolStripMenuItem
@@ -435,12 +442,6 @@ namespace マイメモ帳
             // 
             this.printDialog1.Document = this.printDocument;
             this.printDialog1.UseEXDialog = true;
-            // 
-            // 色CToolStripMenuItem
-            // 
-            this.色CToolStripMenuItem.Name = "色CToolStripMenuItem";
-            this.色CToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.色CToolStripMenuItem.Text = "色(&C)...";
             // 
             // Form1
             // 
