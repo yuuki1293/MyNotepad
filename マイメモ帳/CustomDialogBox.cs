@@ -13,28 +13,28 @@ namespace マイメモ帳
         {
             InitializeComponent();
             Info = info;
-            Text = info.title;
-            ShowIcon = info.showicon;
-            label1.Text = info.message;
-            label1.ForeColor = info.messageColor;
-            label1.Font = info.messageFont;
+            Text = info.Title;
+            ShowIcon = info.ShowIcon;
+            label1.Text = info.Message;
+            label1.ForeColor = info.MessageColor;
+            label1.Font = info.MessageFont;
             label1.Location = new Point(Location.X + 10, 20);
-            info.result = info.CancelChoose;
-            Button = new Button[info.choose.Length];
+            info.Result = info.CancelChoose;
+            Button = new Button[info.Choose.Length];
 
-            for (var i = info.choose.Length - 1; i >= 0; i--)
+            for (var i = info.Choose.Length - 1; i >= 0; i--)
             {
                 Button[i] = new Button
                 {
-                    Text = info.choose[i],
+                    Text = info.Choose[i],
                     AutoSize = true,
                     AutoSizeMode = AutoSizeMode.GrowOnly,
                     Name = i.ToString(),
-                    Font = info.chooseFont,
+                    Font = info.ChooseFont,
                     Anchor = (AnchorStyles.Bottom|AnchorStyles.Right)
                 };
                 panel1.Controls.Add(Button[i]);
-                Button[i].Location = i == info.choose.Length - 1 ? new Point(panel1.Width - 20 - Button[i].Width, (panel1.Height - Button[i].Height) / 2) : new Point(Button[i + 1].Location.X - 10 - Button[i].Width, (panel1.Height - Button[i].Height) / 2);
+                Button[i].Location = i == info.Choose.Length - 1 ? new Point(panel1.Width - 20 - Button[i].Width, (panel1.Height - Button[i].Height) / 2) : new Point(Button[i + 1].Location.X - 10 - Button[i].Width, (panel1.Height - Button[i].Height) / 2);
                 //MessageBox.Show(button[i].Size.ToString());
                 Button[i].Click += ButtonClick;
                 Button[i].BringToFront();
@@ -56,7 +56,7 @@ namespace マイメモ帳
         private void ButtonClick(object sender, EventArgs e)
         {
             var button = (Button)sender;
-            Info.result = int.Parse(button.Name);
+            Info.Result = int.Parse(button.Name);
             Close();
         }
 

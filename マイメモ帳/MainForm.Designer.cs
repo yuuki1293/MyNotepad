@@ -1,7 +1,7 @@
 ﻿
 namespace マイメモ帳
 {
-    partial class MainForm
+    public partial class MainForm
     {
         /// <summary>
         /// 必要なデザイナー変数です。

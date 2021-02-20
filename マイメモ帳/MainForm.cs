@@ -12,7 +12,8 @@ namespace マイメモ帳
     {
         private string SavedText { get; set; } = "";
         private string _title;
-        private string SetTitle
+
+        public string SetTitle
         {
             set
             {
@@ -36,8 +37,9 @@ namespace マイメモ帳
         private string FilePath { get; set; }
         private PageSetupDialog PageSetupDialog { get; set; } = new PageSetupDialog();
         private TextHistory TextHistory { get; set; }
+        private Data Data { get; set; } = new Data();
 
-        public MainForm(IReadOnlyList<string> argv)
+        internal MainForm(IReadOnlyList<string> argv)
         {
             InitializeComponent();
             if (argv.Count > 0)
@@ -50,11 +52,9 @@ namespace マイメモ帳
                 _title = "無題";
                 Text = SetTitle;
             }
-
-            ColorChange();
         }
 
-        private void ColorChange()
+        internal void ColorChange()
         {
             Color Set(string name)
             {
@@ -81,15 +81,15 @@ namespace マイメモ帳
             {
                 CustomMessageBoxInfo customMessageBoxInfo = new CustomMessageBoxInfo
                 {
-                    message = $"{_title} への変更内容を保存しますか?",
-                    choose = new[] { "　保存する(&H)　", "　保存しない(&N)　", "　キャンセル　" },
-                    title = "マイメモ帳",
+                    Message = $"{_title} への変更内容を保存しますか?",
+                    Choose = new[] { "　保存する(&H)　", "　保存しない(&N)　", "　キャンセル　" },
+                    Title = "マイメモ帳",
                     CancelChoose = 2
                 };
                 CustomDialogBox form = new CustomDialogBox(customMessageBoxInfo);
                 form.ShowDialog();
                 form.Dispose();
-                if (customMessageBoxInfo.result == 0)
+                if (customMessageBoxInfo.Result == 0)
                 {
                     if (FilePath == null)
                     {
@@ -98,7 +98,7 @@ namespace マイメモ帳
                     }
                     else { File.WriteAllText(FilePath, text.Text); }
                 }
-                else if (customMessageBoxInfo.result == 2) { return -1; }
+                else if (customMessageBoxInfo.Result == 2) { return -1; }
             }
             return 0;
         }
@@ -184,7 +184,10 @@ namespace マイメモ帳
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Data = Data.Load();
+            text.Font = Data.TextFont;
             TextHistory = new TextHistory(text);
+            ColorChange();;
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -193,6 +196,7 @@ namespace マイメモ帳
             {
                 e.Cancel = true;
             }
+            Data.Save();
         }
 
         private void Txt_memo_TextChanged(object sender, EventArgs e)
@@ -264,16 +268,18 @@ namespace マイメモ帳
         }
 
         private void フォントFToolStripMenuItem_Click(object sender, EventArgs e)
-        { 
+        {
+            fontDialog.Font = text.Font;
             fontDialog.ShowDialog();
 
             fontDialog.Dispose();
             // MessageBox.Show(fontDialog.Font.Name);
             text.Font = fontDialog.Font;
+            Data.Write(new Data { TextFont = text.Font });
         }
     }
 
-    public class TextHistory
+    internal class TextHistory
     {
         private List<string> History { get; set; } = new List<string>();
         private int HistoryNum { get; set; }
@@ -343,6 +349,7 @@ namespace マイメモ帳
             }
         }
     }
+
 }
 
 
