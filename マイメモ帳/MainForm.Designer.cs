@@ -67,6 +67,7 @@ namespace マイメモ帳
             this.表示ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ズームZToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ステータスバーSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.タイトルバーTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ヘルプHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ヘルプの表示ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.フィードバックを送信FToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,15 +77,13 @@ namespace マイメモ帳
             this.printDocument = new System.Drawing.Printing.PrintDocument();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.fontDialog = new System.Windows.Forms.FontDialog();
-            this.タイトルバーTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.BottomToolStripPanel = new System.Windows.Forms.ToolStripPanel();
+            this.TopToolStripPanel = new System.Windows.Forms.ToolStripPanel();
+            this.RightToolStripPanel = new System.Windows.Forms.ToolStripPanel();
+            this.LeftToolStripPanel = new System.Windows.Forms.ToolStripPanel();
+            this.ContentPanel = new System.Windows.Forms.ToolStripContentPanel();
             this.text = new System.Windows.Forms.TextBox();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.menuStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -332,6 +331,11 @@ namespace マイメモ帳
             this.ステータスバーSToolStripMenuItem.Name = "ステータスバーSToolStripMenuItem";
             resources.ApplyResources(this.ステータスバーSToolStripMenuItem, "ステータスバーSToolStripMenuItem");
             // 
+            // タイトルバーTToolStripMenuItem
+            // 
+            this.タイトルバーTToolStripMenuItem.Name = "タイトルバーTToolStripMenuItem";
+            resources.ApplyResources(this.タイトルバーTToolStripMenuItem, "タイトルバーTToolStripMenuItem");
+            // 
             // ヘルプHToolStripMenuItem
             // 
             this.ヘルプHToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -368,10 +372,37 @@ namespace マイメモ帳
             this.printDialog1.Document = this.printDocument;
             this.printDialog1.UseEXDialog = true;
             // 
-            // タイトルバーTToolStripMenuItem
+            // BottomToolStripPanel
             // 
-            this.タイトルバーTToolStripMenuItem.Name = "タイトルバーTToolStripMenuItem";
-            resources.ApplyResources(this.タイトルバーTToolStripMenuItem, "タイトルバーTToolStripMenuItem");
+            resources.ApplyResources(this.BottomToolStripPanel, "BottomToolStripPanel");
+            this.BottomToolStripPanel.Name = "BottomToolStripPanel";
+            this.BottomToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.BottomToolStripPanel.RowMargin = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            // 
+            // TopToolStripPanel
+            // 
+            resources.ApplyResources(this.TopToolStripPanel, "TopToolStripPanel");
+            this.TopToolStripPanel.Name = "TopToolStripPanel";
+            this.TopToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.TopToolStripPanel.RowMargin = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            // 
+            // RightToolStripPanel
+            // 
+            resources.ApplyResources(this.RightToolStripPanel, "RightToolStripPanel");
+            this.RightToolStripPanel.Name = "RightToolStripPanel";
+            this.RightToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.RightToolStripPanel.RowMargin = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            // 
+            // LeftToolStripPanel
+            // 
+            resources.ApplyResources(this.LeftToolStripPanel, "LeftToolStripPanel");
+            this.LeftToolStripPanel.Name = "LeftToolStripPanel";
+            this.LeftToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.LeftToolStripPanel.RowMargin = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            // 
+            // ContentPanel
+            // 
+            resources.ApplyResources(this.ContentPanel, "ContentPanel");
             // 
             // text
             // 
@@ -381,32 +412,12 @@ namespace マイメモ帳
             this.text.TextChanged += new System.EventHandler(this.Txt_memo_TextChanged);
             this.text.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_memo_KeyDown);
             // 
-            // splitContainer1
-            // 
-            resources.ApplyResources(this.splitContainer1, "splitContainer1");
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.text);
-            this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.statusStrip1);
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            resources.ApplyResources(this.statusStrip1, "statusStrip1");
-            this.statusStrip1.Name = "statusStrip1";
-            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Controls.Add(this.splitContainer1);
+            this.Controls.Add(this.text);
             this.Controls.Add(this.menuStrip);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.HelpButton = true;
@@ -415,12 +426,6 @@ namespace マイメモ帳
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.PerformLayout();
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -474,9 +479,12 @@ namespace マイメモ帳
         private System.Windows.Forms.ToolStripMenuItem 色CToolStripMenuItem;
         private System.Windows.Forms.FontDialog fontDialog;
         private System.Windows.Forms.ToolStripMenuItem タイトルバーTToolStripMenuItem;
+        private System.Windows.Forms.ToolStripPanel BottomToolStripPanel;
+        private System.Windows.Forms.ToolStripPanel TopToolStripPanel;
+        private System.Windows.Forms.ToolStripPanel RightToolStripPanel;
+        private System.Windows.Forms.ToolStripPanel LeftToolStripPanel;
+        private System.Windows.Forms.ToolStripContentPanel ContentPanel;
         private System.Windows.Forms.TextBox text;
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.StatusStrip statusStrip1;
     }
 }
 

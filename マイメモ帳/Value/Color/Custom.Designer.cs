@@ -61,7 +61,7 @@ namespace マイメモ帳.Value.Color {
         }
         
         /// <summary>
-        ///   FF000000 に類似しているローカライズされた文字列を検索します。
+        ///   FFFFFFFF に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string menuStripBackColor {
             get {
@@ -70,7 +70,7 @@ namespace マイメモ帳.Value.Color {
         }
         
         /// <summary>
-        ///   FFFFFFFF に類似しているローカライズされた文字列を検索します。
+        ///   FF000000 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string menuStripForeColor {
             get {

@@ -50,7 +50,7 @@ namespace マイメモ帳
                 _title = "無題";
                 Text = SetTitle;
             }
-            
+
             ColorChange();
         }
 
@@ -264,19 +264,12 @@ namespace マイメモ帳
         }
 
         private void フォントFToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            fontDialog.ShowColor = false;
-            fontDialog.ShowEffects = false;
-            fontDialog.AllowVerticalFonts = false;
+        { 
             fontDialog.ShowDialog();
 
             fontDialog.Dispose();
-            MessageBox.Show(fontDialog.Font.Name);
-        }
-
-        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
+            // MessageBox.Show(fontDialog.Font.Name);
+            text.Font = fontDialog.Font;
         }
     }
 
