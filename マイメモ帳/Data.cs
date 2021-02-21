@@ -11,8 +11,7 @@ namespace マイメモ帳
 {
     public class Data
     {
-        [XmlIgnore]
-        public Font TextFont { get; set; }
+        internal Font TextFont { get; set; }
 
         internal void Write(Data data)
         {
@@ -21,7 +20,7 @@ namespace マイメモ帳
 
         internal void Save()
         {
-            var path = Path.Combine(Application.StartupPath, "usersetting.xml");
+            var path = Path.Combine(Application.UserAppDataPath, "usersetting.xml");
 
             var xml = new XmlSerializer(typeof(Data));
             using (var streamWriter = new StreamWriter(path, false, Encoding.UTF8))
@@ -34,7 +33,7 @@ namespace マイメモ帳
         internal Data Load()
         {
             var xmlSerializer = new XmlSerializer(typeof(Data));
-            var path = Path.Combine(Application.StartupPath, "usersetting.xml");
+            var path = Path.Combine(Application.UserAppDataPath, "usersetting.xml");
 
             if (!File.Exists(path)) { return new Data(); }
 

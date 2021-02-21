@@ -269,13 +269,15 @@ namespace マイメモ帳
 
         private void フォントFToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fontDialog.Font = text.Font;
-            fontDialog.ShowDialog();
+            NewFontDialog newFontDialog = new NewFontDialog {Font = text.Font};
+            if (newFontDialog.ShowDialog() == DialogResult.OK)
+            {
+                text.Font = newFontDialog.Font;
+                Data.Write(new Data { TextFont = text.Font });
+            }
 
-            fontDialog.Dispose();
+            newFontDialog.Dispose();
             // MessageBox.Show(fontDialog.Font.Name);
-            text.Font = fontDialog.Font;
-            Data.Write(new Data { TextFont = text.Font });
         }
     }
 
