@@ -52,9 +52,9 @@ namespace マイメモ帳
             this.フォント名.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.フォント名.Location = new System.Drawing.Point(12, 26);
             this.フォント名.Name = "フォント名";
-            this.フォント名.Size = new System.Drawing.Size(100, 18);
+            this.フォント名.Size = new System.Drawing.Size(80, 18);
             this.フォント名.TabIndex = 0;
-            this.フォント名.Text = "フォント名(F):";
+            this.フォント名.Text = "フォント名:";
             // 
             // スタイル
             // 
@@ -63,9 +63,9 @@ namespace マイメモ帳
             this.スタイル.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.スタイル.Location = new System.Drawing.Point(284, 26);
             this.スタイル.Name = "スタイル";
-            this.スタイル.Size = new System.Drawing.Size(87, 18);
+            this.スタイル.Size = new System.Drawing.Size(66, 18);
             this.スタイル.TabIndex = 1;
-            this.スタイル.Text = "スタイル(Y):";
+            this.スタイル.Text = "スタイル:";
             // 
             // サイズ
             // 
@@ -74,9 +74,9 @@ namespace マイメモ帳
             this.サイズ.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.サイズ.Location = new System.Drawing.Point(488, 26);
             this.サイズ.Name = "サイズ";
-            this.サイズ.Size = new System.Drawing.Size(76, 18);
+            this.サイズ.Size = new System.Drawing.Size(55, 18);
             this.サイズ.TabIndex = 2;
-            this.サイズ.Text = "サイズ(S):";
+            this.サイズ.Text = "サイズ:";
             // 
             // フォント名一覧
             // 
@@ -117,16 +117,12 @@ namespace マイメモ帳
             this.スタイル一覧.Font = new System.Drawing.Font("MS UI Gothic", 10F);
             this.スタイル一覧.FormattingEnabled = true;
             this.スタイル一覧.ItemHeight = 26;
-            this.スタイル一覧.Items.AddRange(new object[] {
-            "標準",
-            "太字",
-            "斜体",
-            "太字 斜体"});
             this.スタイル一覧.Location = new System.Drawing.Point(287, 78);
             this.スタイル一覧.Name = "スタイル一覧";
             this.スタイル一覧.ScrollAlwaysVisible = true;
             this.スタイル一覧.Size = new System.Drawing.Size(180, 238);
             this.スタイル一覧.TabIndex = 6;
+            this.スタイル一覧.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.スタイル一覧_DrawItem);
             // 
             // サイズ一覧
             // 
@@ -135,23 +131,6 @@ namespace マイメモ帳
             this.サイズ一覧.Font = new System.Drawing.Font("MS UI Gothic", 13F);
             this.サイズ一覧.FormattingEnabled = true;
             this.サイズ一覧.ItemHeight = 26;
-            this.サイズ一覧.Items.AddRange(new object[] {
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "14",
-            "16",
-            "18",
-            "20",
-            "22",
-            "24",
-            "26",
-            "28",
-            "36",
-            "48",
-            "72"});
             this.サイズ一覧.Location = new System.Drawing.Point(491, 78);
             this.サイズ一覧.Name = "サイズ一覧";
             this.サイズ一覧.ScrollAlwaysVisible = true;
