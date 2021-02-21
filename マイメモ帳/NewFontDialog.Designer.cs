@@ -84,7 +84,7 @@ namespace マイメモ帳
             this.フォント名一覧.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.フォント名一覧.FormattingEnabled = true;
             this.フォント名一覧.ItemHeight = 26;
-            this.フォント名一覧.Location = new System.Drawing.Point(12, 78);
+            this.フォント名一覧.Location = new System.Drawing.Point(12, 74);
             this.フォント名一覧.Name = "フォント名一覧";
             this.フォント名一覧.ScrollAlwaysVisible = true;
             this.フォント名一覧.Size = new System.Drawing.Size(250, 238);
@@ -94,20 +94,20 @@ namespace マイメモ帳
             // textBox1
             // 
             this.textBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox1.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.textBox1.Font = new System.Drawing.Font("MS UI Gothic", 10F);
             this.textBox1.Location = new System.Drawing.Point(12, 47);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(250, 31);
+            this.textBox1.Size = new System.Drawing.Size(250, 27);
             this.textBox1.TabIndex = 4;
             this.textBox1.WordWrap = false;
             // 
             // textBox2
             // 
             this.textBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox2.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.textBox2.Font = new System.Drawing.Font("MS UI Gothic", 10F);
             this.textBox2.Location = new System.Drawing.Point(287, 47);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(180, 31);
+            this.textBox2.Size = new System.Drawing.Size(180, 27);
             this.textBox2.TabIndex = 5;
             // 
             // スタイル一覧
@@ -117,7 +117,7 @@ namespace マイメモ帳
             this.スタイル一覧.Font = new System.Drawing.Font("MS UI Gothic", 10F);
             this.スタイル一覧.FormattingEnabled = true;
             this.スタイル一覧.ItemHeight = 26;
-            this.スタイル一覧.Location = new System.Drawing.Point(287, 78);
+            this.スタイル一覧.Location = new System.Drawing.Point(287, 74);
             this.スタイル一覧.Name = "スタイル一覧";
             this.スタイル一覧.ScrollAlwaysVisible = true;
             this.スタイル一覧.Size = new System.Drawing.Size(180, 238);
@@ -131,7 +131,7 @@ namespace マイメモ帳
             this.サイズ一覧.Font = new System.Drawing.Font("MS UI Gothic", 13F);
             this.サイズ一覧.FormattingEnabled = true;
             this.サイズ一覧.ItemHeight = 26;
-            this.サイズ一覧.Location = new System.Drawing.Point(491, 78);
+            this.サイズ一覧.Location = new System.Drawing.Point(491, 74);
             this.サイズ一覧.Name = "サイズ一覧";
             this.サイズ一覧.ScrollAlwaysVisible = true;
             this.サイズ一覧.Size = new System.Drawing.Size(90, 238);
@@ -141,10 +141,10 @@ namespace マイメモ帳
             // textBox3
             // 
             this.textBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox3.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.textBox3.Font = new System.Drawing.Font("MS UI Gothic", 10F);
             this.textBox3.Location = new System.Drawing.Point(491, 47);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(90, 31);
+            this.textBox3.Size = new System.Drawing.Size(90, 27);
             this.textBox3.TabIndex = 8;
             // 
             // サンプル

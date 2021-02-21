@@ -28,6 +28,7 @@ namespace マイメモ帳
             foreach (int i in fontSize)
                 サイズ一覧.Items.Add(i);
 
+            フォント名一覧.Location = new Point(フォント名一覧.Location.X, textBox1.Location.Y + textBox1.Size.Height);
         }
 
         private void フォント名一覧_DrawItem(object sender, DrawItemEventArgs e)
