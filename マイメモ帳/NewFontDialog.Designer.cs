@@ -84,12 +84,13 @@ namespace マイメモ帳
             this.フォント名一覧.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.フォント名一覧.FormattingEnabled = true;
             this.フォント名一覧.ItemHeight = 26;
-            this.フォント名一覧.Location = new System.Drawing.Point(12, 74);
+            this.フォント名一覧.Location = new System.Drawing.Point(12, 80);
             this.フォント名一覧.Name = "フォント名一覧";
             this.フォント名一覧.ScrollAlwaysVisible = true;
             this.フォント名一覧.Size = new System.Drawing.Size(250, 238);
             this.フォント名一覧.TabIndex = 3;
             this.フォント名一覧.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.フォント名一覧_DrawItem);
+            this.フォント名一覧.SelectedValueChanged += new System.EventHandler(this.SelectedValueChanged);
             // 
             // textBox1
             // 
@@ -100,6 +101,7 @@ namespace マイメモ帳
             this.textBox1.Size = new System.Drawing.Size(250, 27);
             this.textBox1.TabIndex = 4;
             this.textBox1.WordWrap = false;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
@@ -114,15 +116,16 @@ namespace マイメモ帳
             // 
             this.スタイル一覧.Cursor = System.Windows.Forms.Cursors.Default;
             this.スタイル一覧.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.スタイル一覧.Font = new System.Drawing.Font("MS UI Gothic", 10F);
+            this.スタイル一覧.Font = new System.Drawing.Font("MS UI Gothic", 11F);
             this.スタイル一覧.FormattingEnabled = true;
             this.スタイル一覧.ItemHeight = 26;
-            this.スタイル一覧.Location = new System.Drawing.Point(287, 74);
+            this.スタイル一覧.Location = new System.Drawing.Point(287, 80);
             this.スタイル一覧.Name = "スタイル一覧";
             this.スタイル一覧.ScrollAlwaysVisible = true;
             this.スタイル一覧.Size = new System.Drawing.Size(180, 238);
             this.スタイル一覧.TabIndex = 6;
             this.スタイル一覧.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.スタイル一覧_DrawItem);
+            this.スタイル一覧.SelectedValueChanged += new System.EventHandler(this.SelectedValueChanged);
             // 
             // サイズ一覧
             // 
@@ -131,12 +134,13 @@ namespace マイメモ帳
             this.サイズ一覧.Font = new System.Drawing.Font("MS UI Gothic", 13F);
             this.サイズ一覧.FormattingEnabled = true;
             this.サイズ一覧.ItemHeight = 26;
-            this.サイズ一覧.Location = new System.Drawing.Point(491, 74);
+            this.サイズ一覧.Location = new System.Drawing.Point(491, 80);
             this.サイズ一覧.Name = "サイズ一覧";
             this.サイズ一覧.ScrollAlwaysVisible = true;
             this.サイズ一覧.Size = new System.Drawing.Size(90, 238);
             this.サイズ一覧.TabIndex = 7;
             this.サイズ一覧.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.サイズ一覧_DrawItem);
+            this.サイズ一覧.SelectedValueChanged += new System.EventHandler(this.SelectedValueChanged);
             // 
             // textBox3
             // 
@@ -160,6 +164,7 @@ namespace マイメモ帳
             // サンプルテキスト
             // 
             this.サンプルテキスト.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.サンプルテキスト.Font = new System.Drawing.Font("MS UI Gothic", 9F);
             this.サンプルテキスト.Location = new System.Drawing.Point(287, 374);
             this.サンプルテキスト.Name = "サンプルテキスト";
             this.サンプルテキスト.Size = new System.Drawing.Size(294, 25);
@@ -180,6 +185,7 @@ namespace マイメモ帳
             // 
             // OKボタン
             // 
+            this.OKボタン.Font = new System.Drawing.Font("MS UI Gothic", 9F);
             this.OKボタン.Location = new System.Drawing.Point(375, 491);
             this.OKボタン.Name = "OKボタン";
             this.OKボタン.Size = new System.Drawing.Size(100, 35);
@@ -191,6 +197,7 @@ namespace マイメモ帳
             // 
             // キャンセルボタン
             // 
+            this.キャンセルボタン.Font = new System.Drawing.Font("MS UI Gothic", 9F);
             this.キャンセルボタン.Location = new System.Drawing.Point(481, 491);
             this.キャンセルボタン.Name = "キャンセルボタン";
             this.キャンセルボタン.Size = new System.Drawing.Size(100, 35);
@@ -202,8 +209,7 @@ namespace マイメモ帳
             // 
             // NewFontDialog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(593, 540);
             this.Controls.Add(this.キャンセルボタン);
             this.Controls.Add(this.OKボタン);
