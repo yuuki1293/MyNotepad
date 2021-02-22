@@ -163,7 +163,7 @@ namespace マイメモ帳
             {
                 object[] array = new object[フォント名一覧.Items.Count];
                 フォント名一覧.Items.CopyTo(array, 0);
-                Array.IndexOf(array, "  ");
+                Array.Find(array, i=>)
             }
         }
     }
