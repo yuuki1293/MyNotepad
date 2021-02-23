@@ -46,7 +46,7 @@ namespace マイメモ帳
             this.もとに戻すUToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.やり直すYToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.切り取りCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.切り取りTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.コピーCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.貼り付けPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.削除LToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -89,7 +89,6 @@ namespace マイメモ帳
             // menuStrip
             // 
             this.menuStrip.BackColor = System.Drawing.Color.White;
-            this.menuStrip.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ファイルToolStripMenuItem,
@@ -181,7 +180,7 @@ namespace マイメモ帳
             this.もとに戻すUToolStripMenuItem,
             this.やり直すYToolStripMenuItem,
             this.toolStripSeparator3,
-            this.切り取りCToolStripMenuItem,
+            this.切り取りTToolStripMenuItem,
             this.コピーCToolStripMenuItem,
             this.貼り付けPToolStripMenuItem,
             this.削除LToolStripMenuItem,
@@ -215,25 +214,29 @@ namespace マイメモ帳
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
             // 
-            // 切り取りCToolStripMenuItem
+            // 切り取りTToolStripMenuItem
             // 
-            resources.ApplyResources(this.切り取りCToolStripMenuItem, "切り取りCToolStripMenuItem");
-            this.切り取りCToolStripMenuItem.Name = "切り取りCToolStripMenuItem";
+            resources.ApplyResources(this.切り取りTToolStripMenuItem, "切り取りTToolStripMenuItem");
+            this.切り取りTToolStripMenuItem.Name = "切り取りTToolStripMenuItem";
+            this.切り取りTToolStripMenuItem.Click += new System.EventHandler(this.切り取りCToolStripMenuItem_Click);
             // 
             // コピーCToolStripMenuItem
             // 
-            resources.ApplyResources(this.コピーCToolStripMenuItem, "コピーCToolStripMenuItem");
             this.コピーCToolStripMenuItem.Name = "コピーCToolStripMenuItem";
+            resources.ApplyResources(this.コピーCToolStripMenuItem, "コピーCToolStripMenuItem");
+            this.コピーCToolStripMenuItem.Click += new System.EventHandler(this.コピーCToolStripMenuItem_Click);
             // 
             // 貼り付けPToolStripMenuItem
             // 
-            this.貼り付けPToolStripMenuItem.Name = "貼り付けPToolStripMenuItem";
             resources.ApplyResources(this.貼り付けPToolStripMenuItem, "貼り付けPToolStripMenuItem");
+            this.貼り付けPToolStripMenuItem.Name = "貼り付けPToolStripMenuItem";
+            this.貼り付けPToolStripMenuItem.Click += new System.EventHandler(this.貼り付けPToolStripMenuItem_Click);
             // 
             // 削除LToolStripMenuItem
             // 
             resources.ApplyResources(this.削除LToolStripMenuItem, "削除LToolStripMenuItem");
             this.削除LToolStripMenuItem.Name = "削除LToolStripMenuItem";
+            this.削除LToolStripMenuItem.Click += new System.EventHandler(this.削除LToolStripMenuItem_Click);
             // 
             // toolStripSeparator4
             // 
@@ -409,8 +412,10 @@ namespace マイメモ帳
             resources.ApplyResources(this.text, "text");
             this.text.Name = "text";
             this.text.TabStop = false;
+            this.text.MouseClick += new System.Windows.Forms.MouseEventHandler(this.text_MouseClick);
             this.text.TextChanged += new System.EventHandler(this.Txt_memo_TextChanged);
             this.text.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_memo_KeyDown);
+            this.text.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_memo_KeyDown);
             // 
             // MainForm
             // 
@@ -449,7 +454,7 @@ namespace マイメモ帳
         private System.Windows.Forms.ToolStripMenuItem 印刷toolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem もとに戻すUToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 切り取りCToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 切り取りTToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem コピーCToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 貼り付けPToolStripMenuItem;

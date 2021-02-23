@@ -234,20 +234,17 @@
   <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
     <value>293, 6</value>
   </data>
-  <data name="切り取りCToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+  <data name="切り取りTToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="切り取りCToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+  <data name="切り取りTToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+X</value>
   </data>
-  <data name="切り取りCToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="切り取りTToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>296, 34</value>
   </data>
-  <data name="切り取りCToolStripMenuItem.Text" xml:space="preserve">
+  <data name="切り取りTToolStripMenuItem.Text" xml:space="preserve">
     <value>切り取り(&amp;T)</value>
-  </data>
-  <data name="コピーCToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="コピーCToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+C</value>
@@ -257,6 +254,9 @@
   </data>
   <data name="コピーCToolStripMenuItem.Text" xml:space="preserve">
     <value>コピー(&amp;C)</value>
+  </data>
+  <data name="貼り付けPToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="貼り付けPToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+V</value>
@@ -454,7 +454,7 @@
     <value>0, 0</value>
   </data>
   <data name="menuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>800, 35</value>
+    <value>800, 33</value>
   </data>
   <data name="menuStrip.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -544,7 +544,7 @@
     <value>Fill</value>
   </data>
   <data name="text.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 35</value>
+    <value>0, 33</value>
   </data>
   <data name="text.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -553,7 +553,7 @@
     <value>Both</value>
   </data>
   <data name="text.Size" type="System.Drawing.Size, System.Drawing">
-    <value>800, 415</value>
+    <value>800, 417</value>
   </data>
   <data name="text.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -754,10 +754,10 @@
   <data name="&gt;&gt;toolStripSeparator3.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;切り取りCToolStripMenuItem.Name" xml:space="preserve">
-    <value>切り取りCToolStripMenuItem</value>
+  <data name="&gt;&gt;切り取りTToolStripMenuItem.Name" xml:space="preserve">
+    <value>切り取りTToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;切り取りCToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;切り取りTToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;コピーCToolStripMenuItem.Name" xml:space="preserve">

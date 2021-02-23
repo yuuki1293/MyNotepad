@@ -187,7 +187,7 @@ namespace マイメモ帳
             Data = Data.Load();
             text.Font = Data.TextFont;
             TextHistory = new TextHistory(text);
-            ColorChange();;
+            ColorChange();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -269,7 +269,7 @@ namespace マイメモ帳
 
         private void フォントFToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NewFontDialog newFontDialog = new NewFontDialog {Font = text.Font};
+            NewFontDialog newFontDialog = new NewFontDialog { Font = text.Font };
             if (newFontDialog.ShowDialog() == DialogResult.OK)
             {
                 text.Font = newFontDialog.Font;
@@ -278,6 +278,56 @@ namespace マイメモ帳
 
             newFontDialog.Dispose();
             // MessageBox.Show(fontDialog.Font.Name);
+        }
+
+        private void 切り取りCToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int start = text.SelectionStart;
+            var clipboardText = text.Text.Substring(start, text.SelectionLength);
+            Clipboard.SetText(clipboardText);
+            text.Text = text.Text.Remove(start, text.SelectionLength);
+            text.SelectionStart = start;
+            text.SelectionLength = 0;
+        }
+
+        private void コピーCToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var clipboardText = text.Text.Substring(text.SelectionStart, text.SelectionLength);
+            Clipboard.SetText(clipboardText);
+        }
+
+        private void 貼り付けPToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var start = text.SelectionStart;
+            text.Text = text.Text.Remove(start, text.SelectionLength);
+            var clipboardText = Clipboard.GetText();
+            text.Text = text.Text.Insert(start, clipboardText);
+            text.SelectionStart = start + clipboardText.Length;
+            text.SelectionLength = 0;
+        }
+
+        private void 削除LToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var start = text.SelectionStart;
+            text.Text = text.Text.Remove(start, text.SelectionLength);
+            text.SelectionStart = start;
+            text.SelectionLength = 0;
+        }
+
+        private void text_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (text.SelectionLength == 0)
+            {
+                切り取りTToolStripMenuItem.Enabled = false;
+                コピーCToolStripMenuItem.Enabled = false;
+                削除LToolStripMenuItem.Enabled = false;
+            }
+            else
+            {
+                切り取りTToolStripMenuItem.Enabled = true;
+                コピーCToolStripMenuItem.Enabled = true;
+                削除LToolStripMenuItem.Enabled = true;
+            }
         }
     }
 
