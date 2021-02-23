@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -120,11 +119,70 @@ namespace マイメモ帳
 
         private void SelectedValueChanged(object sender, EventArgs e)
         {
-            if (フォント名一覧.SelectedItem != null && FinLoad)
+            if (フォント名一覧.SelectedItem == null || !FinLoad) return;
+            FinLoad = false;
+            var fontName = フォント名一覧.SelectedItem.ToString();
+            var fontSize = (float)サイズ一覧.SelectedItem;
+            FontStyle fontStyle;
+            switch (スタイル一覧.SelectedItem.ToString())
             {
-                FinLoad = false;
+                case "標準":
+                    fontStyle = FontStyle.Regular;
+                    break;
+                case "太字":
+                    fontStyle = FontStyle.Bold;
+                    break;
+                case "斜体":
+                    fontStyle = FontStyle.Italic;
+                    break;
+                default:
+                    fontStyle = (FontStyle.Italic | FontStyle.Bold);
+                    break;
+            }
+
+            textBox1.Text = fontName;
+            textBox2.Text = FontStyleToString[fontStyle];
+            textBox3.Text = fontSize.ToString(CultureInfo.InvariantCulture);
+            Font = new Font(fontName, fontSize, fontStyle);
+            サンプルテキスト.Font = Font;
+
+            スタイル一覧.Items.Clear();
+            foreach (var str in new[] { "標準", "太字", "斜体", "太字 斜体" })
+                スタイル一覧.Items.Add(str);
+            //スタイル一覧_DrawItem("標準",drawItemEventArgs);
+            スタイル一覧.SelectedItem = FontStyleToString[Font.Style];
+            FinLoad = true;
+        }
+
+        private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (!FinLoad) return;
+            FinLoad = false;
+            var find = フォント名一覧.FindString(textBox1.Text);
+            if (find != ListBox.NoMatches)
+            {
+                フォント名一覧.SelectedItem = フォント名一覧.Items[find];
                 var fontName = フォント名一覧.SelectedItem.ToString();
-                var fontSize = (float)サイズ一覧.SelectedItem;
+                Font = new Font(fontName, Font.Size, Font.Style);
+                サンプルテキスト.Font = Font;
+            }
+            else
+            {
+                フォント名一覧.SelectedItem = フォント名一覧.Items[0];
+                フォント名一覧.SelectedItem = null;
+            }
+
+            FinLoad = true;
+        }
+
+        private void TextBox2_TextChanged(object sender, EventArgs e)
+        {
+            if (!FinLoad) return;
+            FinLoad = false;
+            var find = スタイル一覧.FindString(textBox2.Text);
+            if (find != ListBox.NoMatches)
+            {
+                スタイル一覧.SelectedItem = スタイル一覧.Items[find]; 
                 FontStyle fontStyle;
                 switch (スタイル一覧.SelectedItem.ToString())
                 {
@@ -141,47 +199,37 @@ namespace マイメモ帳
                         fontStyle = (FontStyle.Italic | FontStyle.Bold);
                         break;
                 }
-
-                textBox1.Text = fontName;
-                textBox2.Text = FontStyleToString[fontStyle];
-                textBox3.Text = fontSize.ToString(CultureInfo.InvariantCulture);
-                Font = new Font(fontName, fontSize, fontStyle);
+                Font = new Font(Font.Name, Font.Size, fontStyle);
                 サンプルテキスト.Font = Font;
-
-                スタイル一覧.Items.Clear();
-                foreach (var str in new[] { "標準", "太字", "斜体", "太字 斜体" })
-                    スタイル一覧.Items.Add(str);
-                //スタイル一覧_DrawItem("標準",drawItemEventArgs);
-                スタイル一覧.SelectedItem = FontStyleToString[Font.Style];
-                FinLoad = true;
             }
+            else
+            {
+                スタイル一覧.SelectedItem = スタイル一覧.Items[0];
+                スタイル一覧.SelectedItem = null;
+            }
+
+            FinLoad = true;
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void TextBox3_TextChanged(object sender, EventArgs e)
         {
-            if (FinLoad)
+            if (!FinLoad) return;
+            FinLoad = false;
+            var find = サイズ一覧.FindString(textBox3.Text);
+            if (find != ListBox.NoMatches)
             {
-                FinLoad = false;
-                var find = フォント名一覧.FindString(textBox1.Text);
-                if (find != ListBox.NoMatches)
-                {
-                    フォント名一覧.SelectedItem = フォント名一覧.Items[find];
-                    フォント名一覧.SelectedItem = null;
-                }
-                FinLoad = true;
+                サイズ一覧.SelectedItem = サイズ一覧.Items[find];
+                var fontSize = (float)サイズ一覧.SelectedItem;
+                Font = new Font(Font.Name, fontSize, Font.Style);
+                サンプルテキスト.Font = Font;
             }
-        }
+            else
+            {
+                サイズ一覧.SelectedItem = サイズ一覧.Items[0];
+                サイズ一覧.SelectedItem = null;
+            }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-            if (FinLoad)
-            {
-                var find = スタイル一覧.FindString(textBox2.Text);
-                if (find != ListBox.NoMatches)
-                {
-                    スタイル一覧.SelectedItem = スタイル一覧.Items[find];
-                }
-            }
+            FinLoad = true;
         }
     }
 }
