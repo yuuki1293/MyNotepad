@@ -5,6 +5,7 @@ using System.Drawing;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
+using Microsoft.Win32;
 
 namespace マイメモ帳
 {
@@ -239,11 +240,6 @@ namespace マイメモ帳
             やり直すYToolStripMenuItem.Enabled = TextHistory.CanRedo;
         }
 
-        private void Txt_memo_KeyDown(object sender, KeyEventArgs e)
-        {
-            //MessageBox.Show(txt_memo.SelectionStart.ToString());
-        }
-
         private void フィードバックを送信FToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Process.Start("https://github.com/yuuki1293/MyNotepad/issues/new");
@@ -271,7 +267,7 @@ namespace マイメモ帳
 
         private void フォントFToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NewFontDialog newFontDialog = new NewFontDialog { Font = text.Font ,Data= Data};
+            NewFontDialog newFontDialog = new NewFontDialog { Font = text.Font, Data = Data };
             if (newFontDialog.ShowDialog() == DialogResult.OK)
             {
                 text.Font = newFontDialog.Font;
@@ -316,19 +312,26 @@ namespace マイメモ帳
             text.SelectionLength = 0;
         }
 
-        private void text_MouseClick(object sender, MouseEventArgs e)
+        private void Text_MouseClick(object sender, MouseEventArgs e)
+        {
+            TextSelectedCheck();
+        }
+
+        private void TextSelectedCheck()
         {
             if (text.SelectionLength == 0)
             {
                 切り取りTToolStripMenuItem.Enabled = false;
                 コピーCToolStripMenuItem.Enabled = false;
                 削除LToolStripMenuItem.Enabled = false;
+                bingで検索SToolStripMenuItem.Enabled = false;
             }
             else
             {
                 切り取りTToolStripMenuItem.Enabled = true;
                 コピーCToolStripMenuItem.Enabled = true;
                 削除LToolStripMenuItem.Enabled = true;
+                bingで検索SToolStripMenuItem.Enabled = true;
             }
         }
 
@@ -346,6 +349,16 @@ namespace マイメモ帳
                 タイトルバーTToolStripMenuItem.Checked = false;
                 Data.ShowTitleBar = false;
             }
+        }
+
+        private void bingで検索SToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start($@"https://www.bing.com/search?q={text.Text.Substring(text.SelectionStart, text.SelectionLength)}");
+        }
+
+        private void text_KeyUp(object sender, KeyEventArgs e)
+        {
+            TextSelectedCheck();
         }
     }
 

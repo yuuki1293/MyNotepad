@@ -76,7 +76,6 @@ namespace マイメモ帳
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
             this.printDocument = new System.Drawing.Printing.PrintDocument();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
-            this.fontDialog = new System.Windows.Forms.FontDialog();
             this.BottomToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.TopToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.RightToolStripPanel = new System.Windows.Forms.ToolStripPanel();
@@ -89,7 +88,6 @@ namespace マイメモ帳
             // menuStrip
             // 
             this.menuStrip.BackColor = System.Drawing.Color.White;
-            this.menuStrip.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ファイルToolStripMenuItem,
@@ -248,6 +246,7 @@ namespace マイメモ帳
             // 
             resources.ApplyResources(this.bingで検索SToolStripMenuItem, "bingで検索SToolStripMenuItem");
             this.bingで検索SToolStripMenuItem.Name = "bingで検索SToolStripMenuItem";
+            this.bingで検索SToolStripMenuItem.Click += new System.EventHandler(this.bingで検索SToolStripMenuItem_Click);
             // 
             // 検索FToolStripMenuItem
             // 
@@ -414,10 +413,9 @@ namespace マイメモ帳
             resources.ApplyResources(this.text, "text");
             this.text.Name = "text";
             this.text.TabStop = false;
-            this.text.MouseClick += new System.Windows.Forms.MouseEventHandler(this.text_MouseClick);
+            this.text.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Text_MouseClick);
             this.text.TextChanged += new System.EventHandler(this.Txt_memo_TextChanged);
-            this.text.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_memo_KeyDown);
-            this.text.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_memo_KeyDown);
+            this.text.KeyUp += new System.Windows.Forms.KeyEventHandler(this.text_KeyUp);
             // 
             // MainForm
             // 
@@ -484,7 +482,6 @@ namespace マイメモ帳
         private System.Windows.Forms.ToolStripMenuItem やり直すYToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem フィードバックを送信FToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 色CToolStripMenuItem;
-        private System.Windows.Forms.FontDialog fontDialog;
         private System.Windows.Forms.ToolStripMenuItem タイトルバーTToolStripMenuItem;
         private System.Windows.Forms.ToolStripPanel BottomToolStripPanel;
         private System.Windows.Forms.ToolStripPanel TopToolStripPanel;
