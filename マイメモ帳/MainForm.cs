@@ -37,7 +37,7 @@ namespace マイメモ帳
         private string FilePath { get; set; }
         private PageSetupDialog PageSetupDialog { get; set; } = new PageSetupDialog();
         private TextHistory TextHistory { get; set; }
-        private Data Data { get; set; } = new Data();
+        public static Data Data { get; set; } = new Data();
 
         internal MainForm(IReadOnlyList<string> argv)
         {
@@ -58,7 +58,7 @@ namespace マイメモ帳
         {
             Color Set(string name)
             {
-                var colorBaf = Convert.ToInt32(Value.Color.Custom.ResourceManager.GetString(name), 16);
+                var colorBaf = Convert.ToInt32(Value.Color.Default.ResourceManager.GetString(name), 16);
                 return Color.FromArgb(colorBaf);
             }
 

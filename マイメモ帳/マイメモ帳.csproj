@@ -95,6 +95,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Custom.resx</DependentUpon>
     </Compile>
+    <Compile Include="Value\Color\Default.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Default.resx</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MainForm.ja-JP.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,6 +131,10 @@
     <EmbeddedResource Include="Value\Color\Custom.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Custom.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Value\Color\Default.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Default.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="Properties\Settings.settings">

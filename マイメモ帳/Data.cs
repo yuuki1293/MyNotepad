@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Drawing;
 using System.IO;
-using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml;
@@ -39,7 +38,7 @@ namespace マイメモ帳
 
             var settings = new XmlReaderSettings { CheckCharacters = false };
             using (var streamReader = new StreamReader(path,Encoding.UTF8)) 
-            using (var xmlReader = System.Xml.XmlReader.Create(streamReader,settings))
+            using (var xmlReader = XmlReader.Create(streamReader,settings))
             {
                 Data data =(Data)xmlSerializer.Deserialize(xmlReader);
                 streamReader.Close();

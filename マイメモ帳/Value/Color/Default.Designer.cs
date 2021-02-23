@@ -22,24 +22,24 @@ namespace マイメモ帳.Value.Color {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Custom {
+    internal class Default {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Custom() {
+        internal Default() {
         }
         
         /// <summary>
         ///   このクラスで使用されているキャッシュされた ResourceManager インスタンスを返します。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("マイメモ帳.Value.Color.Custom", typeof(Custom).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("マイメモ帳.Value.Color.Default", typeof(Default).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -51,7 +51,7 @@ namespace マイメモ帳.Value.Color {
         ///   現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,34 +63,34 @@ namespace マイメモ帳.Value.Color {
         /// <summary>
         ///   FFE1E1E1 に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        public static string buttonBackColor {
+        internal static string buttonBackColor {
             get {
                 return ResourceManager.GetString("buttonBackColor", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   FFFFFFFF に類似しているローカライズされた文字列を検索します。
+        ///   FF000000 に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        public static string buttonForeColor {
+        internal static string buttonForeColor {
             get {
                 return ResourceManager.GetString("buttonForeColor", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   FF000000 に類似しているローカライズされた文字列を検索します。
+        ///   FFF0F0F0 に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        public static string formBackColor {
+        internal static string formBackColor {
             get {
                 return ResourceManager.GetString("formBackColor", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   FFF0F0F0 に類似しているローカライズされた文字列を検索します。
+        ///   FF000000 に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        public static string formForeColor {
+        internal static string formForeColor {
             get {
                 return ResourceManager.GetString("formForeColor", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace マイメモ帳.Value.Color {
         /// <summary>
         ///   FFFFFFFF に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        public static string menuStripBackColor {
+        internal static string menuStripBackColor {
             get {
                 return ResourceManager.GetString("menuStripBackColor", resourceCulture);
             }
@@ -108,25 +108,25 @@ namespace マイメモ帳.Value.Color {
         /// <summary>
         ///   FF000000 に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        public static string menuStripForeColor {
+        internal static string menuStripForeColor {
             get {
                 return ResourceManager.GetString("menuStripForeColor", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   FF000000 に類似しているローカライズされた文字列を検索します。
+        ///   FFFFFFFF に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        public static string textBackColor {
+        internal static string textBackColor {
             get {
                 return ResourceManager.GetString("textBackColor", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   FFFFFFFF に類似しているローカライズされた文字列を検索します。
+        ///   FF000000 に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        public static string textForeColor {
+        internal static string textForeColor {
             get {
                 return ResourceManager.GetString("textForeColor", resourceCulture);
             }

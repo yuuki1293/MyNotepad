@@ -19,14 +19,45 @@ namespace マイメモ帳
 
         private bool FinLoad { get; set; }
 
+        private SolidBrush ForeBrushes { get; set; }
+
         public NewFontDialog()
         {
             InitializeComponent();
         }
 
+        internal void ColorChange()
+        {
+            Color Set(string name)
+            {
+                var colorBaf = Convert.ToInt32(Value.Color.Default.ResourceManager.GetString(name), 16);
+                return Color.FromArgb(colorBaf);
+            }
+
+            BackColor = Set("formBackColor");
+            ForeColor = Set("formForeColor");
+            フォント名一覧.BackColor = Set("textBackColor");
+            スタイル一覧.BackColor = Set("textBackColor");
+            サイズ一覧.BackColor = Set("textBackColor");
+            ForeBrushes = new SolidBrush(Set("textForeColor"));
+            textBox1.BackColor = Set("textBackColor");
+            textBox2.BackColor = Set("textBackColor");
+            textBox3.BackColor = Set("textBackColor");
+            textBox1.ForeColor = Set("textForeColor");
+            textBox2.ForeColor = Set("textForeColor");
+            textBox3.ForeColor = Set("textForeColor");
+            OKボタン.BackColor = Set("buttonBackColor");
+            OKボタン.ForeColor = Set("buttonForeColor");
+            キャンセルボタン.BackColor = Set("buttonBackColor");
+            キャンセルボタン.ForeColor = Set("buttonForeColor");
+            サンプルテキスト.BackColor = Set("textBackColor");
+            サンプルテキスト.ForeColor = Set("textForeColor");
+        }
+
         private void NewFontDialog_Load(object sender, EventArgs e)
         {
-            
+            ColorChange();
+
             var fonts = new InstalledFontCollection();
             FontFamily[] ffArray = fonts.Families;
             foreach (var ff in ffArray)
@@ -60,7 +91,7 @@ namespace マイメモ帳
 
             string txt = ((ListBox)sender).Items[e.Index].ToString();
             Font font = new Font(txt, 11, Font.Style);
-            e.Graphics.DrawString(txt, font, Brushes.Black, e.Bounds);
+            e.Graphics.DrawString(txt, font, ForeBrushes, e.Bounds);
         }
 
         private void スタイル一覧_DrawItem(object sender, DrawItemEventArgs e)
@@ -86,13 +117,13 @@ namespace マイメモ帳
                     break;
             }
             Font font = new Font(Font.Name, 11, style);
-            e.Graphics.DrawString(txt, font, Brushes.Black, e.Bounds);
+            e.Graphics.DrawString(txt, font, ForeBrushes, e.Bounds);
         }
 
         private void サイズ一覧_DrawItem(object sender, DrawItemEventArgs e)
         {
             e.DrawBackground();
-            e.Graphics.DrawString(((ListBox)sender).Items[e.Index].ToString(), new Font("Yu UI", 11, FontStyle.Regular), Brushes.Black, e.Bounds);
+            e.Graphics.DrawString(((ListBox)sender).Items[e.Index].ToString(), new Font("Yu UI", 11, FontStyle.Regular), ForeBrushes, e.Bounds);
         }
 
         private void OKボタン_Click(object sender, EventArgs e)

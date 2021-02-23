@@ -187,6 +187,7 @@ namespace マイメモ帳
             // 
             // OKボタン
             // 
+            this.OKボタン.BackColor = System.Drawing.SystemColors.Control;
             this.OKボタン.Font = new System.Drawing.Font("MS UI Gothic", 9F);
             this.OKボタン.Location = new System.Drawing.Point(378, 572);
             this.OKボタン.Name = "OKボタン";
@@ -194,7 +195,7 @@ namespace マイメモ帳
             this.OKボタン.TabIndex = 11;
             this.OKボタン.Text = "OK";
             this.OKボタン.UseMnemonic = false;
-            this.OKボタン.UseVisualStyleBackColor = true;
+            this.OKボタン.UseVisualStyleBackColor = false;
             this.OKボタン.Click += new System.EventHandler(this.OKボタン_Click);
             // 
             // キャンセルボタン
@@ -206,12 +207,13 @@ namespace マイメモ帳
             this.キャンセルボタン.TabIndex = 12;
             this.キャンセルボタン.Text = "キャンセル";
             this.キャンセルボタン.UseMnemonic = false;
-            this.キャンセルボタン.UseVisualStyleBackColor = true;
+            this.キャンセルボタン.UseVisualStyleBackColor = false;
             this.キャンセルボタン.Click += new System.EventHandler(this.キャンセルボタン_Click);
             // 
             // NewFontDialog
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(593, 619);
             this.Controls.Add(this.キャンセルボタン);
             this.Controls.Add(this.OKボタン);
@@ -227,6 +229,7 @@ namespace マイメモ帳
             this.Controls.Add(this.サイズ);
             this.Controls.Add(this.スタイル);
             this.Controls.Add(this.フォント名);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

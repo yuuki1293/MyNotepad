@@ -122,15 +122,15 @@
     <comment>ボタンの色</comment>
   </data>
   <data name="buttonForeColor" xml:space="preserve">
-    <value>FFFFFFFF</value>
+    <value>FF000000</value>
     <comment>ボタンの文字色</comment>
   </data>
   <data name="formBackColor" xml:space="preserve">
-    <value>FF000000</value>
+    <value>FFF0F0F0</value>
     <comment>フォームの背景色</comment>
   </data>
   <data name="formForeColor" xml:space="preserve">
-    <value>FFF0F0F0</value>
+    <value>FF000000</value>
     <comment>ラベルの文字色</comment>
   </data>
   <data name="menuStripBackColor" xml:space="preserve">
@@ -142,11 +142,11 @@
     <comment>メニューバーの文字色</comment>
   </data>
   <data name="textBackColor" xml:space="preserve">
-    <value>FF000000</value>
+    <value>FFFFFFFF</value>
     <comment>テキストボックスの背景色</comment>
   </data>
   <data name="textForeColor" xml:space="preserve">
-    <value>FFFFFFFF</value>
+    <value>FF000000</value>
     <comment>テキストボックスの文字色</comment>
   </data>
 </root>
