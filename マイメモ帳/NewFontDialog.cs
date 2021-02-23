@@ -120,7 +120,7 @@ namespace マイメモ帳
 
         private void SelectedValueChanged(object sender, EventArgs e)
         {
-            if (サイズ一覧.SelectedItem != null && FinLoad)
+            if (フォント名一覧.SelectedItem != null && FinLoad)
             {
                 FinLoad = false;
                 var fontName = フォント名一覧.SelectedItem.ToString();
@@ -161,9 +161,26 @@ namespace マイメモ帳
         {
             if (FinLoad)
             {
-                object[] array = new object[フォント名一覧.Items.Count];
-                フォント名一覧.Items.CopyTo(array, 0);
-                Array.Find(array, i=>)
+                FinLoad = false;
+                var find = フォント名一覧.FindString(textBox1.Text);
+                if (find != ListBox.NoMatches)
+                {
+                    フォント名一覧.SelectedItem = フォント名一覧.Items[find];
+                    フォント名一覧.SelectedItem = null;
+                }
+                FinLoad = true;
+            }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            if (FinLoad)
+            {
+                var find = スタイル一覧.FindString(textBox2.Text);
+                if (find != ListBox.NoMatches)
+                {
+                    スタイル一覧.SelectedItem = スタイル一覧.Items[find];
+                }
             }
         }
     }
