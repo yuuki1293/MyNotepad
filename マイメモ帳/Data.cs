@@ -12,10 +12,7 @@ namespace マイメモ帳
     {
         internal Font TextFont { get; set; }
 
-        internal void Write(Data data)
-        {
-            TextFont = data.TextFont;
-        }
+        public bool ShowTitleBar { get; set; }
 
         internal void Save()
         {

@@ -16,10 +16,10 @@ namespace マイメモ帳
             { FontStyle.Italic,"斜体" },
             { (FontStyle.Bold|FontStyle.Italic),"太字 斜体" }
         };
-
         private bool FinLoad { get; set; }
-
         private SolidBrush ForeBrushes { get; set; }
+
+        public Data Data { get; set; }
 
         public NewFontDialog()
         {
@@ -57,6 +57,7 @@ namespace マイメモ帳
         private void NewFontDialog_Load(object sender, EventArgs e)
         {
             ColorChange();
+            if (!Data.ShowTitleBar) FormBorderStyle = FormBorderStyle.None;
 
             var fonts = new InstalledFontCollection();
             FontFamily[] ffArray = fonts.Families;

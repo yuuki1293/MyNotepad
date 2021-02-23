@@ -188,6 +188,8 @@ namespace マイメモ帳
             text.Font = Data.TextFont;
             TextHistory = new TextHistory(text);
             ColorChange();
+            if (!Data.ShowTitleBar) FormBorderStyle = FormBorderStyle.None;
+            else タイトルバーTToolStripMenuItem.Checked = true;
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -269,11 +271,11 @@ namespace マイメモ帳
 
         private void フォントFToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NewFontDialog newFontDialog = new NewFontDialog { Font = text.Font };
+            NewFontDialog newFontDialog = new NewFontDialog { Font = text.Font ,Data= Data};
             if (newFontDialog.ShowDialog() == DialogResult.OK)
             {
                 text.Font = newFontDialog.Font;
-                Data.Write(new Data { TextFont = text.Font });
+                Data.TextFont = text.Font;
             }
 
             newFontDialog.Dispose();
@@ -327,6 +329,22 @@ namespace マイメモ帳
                 切り取りTToolStripMenuItem.Enabled = true;
                 コピーCToolStripMenuItem.Enabled = true;
                 削除LToolStripMenuItem.Enabled = true;
+            }
+        }
+
+        private void タイトルバーTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (タイトルバーTToolStripMenuItem.Checked == false)
+            {
+                FormBorderStyle = FormBorderStyle.Sizable;
+                タイトルバーTToolStripMenuItem.Checked = true;
+                Data.ShowTitleBar = true;
+            }
+            else
+            {
+                FormBorderStyle = FormBorderStyle.None;
+                タイトルバーTToolStripMenuItem.Checked = false;
+                Data.ShowTitleBar = false;
             }
         }
     }
