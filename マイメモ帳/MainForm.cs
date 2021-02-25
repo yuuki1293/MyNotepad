@@ -42,7 +42,6 @@ namespace マイメモ帳
         internal MainForm(IReadOnlyList<string> argv)
         {
             InitializeComponent();
-            MessageBox.Show(argv[0]);
             if (argv.Count > 0)
             {
                 SetTitle = String.Join(" ",argv);
