@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Drawing;
-using System.Resources;
 using System.Windows.Forms;
 
 namespace マイメモ帳
@@ -25,10 +24,7 @@ namespace マイメモ帳
                 return Color.FromArgb(colorBaf);
             }
 
-            ColorSelectDialog textForeColor = new ColorSelectDialog
-            {
-                Text = @"テキストボックスの文字色", Color = Set("textForeColor"), Location = new Point(10, 10)
-            };
+            var textForeColor = new ColorSelectDialog {Text = @"テキストボックスの文字色", Color = Set("textForeColor"), Location = new Point(10, 10)};
             Controls.Add(textForeColor);
         }
     }

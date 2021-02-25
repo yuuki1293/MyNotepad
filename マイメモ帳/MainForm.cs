@@ -109,6 +109,7 @@ namespace マイメモ帳
             {
                 OpenFile();
                 TextHistory.Reset();
+                もとに戻すUToolStripMenuItem.Enabled = false;
             }
         }
 
@@ -377,7 +378,7 @@ namespace マイメモ帳
         private List<int> CursorLengthPosition { get; set; } = new List<int>();
 
         public bool UseUndoRedo { get; set; }
-        public bool CanUndo => HistoryNum != 0;
+        public bool CanUndo => HistoryNum > 0;
         public bool CanRedo => HistoryNum != History.Count - 1;
 
         public TextHistory(TextBox txtMemo)
