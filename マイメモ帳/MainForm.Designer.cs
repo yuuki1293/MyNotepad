@@ -315,6 +315,7 @@ namespace マイメモ帳
             // 
             this.色CToolStripMenuItem.Name = "色CToolStripMenuItem";
             resources.ApplyResources(this.色CToolStripMenuItem, "色CToolStripMenuItem");
+            this.色CToolStripMenuItem.Click += new System.EventHandler(this.色CToolStripMenuItem_Click);
             // 
             // 表示ToolStripMenuItem
             // 

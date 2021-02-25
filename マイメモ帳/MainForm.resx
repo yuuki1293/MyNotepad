@@ -415,37 +415,37 @@
     <value>日付と時刻(&amp;D)</value>
   </data>
   <data name="右端で折り返すWToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>254, 34</value>
+    <value>270, 34</value>
   </data>
   <data name="右端で折り返すWToolStripMenuItem.Text" xml:space="preserve">
     <value>右端で折り返す(&amp;W)</value>
   </data>
   <data name="フォントFToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>254, 34</value>
+    <value>270, 34</value>
   </data>
   <data name="フォントFToolStripMenuItem.Text" xml:space="preserve">
     <value>フォント(&amp;F)...</value>
   </data>
   <data name="色CToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>254, 34</value>
+    <value>270, 34</value>
   </data>
   <data name="色CToolStripMenuItem.Text" xml:space="preserve">
     <value>色(&amp;C)...</value>
   </data>
   <data name="ズームZToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 34</value>
+    <value>270, 34</value>
   </data>
   <data name="ズームZToolStripMenuItem.Text" xml:space="preserve">
     <value>ズーム(&amp;Z)</value>
   </data>
   <data name="ステータスバーSToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 34</value>
+    <value>270, 34</value>
   </data>
   <data name="ステータスバーSToolStripMenuItem.Text" xml:space="preserve">
     <value>ステータスバー(&amp;S)</value>
   </data>
   <data name="タイトルバーTToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 34</value>
+    <value>270, 34</value>
   </data>
   <data name="タイトルバーTToolStripMenuItem.Text" xml:space="preserve">
     <value>タイトルバー(&amp;T)</value>

@@ -5,7 +5,6 @@ using System.Drawing;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
-using Microsoft.Win32;
 
 namespace マイメモ帳
 {
@@ -359,6 +358,13 @@ namespace マイメモ帳
         private void text_KeyUp(object sender, KeyEventArgs e)
         {
             TextSelectedCheck();
+        }
+
+        private void 色CToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            色 form1 = new 色();
+            form1.ShowDialog();
+            form1.Dispose();
         }
     }
 
