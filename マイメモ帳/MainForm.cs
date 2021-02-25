@@ -42,10 +42,11 @@ namespace マイメモ帳
         internal MainForm(IReadOnlyList<string> argv)
         {
             InitializeComponent();
+            MessageBox.Show(argv[0]);
             if (argv.Count > 0)
             {
-                text.Text = File.ReadAllText(argv[0]);
-                SetTitle = argv[0];
+                SetTitle = String.Join(" ",argv);
+                text.Text = File.ReadAllText(FilePath);
             }
             else
             {
@@ -204,6 +205,7 @@ namespace マイメモ帳
 
         private void Txt_memo_TextChanged(object sender, EventArgs e)
         {
+            if (TextHistory == null) return;
             if (!TextHistory.UseUndoRedo)
             {
                 TextHistory.Add();
@@ -377,7 +379,7 @@ namespace マイメモ帳
         private List<int> CursorStartPosition { get; set; } = new List<int>();
         private List<int> CursorLengthPosition { get; set; } = new List<int>();
 
-        public bool UseUndoRedo { get; set; }
+        public bool UseUndoRedo { get; set; } = false;
         public bool CanUndo => HistoryNum > 0;
         public bool CanRedo => HistoryNum != History.Count - 1;
 
