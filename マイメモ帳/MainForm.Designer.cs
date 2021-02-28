@@ -412,6 +412,8 @@ namespace マイメモ帳
             // 
             // text
             // 
+            this.text.AcceptsReturn = true;
+            this.text.AcceptsTab = true;
             resources.ApplyResources(this.text, "text");
             this.text.Name = "text";
             this.text.TabStop = false;

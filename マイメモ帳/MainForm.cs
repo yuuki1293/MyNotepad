@@ -44,7 +44,8 @@ namespace マイメモ帳
             InitializeComponent();
             if (argv.Count > 0)
             {
-                SetTitle = String.Join(" ",argv);
+                SetTitle = string.Join(" ",argv);
+                // text.Text = string.Join("\r\n",File.ReadAllLines(FilePath));
                 text.Text = File.ReadAllText(FilePath);
             }
             else
@@ -54,14 +55,14 @@ namespace マイメモ帳
             }
         }
 
+       public static Set(string name)
+        {
+            var colorBaf = Convert.ToInt32(Value.Color.Default.ResourceManager.GetString(name), 16);
+            return Color.FromArgb(colorBaf);
+        }
+
         internal void ColorChange()
         {
-            Color Set(string name)
-            {
-                var colorBaf = Convert.ToInt32(Value.Color.Default.ResourceManager.GetString(name), 16);
-                return Color.FromArgb(colorBaf);
-            }
-
             text.ForeColor = Set("textForeColor");
             text.BackColor = Set("textBackColor");
             menuStrip.ForeColor = Set("menuStripForeColor");

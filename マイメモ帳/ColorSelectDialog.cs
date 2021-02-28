@@ -6,7 +6,7 @@ namespace マイメモ帳
 {
     public partial class ColorSelectDialog : UserControl
     {
-        internal Color Color { get; set; }
+        internal string Color { get; set; }
 
         public ColorSelectDialog()
         {

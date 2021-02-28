@@ -39,7 +39,7 @@ namespace マイメモ帳.Value.Color {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("マイメモ帳.Value.Color.Default", typeof(Default).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("マイメモ帳.Value.ColorName.Default", typeof(Default).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

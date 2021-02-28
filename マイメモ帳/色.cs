@@ -18,13 +18,13 @@ namespace マイメモ帳
 
         internal void ColorChange()
         {
-            Color Set(string name)
+            static Color SetColor(string name)
             {
                 var colorBaf = Convert.ToInt32(Value.Color.Default.ResourceManager.GetString(name), 16);
                 return Color.FromArgb(colorBaf);
             }
 
-            var textForeColor = new ColorSelectDialog {Text = @"テキストボックスの文字色", Color = Set("textForeColor"), Location = new Point(10, 10)};
+            var textForeColor = new ColorSelectDialog {Text = @"テキストボックスの文字色", Color ="textForeColor", Location = new Point(10, 10)};
             Controls.Add(textForeColor);
         }
     }
