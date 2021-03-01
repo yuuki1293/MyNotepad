@@ -35,16 +35,16 @@ namespace マイメモ帳
             }
         }
         private string FilePath { get; set; }
-        private PageSetupDialog PageSetupDialog { get; set; } = new PageSetupDialog();
+        private PageSetupDialog PageSetupDialog { get; set; } = new();
         private TextHistory TextHistory { get; set; }
-        public static Data Data { get; set; } = new Data();
+        public static Data Data { get; set; } = new();
 
         internal MainForm(IReadOnlyList<string> argv)
         {
             InitializeComponent();
             if (argv.Count > 0)
             {
-                SetTitle = string.Join(" ",argv);
+                SetTitle = string.Join(" ", argv);
                 // text.Text = string.Join("\r\n",File.ReadAllLines(FilePath));
                 text.Text = File.ReadAllText(FilePath);
             }
@@ -55,7 +55,7 @@ namespace マイメモ帳
             }
         }
 
-       public static Set(string name)
+        public static Color Set(string name)
         {
             var colorBaf = Convert.ToInt32(Value.Color.Default.ResourceManager.GetString(name), 16);
             return Color.FromArgb(colorBaf);
@@ -75,7 +75,9 @@ namespace マイメモ帳
             set => base.Text = value;
         }
 
-        //保存するor保存しない：0　キャンセル：-1
+        ///<summary>
+        ///保存するor保存しない：0　キャンセル：-1
+        /// </summary>
         private int 保存しますか()
         {
             if (!SavedText.Equals(text.Text))
@@ -373,11 +375,11 @@ namespace マイメモ帳
 
     internal class TextHistory
     {
-        private List<string> History { get; set; } = new List<string>();
+        private List<string> History { get; set; } = new();
         private int HistoryNum { get; set; }
         private TextBox TxtMemo { get; }
-        private List<int> CursorStartPosition { get; set; } = new List<int>();
-        private List<int> CursorLengthPosition { get; set; } = new List<int>();
+        private List<int> CursorStartPosition { get; set; } = new();
+        private List<int> CursorLengthPosition { get; set; } = new();
 
         public bool UseUndoRedo { get; set; } = false;
         public bool CanUndo => HistoryNum > 0;

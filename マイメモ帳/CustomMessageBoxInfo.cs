@@ -11,8 +11,8 @@ namespace マイメモ帳
         public bool ShowIcon { get; set; } = false;
         public int Result { get; set; }
         public int CancelChoose { get; set; } = 0;
-        public Font MessageFont { get; set; } = new Font("Yu Gothic UI", 12);
-        public Font ChooseFont { get; set; } = new Font("Yu Gothic UI", 9);
+        public Font MessageFont { get; set; } = new("Yu Gothic UI", 12);
+        public Font ChooseFont { get; set; } = new("Yu Gothic UI", 9);
         public Color MessageColor { get; set; } = Color.FromArgb(0, 51, 153);
     }
 }

@@ -19,11 +19,9 @@ namespace マイメモ帳
             var path = Path.Combine(Application.UserAppDataPath, "usersetting.xml");
 
             var xml = new XmlSerializer(typeof(Data));
-            using (var streamWriter = new StreamWriter(path, false, Encoding.UTF8))
-            {
-                xml.Serialize(streamWriter, this);
-                streamWriter.Flush();
-            }
+            using var streamWriter = new StreamWriter(path, false, Encoding.UTF8);
+            xml.Serialize(streamWriter, this);
+            streamWriter.Flush();
         }
 
         internal Data Load()
@@ -34,13 +32,11 @@ namespace マイメモ帳
             if (!File.Exists(path)) { return new Data(); }
 
             var settings = new XmlReaderSettings { CheckCharacters = false };
-            using (var streamReader = new StreamReader(path,Encoding.UTF8)) 
-            using (var xmlReader = XmlReader.Create(streamReader,settings))
-            {
-                Data data =(Data)xmlSerializer.Deserialize(xmlReader);
-                streamReader.Close();
-                return data;
-            }
+            using var streamReader = new StreamReader(path,Encoding.UTF8);
+            using var xmlReader = XmlReader.Create(streamReader,settings);
+            Data data =(Data)xmlSerializer.Deserialize(xmlReader);
+            streamReader.Close();
+            return data;
         }
 
         [EditorBrowsable(EditorBrowsableState.Never)]
