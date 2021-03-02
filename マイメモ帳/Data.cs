@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using System.Xml.Serialization;
 
 namespace マイメモ帳
 {
@@ -16,19 +17,18 @@ namespace マイメモ帳
 
         internal void Save()
         {
-            // var path = Path.Combine(Application.UserAppDataPath, "usersetting.xml");
-            //
-            // var xml = new XmlSerializer(typeof(Data));
-            // using (var streamWriter = new StreamWriter(path, false, Encoding.UTF8))
-            // {
-            //     xml.Serialize(streamWriter, this);
-            //     streamWriter.Flush();
-            // }
+            var path = Path.Combine(Application.UserAppDataPath, "usersetting.xml");
+
+            var xml = XElement.Load(path);
+            xml.Elements("ShowTitleBar").Single().Value = ShowTitleBar.ToString();
+
+            xml.Save(path);
         }
 
         internal void Load()
         {
             var path = Path.Combine(Application.UserAppDataPath, "usersetting.xml");
+
             var xml = XElement.Load(path);
             ShowTitleBar = Convert.ToBoolean(xml.Elements("ShowTitleBar").Single().Value);
             var loadFont = xml.Elements("Font");
