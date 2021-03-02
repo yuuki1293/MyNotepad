@@ -54,9 +54,7 @@ namespace マイメモ帳
                 Text = SetTitle;
             }
         }
-
-        public static Color Set(string name)
-        {
+        
             Color Set(string name)=> Data.Colors[name];
 
         internal void ColorChange()

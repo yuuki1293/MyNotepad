@@ -6,7 +6,7 @@ namespace マイメモ帳
 {
     public partial class ColorSelectDialog : UserControl
     {
-        internal string ColorName { get; set; }
+        internal Color Color { get; set; }
 
         public ColorSelectDialog()
         {
@@ -15,12 +15,12 @@ namespace マイメモ帳
 
         private void ColorButton_Click(object sender, EventArgs e)
         {
-            colorDialog1.Color = MainForm.Set(ColorName);
+            colorDialog1.Color = Color;
             if (colorDialog1.ShowDialog() == DialogResult.OK)
             {
-                 = colorDialog1.Color;
-                ColorButton.BackColor = ColorName;
-                maskedTextBoxHex.Text = Value.Color.Default.ResourceManager.GetString(ColorName);
+                Color = colorDialog1.Color;
+                ColorButton.BackColor = Color;
+                maskedTextBoxHex.Text = Color.ToString();
             }
         }
 
@@ -37,7 +37,7 @@ namespace マイメモ帳
 
         private void ColorSelectDialog_Load(object sender, EventArgs e)
         {
-            ColorButton.BackColor = ColorName;
+            ColorButton.BackColor = Color;
             label1.Text = Text;
         }
     }
