@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -20,6 +21,17 @@ namespace マイメモ帳
 
             var xml = XElement.Load(path);
             xml.Elements("ShowTitleBar").Single().Value = ShowTitleBar.ToString();
+            var fontElements = xml.Elements("Font");
+            var xElements = fontElements as XElement[] ?? fontElements.ToArray();
+            xElements.Elements("Name").Single().Value = TextFont.Name;
+            xElements.Elements("Size").Single().Value = TextFont.Size.ToString(CultureInfo.InvariantCulture);
+            xElements.Elements("Bold").Single().Value = TextFont.Bold.ToString();
+            xElements.Elements("Italic").Single().Value = TextFont.Italic.ToString(); 
+            foreach (var color in Colors)
+            {
+                MessageBox.Show(color.Value.ToArgb().ToString());
+                xml.Elements("Color").Attributes(color.Key).Single().Value = color.Value.ToArgb().ToString();
+            }
 
             xml.Save(path);
         }
@@ -32,10 +44,10 @@ namespace マイメモ帳
 
             }
             var xml = XElement.Load(path);
-            ShowTitleBar = Convert.ToBoolean(NodeExists(xml,"ShowTitleBar","true"));
+            ShowTitleBar = Convert.ToBoolean(NodeExists(xml, "ShowTitleBar", "true"));
             try
             {
-                var loadFont = xml.Elements("Font"); 
+                var loadFont = xml.Elements("Font");
                 var xElements = loadFont as XElement[] ?? loadFont.ToArray();
                 var bold = Convert.ToBoolean(xElements.Elements("Bold").Single().Value);
                 var italic = Convert.ToBoolean(xElements.Elements("Italic").Single().Value);
@@ -53,15 +65,15 @@ namespace マイメモ帳
             {
                 xml.Elements("Font").Remove();
                 xml.Add(new XElement("Font",
-                    new XElement("Name","MS UI Gothic"),
-                    new XElement("Size",12),
-                    new XElement("Bold",false),
-                    new XElement("Italic",false)
+                    new XElement("Name", "MS UI Gothic"),
+                    new XElement("Size", 12),
+                    new XElement("Bold", false),
+                    new XElement("Italic", false)
                 ));
-                TextFont = new Font("MS UI Gothic",12);
+                TextFont = new Font("MS UI Gothic", 12);
             }
-            
-            if (!xml.Elements("Color").Any())xml.Add(new XElement("Color"));
+
+            if (!xml.Elements("Color").Any()) xml.Add(new XElement("Color"));
             var colors = xml.Elements("Color");
             Colors = new Dictionary<string, Color>();
             foreach (var color in colors)
