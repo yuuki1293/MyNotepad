@@ -10,7 +10,7 @@ namespace マイメモ帳
 {
     public partial class NewFontDialog : Form
     {
-        private Dictionary<FontStyle, string> FontStyleToString { get; } = new Dictionary<FontStyle, string>(){
+        private Dictionary<FontStyle, string> FontStyleToString { get; } = new(){
             { FontStyle.Regular,"標準" },
             { FontStyle.Bold,"太字" },
             { FontStyle.Italic,"斜体" },

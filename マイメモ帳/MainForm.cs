@@ -35,16 +35,17 @@ namespace マイメモ帳
             }
         }
         private string FilePath { get; set; }
-        private PageSetupDialog PageSetupDialog { get; set; } = new PageSetupDialog();
+        private PageSetupDialog PageSetupDialog { get; set; } = new();
         private TextHistory TextHistory { get; set; }
-        public static Data Data { get; set; } = new Data();
+        public static Data Data { get; set; } = new();
 
         internal MainForm(IReadOnlyList<string> argv)
         {
             InitializeComponent();
             if (argv.Count > 0)
             {
-                SetTitle = String.Join(" ",argv);
+                SetTitle = string.Join(" ", argv);
+                // text.Text = string.Join("\r\n",File.ReadAllLines(FilePath));
                 text.Text = File.ReadAllText(FilePath);
             }
             else
@@ -54,10 +55,12 @@ namespace マイメモ帳
             }
         }
 
-        internal void ColorChange()
+        public static Color Set(string name)
         {
             Color Set(string name)=> Data.Colors[name];
 
+        internal void ColorChange()
+        {
             text.ForeColor = Set("textForeColor");
             text.BackColor = Set("textBackColor");
             menuStrip.ForeColor = Set("menuStripForeColor");
@@ -370,11 +373,11 @@ namespace マイメモ帳
 
     internal class TextHistory
     {
-        private List<string> History { get; set; } = new List<string>();
+        private List<string> History { get; set; } = new();
         private int HistoryNum { get; set; }
         private TextBox TxtMemo { get; }
-        private List<int> CursorStartPosition { get; set; } = new List<int>();
-        private List<int> CursorLengthPosition { get; set; } = new List<int>();
+        private List<int> CursorStartPosition { get; set; } = new();
+        private List<int> CursorLengthPosition { get; set; } = new();
 
         public bool UseUndoRedo { get; set; } = false;
         public bool CanUndo => HistoryNum > 0;

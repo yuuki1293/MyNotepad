@@ -376,19 +376,19 @@
     <value>編集(&amp;E)</value>
   </data>
   <data name="右端で折り返すWToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 34</value>
+    <value>254, 34</value>
   </data>
   <data name="右端で折り返すWToolStripMenuItem.Text" xml:space="preserve">
     <value>右端で折り返す(&amp;W)</value>
   </data>
   <data name="フォントFToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 34</value>
+    <value>254, 34</value>
   </data>
   <data name="フォントFToolStripMenuItem.Text" xml:space="preserve">
     <value>フォント(&amp;F)...</value>
   </data>
   <data name="色CToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 34</value>
+    <value>254, 34</value>
   </data>
   <data name="色CToolStripMenuItem.Text" xml:space="preserve">
     <value>色(&amp;C)...</value>
@@ -541,7 +541,7 @@
     <value>Fill</value>
   </data>
   <data name="text.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 35</value>
+    <value>0, 33</value>
   </data>
   <data name="text.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -550,7 +550,7 @@
     <value>Both</value>
   </data>
   <data name="text.Size" type="System.Drawing.Size, System.Drawing">
-    <value>800, 415</value>
+    <value>800, 417</value>
   </data>
   <data name="text.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
