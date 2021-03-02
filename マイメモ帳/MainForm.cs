@@ -187,7 +187,7 @@ namespace マイメモ帳
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Data = Data.Load();
+            Data.Load();
             text.Font = Data.TextFont;
             TextHistory = new TextHistory(text);
             ColorChange();

@@ -1,9 +1,10 @@
 ﻿using System.ComponentModel;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using System.Xml;
+using System.Xml.Linq;
 using System.Xml.Serialization;
 
 namespace マイメモ帳
@@ -26,21 +27,30 @@ namespace マイメモ帳
             }
         }
 
-        internal Data Load()
+        internal void Load()
         {
-            var xmlSerializer = new XmlSerializer(typeof(Data));
+            //var xmlSerializer = new XmlSerializer(typeof(Data));
             var path = Path.Combine(Application.UserAppDataPath, "usersetting.xml");
+            XElement xml = XElement.Load(path);
+            var infos = from item in xml.Elements("ShowTitleBar")
+                select item;
 
-            if (!File.Exists(path)) { return new Data(); }
-
-            var settings = new XmlReaderSettings { CheckCharacters = false };
-            using (var streamReader = new StreamReader(path,Encoding.UTF8)) 
-            using (var xmlReader = XmlReader.Create(streamReader,settings))
+            //要素分ループして、コンソールに表示
+            foreach (var info in infos)
             {
-                Data data =(Data)xmlSerializer.Deserialize(xmlReader);
-                streamReader.Close();
-                return data;
+                MessageBox.Show(info.Value);
             }
+
+            // if (!File.Exists(path)) { return new Data(); }
+            //
+            // var settings = new XmlReaderSettings { CheckCharacters = false };
+            // using (var streamReader = new StreamReader(path,Encoding.UTF8)) 
+            // using (var xmlReader = XmlReader.Create(streamReader,settings))
+            // {
+            //     Data data =(Data)xmlSerializer.Deserialize(xmlReader);
+            //     streamReader.Close();
+            //     return data;
+            // }
         }
 
         [EditorBrowsable(EditorBrowsableState.Never)]

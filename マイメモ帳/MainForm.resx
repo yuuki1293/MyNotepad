@@ -120,63 +120,11 @@
   <metadata name="menuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="ファイルToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 29</value>
-  </data>
-  <data name="ファイルToolStripMenuItem.Text" xml:space="preserve">
-    <value>ファイル(&amp;F)</value>
-  </data>
-  <data name="編集ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 29</value>
-  </data>
-  <data name="編集ToolStripMenuItem.Text" xml:space="preserve">
-    <value>編集(&amp;E)</value>
-  </data>
-  <data name="書式OToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 29</value>
-  </data>
-  <data name="書式OToolStripMenuItem.Text" xml:space="preserve">
-    <value>書式(&amp;O)</value>
-  </data>
-  <data name="表示ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>85, 29</value>
-  </data>
-  <data name="表示ToolStripMenuItem.Text" xml:space="preserve">
-    <value>表示(&amp;V)</value>
-  </data>
-  <data name="ヘルプHToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 29</value>
-  </data>
-  <data name="ヘルプHToolStripMenuItem.Text" xml:space="preserve">
-    <value>ヘルプ(&amp;H)</value>
-  </data>
-  <data name="menuStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="menuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>800, 35</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="menuStrip.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;menuStrip.Name" xml:space="preserve">
-    <value>menuStrip</value>
-  </data>
-  <data name="&gt;&gt;menuStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;menuStrip.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;menuStrip.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="新規toolStripMenuItem1.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+N</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="新規toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>388, 34</value>
   </data>
@@ -222,6 +170,7 @@
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>385, 6</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ページ設定toolStripMenuItem1.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -251,6 +200,12 @@
   </data>
   <data name="終了ToolStripMenuItem.Text" xml:space="preserve">
     <value>終了(&amp;X)</value>
+  </data>
+  <data name="ファイルToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 29</value>
+  </data>
+  <data name="ファイルToolStripMenuItem.Text" xml:space="preserve">
+    <value>ファイル(&amp;F)</value>
   </data>
   <data name="もとに戻すUToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -414,6 +369,12 @@
   <data name="日付と時刻DToolStripMenuItem.Text" xml:space="preserve">
     <value>日付と時刻(&amp;D)</value>
   </data>
+  <data name="編集ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 29</value>
+  </data>
+  <data name="編集ToolStripMenuItem.Text" xml:space="preserve">
+    <value>編集(&amp;E)</value>
+  </data>
   <data name="右端で折り返すWToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>270, 34</value>
   </data>
@@ -432,23 +393,35 @@
   <data name="色CToolStripMenuItem.Text" xml:space="preserve">
     <value>色(&amp;C)...</value>
   </data>
+  <data name="書式OToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 29</value>
+  </data>
+  <data name="書式OToolStripMenuItem.Text" xml:space="preserve">
+    <value>書式(&amp;O)</value>
+  </data>
   <data name="ズームZToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 34</value>
+    <value>229, 34</value>
   </data>
   <data name="ズームZToolStripMenuItem.Text" xml:space="preserve">
     <value>ズーム(&amp;Z)</value>
   </data>
   <data name="ステータスバーSToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 34</value>
+    <value>229, 34</value>
   </data>
   <data name="ステータスバーSToolStripMenuItem.Text" xml:space="preserve">
     <value>ステータスバー(&amp;S)</value>
   </data>
   <data name="タイトルバーTToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 34</value>
+    <value>229, 34</value>
   </data>
   <data name="タイトルバーTToolStripMenuItem.Text" xml:space="preserve">
     <value>タイトルバー(&amp;T)</value>
+  </data>
+  <data name="表示ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 29</value>
+  </data>
+  <data name="表示ToolStripMenuItem.Text" xml:space="preserve">
+    <value>表示(&amp;V)</value>
   </data>
   <data name="ヘルプの表示ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>272, 34</value>
@@ -470,6 +443,33 @@
   </data>
   <data name="バージョン情報AToolStripMenuItem.Text" xml:space="preserve">
     <value>バージョン情報(&amp;A)</value>
+  </data>
+  <data name="ヘルプHToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 29</value>
+  </data>
+  <data name="ヘルプHToolStripMenuItem.Text" xml:space="preserve">
+    <value>ヘルプ(&amp;H)</value>
+  </data>
+  <data name="menuStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="menuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>800, 35</value>
+  </data>
+  <data name="menuStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip.Name" xml:space="preserve">
+    <value>menuStrip</value>
+  </data>
+  <data name="&gt;&gt;menuStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuStrip.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;menuStrip.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <metadata name="pageSetupDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>166, 14</value>
