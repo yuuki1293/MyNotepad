@@ -56,11 +56,7 @@ namespace マイメモ帳
 
         internal void ColorChange()
         {
-            Color Set(string name)
-            {
-                var colorBaf = Convert.ToInt32(Value.Color.Default.ResourceManager.GetString(name), 16);
-                return Color.FromArgb(colorBaf);
-            }
+            Color Set(string name)=> Data.Colors[name];
 
             text.ForeColor = Set("textForeColor");
             text.BackColor = Set("textBackColor");
