@@ -68,13 +68,15 @@ namespace マイメモ帳
             menuStrip.BackColor = Set("menuStripBackColor");
         }
 
-        public sealed override string Text
-        {
-            get => base.Text;
-            set => base.Text = value;
-        }
+        //public sealed override string Text
+        // {
+        //     get => base.Text;
+        //     set => base.Text = value;
+        // }
 
-        //保存するor保存しない：0　キャンセル：-1
+        /// <summary>
+        /// 保存するor保存しない：0　キャンセル：-1
+        /// </summary>
         private int 保存しますか()
         {
             if (!SavedText.Equals(text.Text))

@@ -57,10 +57,11 @@ namespace マイメモ帳
             // 
             // maskedTextBoxHex
             // 
+            this.maskedTextBoxHex.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.maskedTextBoxHex.Location = new System.Drawing.Point(395, 0);
-            this.maskedTextBoxHex.Mask = "AA AA AA AA";
+            this.maskedTextBoxHex.Mask = " AA AA AA AA";
             this.maskedTextBoxHex.Name = "maskedTextBoxHex";
-            this.maskedTextBoxHex.Size = new System.Drawing.Size(100, 25);
+            this.maskedTextBoxHex.Size = new System.Drawing.Size(121, 25);
             this.maskedTextBoxHex.TabIndex = 2;
             this.maskedTextBoxHex.Text = "FFFFFFFF";
             this.maskedTextBoxHex.KeyDown += new System.Windows.Forms.KeyEventHandler(this.maskedTextBox1_KeyDown);
@@ -74,7 +75,7 @@ namespace マイメモ帳
             this.Controls.Add(this.ColorButton);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "ColorSelectDialog";
-            this.Size = new System.Drawing.Size(500, 24);
+            this.Size = new System.Drawing.Size(516, 24);
             this.Load += new System.EventHandler(this.ColorSelectDialog_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
