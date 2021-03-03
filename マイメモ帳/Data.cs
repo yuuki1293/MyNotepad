@@ -39,10 +39,6 @@ namespace マイメモ帳
         internal void Load()
         {
             var path = Path.Combine(Application.UserAppDataPath, "usersetting.xml");
-            if (!File.Exists(path))
-            {
-                MessageBox.Show("ファイルがないよ!!");
-            }
             var xml = XElement.Load(path);
             ShowTitleBar = Convert.ToBoolean(NodeExists(xml, "ShowTitleBar", "true"));
             try
@@ -85,7 +81,7 @@ namespace マイメモ帳
             xml.Save(path);
         }
 
-        private string NodeExists(XElement xml, string nodeName, string defaultValue = null)
+        private static string NodeExists(XContainer xml, string nodeName, string defaultValue = null)
         {
             try
             {
@@ -96,11 +92,6 @@ namespace マイメモ帳
                 xml.Add(new XElement(nodeName, defaultValue));
                 return defaultValue;
             }
-        }
-
-        private void SettingReset(string path)
-        {
-            File.Create(path);
         }
     }
 }

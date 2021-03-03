@@ -29,7 +29,7 @@ namespace マイメモ帳
                 count += 25;
             }
 
-            Height = count + 50;
+            Height = count;
         }
 
         private void OKボタン_Click(object sender, System.EventArgs e)

@@ -178,7 +178,7 @@
     <value>388, 34</value>
   </data>
   <data name="ページ設定toolStripMenuItem1.Text" xml:space="preserve">
-    <value>ページ設定(&amp;U)...(未実装)</value>
+    <value>ページ設定(&amp;U)...</value>
   </data>
   <data name="印刷toolStripMenuItem1.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -190,7 +190,7 @@
     <value>388, 34</value>
   </data>
   <data name="印刷toolStripMenuItem1.Text" xml:space="preserve">
-    <value>印刷(&amp;P)...(未実装)</value>
+    <value>印刷(&amp;P)...</value>
   </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
     <value>385, 6</value>
@@ -376,19 +376,19 @@
     <value>編集(&amp;E)</value>
   </data>
   <data name="右端で折り返すWToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>254, 34</value>
+    <value>270, 34</value>
   </data>
   <data name="右端で折り返すWToolStripMenuItem.Text" xml:space="preserve">
     <value>右端で折り返す(&amp;W)</value>
   </data>
   <data name="フォントFToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>254, 34</value>
+    <value>270, 34</value>
   </data>
   <data name="フォントFToolStripMenuItem.Text" xml:space="preserve">
     <value>フォント(&amp;F)...</value>
   </data>
   <data name="色CToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>254, 34</value>
+    <value>270, 34</value>
   </data>
   <data name="色CToolStripMenuItem.Text" xml:space="preserve">
     <value>色(&amp;C)...</value>
@@ -400,19 +400,22 @@
     <value>書式(&amp;O)</value>
   </data>
   <data name="ズームZToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 34</value>
+    <value>270, 34</value>
   </data>
   <data name="ズームZToolStripMenuItem.Text" xml:space="preserve">
     <value>ズーム(&amp;Z)</value>
   </data>
+  <data name="ステータスバーSToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="ステータスバーSToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 34</value>
+    <value>270, 34</value>
   </data>
   <data name="ステータスバーSToolStripMenuItem.Text" xml:space="preserve">
     <value>ステータスバー(&amp;S)</value>
   </data>
   <data name="タイトルバーTToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 34</value>
+    <value>270, 34</value>
   </data>
   <data name="タイトルバーTToolStripMenuItem.Text" xml:space="preserve">
     <value>タイトルバー(&amp;T)</value>
@@ -422,6 +425,9 @@
   </data>
   <data name="表示ToolStripMenuItem.Text" xml:space="preserve">
     <value>表示(&amp;V)</value>
+  </data>
+  <data name="ヘルプの表示ToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="ヘルプの表示ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>272, 34</value>
@@ -437,6 +443,9 @@
   </data>
   <data name="toolStripSeparator6.Size" type="System.Drawing.Size, System.Drawing">
     <value>269, 6</value>
+  </data>
+  <data name="バージョン情報AToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="バージョン情報AToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>272, 34</value>
@@ -454,7 +463,7 @@
     <value>0, 0</value>
   </data>
   <data name="menuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>800, 35</value>
+    <value>800, 33</value>
   </data>
   <data name="menuStrip.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>

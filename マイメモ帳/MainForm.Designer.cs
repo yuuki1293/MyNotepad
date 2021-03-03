@@ -333,8 +333,8 @@ namespace マイメモ帳
             // 
             // ステータスバーSToolStripMenuItem
             // 
-            this.ステータスバーSToolStripMenuItem.Name = "ステータスバーSToolStripMenuItem";
             resources.ApplyResources(this.ステータスバーSToolStripMenuItem, "ステータスバーSToolStripMenuItem");
+            this.ステータスバーSToolStripMenuItem.Name = "ステータスバーSToolStripMenuItem";
             // 
             // タイトルバーTToolStripMenuItem
             // 
@@ -354,8 +354,8 @@ namespace マイメモ帳
             // 
             // ヘルプの表示ToolStripMenuItem
             // 
-            this.ヘルプの表示ToolStripMenuItem.Name = "ヘルプの表示ToolStripMenuItem";
             resources.ApplyResources(this.ヘルプの表示ToolStripMenuItem, "ヘルプの表示ToolStripMenuItem");
+            this.ヘルプの表示ToolStripMenuItem.Name = "ヘルプの表示ToolStripMenuItem";
             // 
             // フィードバックを送信FToolStripMenuItem
             // 
@@ -370,8 +370,8 @@ namespace マイメモ帳
             // 
             // バージョン情報AToolStripMenuItem
             // 
-            this.バージョン情報AToolStripMenuItem.Name = "バージョン情報AToolStripMenuItem";
             resources.ApplyResources(this.バージョン情報AToolStripMenuItem, "バージョン情報AToolStripMenuItem");
+            this.バージョン情報AToolStripMenuItem.Name = "バージョン情報AToolStripMenuItem";
             // 
             // printDialog1
             // 

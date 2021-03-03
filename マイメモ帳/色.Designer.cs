@@ -35,6 +35,7 @@ namespace マイメモ帳
             // 
             // OKボタン
             // 
+            this.OKボタン.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.OKボタン.Location = new System.Drawing.Point(417, 404);
             this.OKボタン.Name = "OKボタン";
             this.OKボタン.Size = new System.Drawing.Size(110, 34);
@@ -45,6 +46,7 @@ namespace マイメモ帳
             // 
             // キャンセルボタン
             // 
+            this.キャンセルボタン.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.キャンセルボタン.Location = new System.Drawing.Point(301, 404);
             this.キャンセルボタン.Name = "キャンセルボタン";
             this.キャンセルボタン.Size = new System.Drawing.Size(110, 34);
