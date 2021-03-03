@@ -29,8 +29,8 @@ namespace マイメモ帳
             xElements.Elements("Italic").Single().Value = TextFont.Italic.ToString(); 
             foreach (var color in Colors)
             {
-                MessageBox.Show(color.Value.ToArgb().ToString());
-                xml.Elements("Color").Attributes(color.Key).Single().Value = color.Value.ToArgb().ToString();
+                xml.Elements("Color")
+                    .Single(y => y.Attributes("name").Single().Value == color.Key).Value = Convert.ToString(color.Value.ToArgb(),16);
             }
 
             xml.Save(path);
@@ -41,7 +41,7 @@ namespace マイメモ帳
             var path = Path.Combine(Application.UserAppDataPath, "usersetting.xml");
             if (!File.Exists(path))
             {
-
+                MessageBox.Show("ファイルがないよ!!");
             }
             var xml = XElement.Load(path);
             ShowTitleBar = Convert.ToBoolean(NodeExists(xml, "ShowTitleBar", "true"));
