@@ -32,7 +32,7 @@ namespace マイメモ帳
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.ColorButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.maskedTextBoxHex = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // ColorButton
@@ -55,22 +55,22 @@ namespace マイメモ帳
             this.label1.TabIndex = 1;
             this.label1.Text = "label1";
             // 
-            // maskedTextBoxHex
+            // maskedTextBox
             // 
-            this.maskedTextBoxHex.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.maskedTextBoxHex.Location = new System.Drawing.Point(395, 0);
-            this.maskedTextBoxHex.Mask = " AA AA AA AA";
-            this.maskedTextBoxHex.Name = "maskedTextBoxHex";
-            this.maskedTextBoxHex.Size = new System.Drawing.Size(121, 25);
-            this.maskedTextBoxHex.TabIndex = 2;
-            this.maskedTextBoxHex.Text = "FFFFFFFF";
-            this.maskedTextBoxHex.KeyDown += new System.Windows.Forms.KeyEventHandler(this.maskedTextBox1_KeyDown);
+            this.maskedTextBox.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.maskedTextBox.Location = new System.Drawing.Point(395, 0);
+            this.maskedTextBox.Mask = " AA AA AA AA";
+            this.maskedTextBox.Name = "maskedTextBox";
+            this.maskedTextBox.Size = new System.Drawing.Size(121, 25);
+            this.maskedTextBox.TabIndex = 2;
+            this.maskedTextBox.Text = "FFFFFFFF";
+            this.maskedTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.maskedTextBox1_KeyDown);
             // 
             // ColorSelectDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.maskedTextBoxHex);
+            this.Controls.Add(this.maskedTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ColorButton);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -87,6 +87,6 @@ namespace マイメモ帳
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Button ColorButton;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxHex;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox;
     }
 }

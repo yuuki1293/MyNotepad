@@ -29,13 +29,37 @@ namespace マイメモ帳
         /// </summary>
         private void InitializeComponent()
         {
+            this.OKボタン = new System.Windows.Forms.Button();
+            this.キャンセルボタン = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // OKボタン
+            // 
+            this.OKボタン.Location = new System.Drawing.Point(417, 404);
+            this.OKボタン.Name = "OKボタン";
+            this.OKボタン.Size = new System.Drawing.Size(110, 34);
+            this.OKボタン.TabIndex = 0;
+            this.OKボタン.Text = "OK";
+            this.OKボタン.UseVisualStyleBackColor = true;
+            this.OKボタン.Click += new System.EventHandler(this.OKボタン_Click);
+            // 
+            // キャンセルボタン
+            // 
+            this.キャンセルボタン.Location = new System.Drawing.Point(301, 404);
+            this.キャンセルボタン.Name = "キャンセルボタン";
+            this.キャンセルボタン.Size = new System.Drawing.Size(110, 34);
+            this.キャンセルボタン.TabIndex = 1;
+            this.キャンセルボタン.Text = "キャンセル";
+            this.キャンセルボタン.UseVisualStyleBackColor = true;
+            this.キャンセルボタン.Click += new System.EventHandler(this.キャンセルボタン_Click);
             // 
             // 色
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(518, 450);
+            this.ClientSize = new System.Drawing.Size(539, 450);
+            this.Controls.Add(this.キャンセルボタン);
+            this.Controls.Add(this.OKボタン);
             this.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Name = "色";
             this.ShowIcon = false;
@@ -47,5 +71,8 @@ namespace マイメモ帳
         }
 
         #endregion
+
+        private System.Windows.Forms.Button OKボタン;
+        private System.Windows.Forms.Button キャンセルボタン;
     }
 }

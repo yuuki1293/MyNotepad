@@ -39,7 +39,7 @@ namespace マイメモ帳
         private TextHistory TextHistory { get; set; }
         public static Data Data { get; set; } = new();
 
-        internal MainForm(IReadOnlyList<string> argv)
+        internal MainForm(IReadOnlyCollection<string> argv)
         {
             InitializeComponent();
             if (argv.Count > 0)
@@ -54,8 +54,14 @@ namespace マイメモ帳
                 Text = SetTitle;
             }
         }
-        
-            Color Set(string name)=> Data.Colors[name];
+
+        public sealed override string Text
+        {
+            get => base.Text;
+            set => base.Text = value;
+        }
+
+        Color Set(string name)=> Data.Colors[name];
 
         internal void ColorChange()
         {
@@ -64,12 +70,6 @@ namespace マイメモ帳
             menuStrip.ForeColor = Set("menuStripForeColor");
             menuStrip.BackColor = Set("menuStripBackColor");
         }
-
-        //public sealed override string Text
-        // {
-        //     get => base.Text;
-        //     set => base.Text = value;
-        // }
 
         /// <summary>
         /// 保存するor保存しない：0　キャンセル：-1
@@ -363,8 +363,9 @@ namespace マイメモ帳
 
         private void 色CToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            色 form1 = new 色();
+            var form1 = new 色();
             form1.ShowDialog();
+            ColorChange();
             form1.Dispose();
         }
     }
