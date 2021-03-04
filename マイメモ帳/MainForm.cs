@@ -35,7 +35,6 @@ namespace マイメモ帳
             }
         }
         private string FilePath { get; set; }
-        private PageSetupDialog PageSetupDialog { get; set; } = new();
         private TextHistory TextHistory { get; set; }
         public static Data Data { get; set; } = new();
 
@@ -69,6 +68,15 @@ namespace マイメモ帳
             text.BackColor = Set("textBackColor");
             menuStrip.ForeColor = Set("menuStripForeColor");
             menuStrip.BackColor = Set("menuStripBackColor");
+            foreach (ToolStripItem menuStripItem in menuStrip.Items)
+            {
+                menuStripItem.ForeColor = Set("menuStripForeColor");
+                menuStripItem.BackColor = Set("menuStripBackColor");
+                // foreach (var VARIABLE in menuStripItem)
+                // {
+                //     
+                // }
+            }
         }
 
         /// <summary>
@@ -215,23 +223,10 @@ namespace マイメモ帳
 
         private void ページ設定toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            pageSetupDialog1 = PageSetupDialog;
-            if (pageSetupDialog1.ShowDialog() == DialogResult.OK)
-            {
-                PageSetupDialog = pageSetupDialog1;
-            }
-            pageSetupDialog1.Dispose();
         }
 
         private void 印刷toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (printDialog1.ShowDialog() == DialogResult.OK)
-            {
-                printDocument.DocumentName = SetTitle;
-                printDocument.PrinterSettings = printDialog1.PrinterSettings;
-                printDocument.DefaultPageSettings = PageSetupDialog.PageSettings;
-                printDocument.Print();
-            }
         }
 
         private void やり直すYToolStripMenuItem_Click(object sender, EventArgs e)
@@ -267,7 +262,7 @@ namespace マイメモ帳
 
         private void フォントFToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NewFontDialog newFontDialog = new NewFontDialog { Font = text.Font, Data = Data };
+            var newFontDialog = new NewFontDialog { Font = text.Font, Data = Data };
             if (newFontDialog.ShowDialog() == DialogResult.OK)
             {
                 text.Font = newFontDialog.Font;
@@ -275,7 +270,6 @@ namespace マイメモ帳
             }
 
             newFontDialog.Dispose();
-            // MessageBox.Show(fontDialog.Font.Name);
         }
 
         private void 切り取りCToolStripMenuItem_Click(object sender, EventArgs e)
@@ -378,7 +372,7 @@ namespace マイメモ帳
         private List<int> CursorStartPosition { get; set; } = new();
         private List<int> CursorLengthPosition { get; set; } = new();
 
-        public bool UseUndoRedo { get; set; } = false;
+        public bool UseUndoRedo { get; set; }
         public bool CanUndo => HistoryNum > 0;
         public bool CanRedo => HistoryNum != History.Count - 1;
 
@@ -390,7 +384,6 @@ namespace マイメモ帳
 
         public void Add()
         {
-            //txt_memo.Text = "Addされたよ！";
             if (HistoryNum != History.Count - 1)
             {
                 History.RemoveRange(HistoryNum + 1, History.Count - 1 - HistoryNum);
@@ -426,8 +419,6 @@ namespace マイメモ帳
 
         public int Redo()
         {
-            //MessageBox.Show(historyNum.ToString());
-            //MessageBox.Show(history.Count.ToString());
             if (HistoryNum == History.Count - 1) { return 0; }
             else
             {

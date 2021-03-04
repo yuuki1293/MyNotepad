@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -7,6 +8,7 @@ namespace マイメモ帳
     public partial class ColorSelectDialog : UserControl
     {
         internal Color Color { get; set; }
+        private Dictionary<string, Color> Colors { get; } = MainForm.Data.Colors;
 
         public ColorSelectDialog()
         {
@@ -49,6 +51,11 @@ namespace マイメモ帳
             ColorButton.BackColor = Color;
             label1.Text = Text;
             maskedTextBox.Text = Convert.ToString(Color.ToArgb(),16);
+            BackColor = Colors["formBackColor"];
+            ForeColor = Colors["formForeColor"];
+            label1.ForeColor = Colors["formForeColor"];
+            maskedTextBox.BackColor = Colors["textBackColor"];
+            maskedTextBox.ForeColor = Colors["textForeColor"];
         }
     }
 }

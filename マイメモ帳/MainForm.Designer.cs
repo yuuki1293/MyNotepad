@@ -73,9 +73,6 @@ namespace マイメモ帳
             this.フィードバックを送信FToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.バージョン情報AToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
-            this.printDocument = new System.Drawing.Printing.PrintDocument();
-            this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.BottomToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.TopToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.RightToolStripPanel = new System.Windows.Forms.ToolStripPanel();
@@ -216,6 +213,7 @@ namespace マイメモ帳
             // 
             // 切り取りTToolStripMenuItem
             // 
+            this.切り取りTToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
             resources.ApplyResources(this.切り取りTToolStripMenuItem, "切り取りTToolStripMenuItem");
             this.切り取りTToolStripMenuItem.Name = "切り取りTToolStripMenuItem";
             this.切り取りTToolStripMenuItem.Click += new System.EventHandler(this.切り取りCToolStripMenuItem_Click);
@@ -373,11 +371,6 @@ namespace マイメモ帳
             resources.ApplyResources(this.バージョン情報AToolStripMenuItem, "バージョン情報AToolStripMenuItem");
             this.バージョン情報AToolStripMenuItem.Name = "バージョン情報AToolStripMenuItem";
             // 
-            // printDialog1
-            // 
-            this.printDialog1.Document = this.printDocument;
-            this.printDialog1.UseEXDialog = true;
-            // 
             // BottomToolStripPanel
             // 
             resources.ApplyResources(this.BottomToolStripPanel, "BottomToolStripPanel");
@@ -481,9 +474,6 @@ namespace マイメモ帳
         private System.Windows.Forms.ToolStripMenuItem ヘルプの表示ToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripMenuItem バージョン情報AToolStripMenuItem;
-        private System.Windows.Forms.PageSetupDialog pageSetupDialog1;
-        private System.Drawing.Printing.PrintDocument printDocument;
-        private System.Windows.Forms.PrintDialog printDialog1;
         private System.Windows.Forms.ToolStripMenuItem やり直すYToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem フィードバックを送信FToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 色CToolStripMenuItem;
