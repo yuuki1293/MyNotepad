@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -72,10 +73,8 @@ namespace マイメモ帳
             {
                 menuStripItem.ForeColor = Set("menuStripForeColor");
                 menuStripItem.BackColor = Set("menuStripBackColor");
-                // foreach (var VARIABLE in menuStripItem)
-                // {
-                //     
-                // }
+                var t =menuStrip.Controls;
+                MessageBox.Show(t.ToString());
             }
         }
 
