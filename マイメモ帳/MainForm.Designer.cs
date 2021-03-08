@@ -245,7 +245,7 @@ namespace マイメモ帳
             // 
             resources.ApplyResources(this.bingで検索SToolStripMenuItem, "bingで検索SToolStripMenuItem");
             this.bingで検索SToolStripMenuItem.Name = "bingで検索SToolStripMenuItem";
-            this.bingで検索SToolStripMenuItem.Click += new System.EventHandler(this.bingで検索SToolStripMenuItem_Click);
+            this.bingで検索SToolStripMenuItem.Click += new System.EventHandler(this.Bingで検索SToolStripMenuItem_Click);
             // 
             // 検索FToolStripMenuItem
             // 
@@ -412,7 +412,7 @@ namespace マイメモ帳
             this.text.TabStop = false;
             this.text.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Text_MouseClick);
             this.text.TextChanged += new System.EventHandler(this.Txt_memo_TextChanged);
-            this.text.KeyUp += new System.Windows.Forms.KeyEventHandler(this.text_KeyUp);
+            this.text.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Text_KeyUp);
             this.text.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Text_MouseClick);
             // 
             // MainForm
@@ -426,7 +426,8 @@ namespace マイメモ帳
             this.HelpButton = true;
             this.Name = "MainForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.Resize += new System.EventHandler(this.MainForm_Resize);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.ResumeLayout(false);

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -23,17 +22,7 @@ namespace マイメモ帳
                 _title = Path.GetFileName(FilePath);
                 Text = SetTitle;
             }
-            get
-            {
-                if (SavedText == text.Text)
-                {
-                    return $"{_title} - マイメモ帳";
-                }
-                else
-                {
-                    return $"*{_title} - マイメモ帳";
-                }
-            }
+            get => SavedText == text.Text ? $"{_title} - マイメモ帳" : $"*{_title} - マイメモ帳";
         }
         private string FilePath { get; set; }
         private TextHistory TextHistory { get; set; }
@@ -61,7 +50,7 @@ namespace マイメモ帳
             set => base.Text = value;
         }
 
-        Color Set(string name)=> Data.Colors[name];
+        private static Color Set(string name)=> Data.Colors[name];
 
         internal void ColorChange()
         {
@@ -71,10 +60,11 @@ namespace マイメモ帳
             menuStrip.BackColor = Set("menuStripBackColor");
             foreach (ToolStripItem menuStripItem in menuStrip.Items)
             {
-                menuStripItem.ForeColor = Set("menuStripForeColor");
-                menuStripItem.BackColor = Set("menuStripBackColor");
-                var t =menuStrip.Controls;
-                MessageBox.Show(t.ToString());
+                foreach (ToolStripItem dropDownItem in ((ToolStripMenuItem)menuStripItem).DropDownItems)
+                {
+                    dropDownItem.ForeColor = Set("menuStripForeColor");
+                    dropDownItem.BackColor = Set("menuStripBackColor");
+                }
             }
         }
 
@@ -83,50 +73,46 @@ namespace マイメモ帳
         /// </summary>
         private int 保存しますか()
         {
-            if (!SavedText.Equals(text.Text))
+            if (SavedText.Equals(text.Text)) return 0;
+            var customMessageBoxInfo = new CustomMessageBoxInfo
             {
-                CustomMessageBoxInfo customMessageBoxInfo = new CustomMessageBoxInfo
+                Message = $"{_title} への変更内容を保存しますか?",
+                Choose = new[] { "　保存する(&H)　", "　保存しない(&N)　", "　キャンセル　" },
+                Title = "マイメモ帳",
+                CancelChoose = 2
+            };
+            var form = new CustomDialogBox(customMessageBoxInfo);
+            form.ShowDialog();
+            form.Dispose();
+            if (customMessageBoxInfo.Result == 0)
+            {
+                if (FilePath == null)
                 {
-                    Message = $"{_title} への変更内容を保存しますか?",
-                    Choose = new[] { "　保存する(&H)　", "　保存しない(&N)　", "　キャンセル　" },
-                    Title = "マイメモ帳",
-                    CancelChoose = 2
-                };
-                CustomDialogBox form = new CustomDialogBox(customMessageBoxInfo);
-                form.ShowDialog();
-                form.Dispose();
-                if (customMessageBoxInfo.Result == 0)
-                {
-                    if (FilePath == null)
-                    {
-                        if (名前を付けて保存ToolStripMenuItem_Click() == 0) { return 0; }
-                        else { return -1; }
-                    }
-                    else { File.WriteAllText(FilePath, text.Text); }
+                    if (名前を付けて保存ToolStripMenuItem_Click() == 0) { return 0; }
+
+                    return -1;
                 }
-                else if (customMessageBoxInfo.Result == 2) { return -1; }
+
+                File.WriteAllText(FilePath, text.Text);
             }
+            else if (customMessageBoxInfo.Result == 2) { return -1; }
             return 0;
         }
 
         private void 開くToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (保存しますか() == 0)
-            {
-                OpenFile();
-                TextHistory.Reset();
-                もとに戻すUToolStripMenuItem.Enabled = false;
-            }
+            if (保存しますか() != 0) return;
+            OpenFile();
+            TextHistory.Reset();
+            もとに戻すUToolStripMenuItem.Enabled = false;
         }
 
         private void OpenFile()
         {
-            OpenFileDialog dialog = new OpenFileDialog { Title = @"開く" };
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                text.Text = File.ReadAllText(dialog.FileName, Encoding.UTF8);
-                SetTitle = dialog.FileName;
-            }
+            var dialog = new OpenFileDialog { Title = @"開く" };
+            if (dialog.ShowDialog() != DialogResult.OK) return;
+            text.Text = File.ReadAllText(dialog.FileName, Encoding.UTF8);
+            SetTitle = dialog.FileName;
         }
 
         private void 名前を付けて保存ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -136,7 +122,7 @@ namespace マイメモ帳
 
         private int 名前を付けて保存ToolStripMenuItem_Click()
         {
-            SaveFileDialog dialog = new SaveFileDialog { Title = @"名前を付けて保存" };
+            var dialog = new SaveFileDialog { Title = @"名前を付けて保存" };
             //dialog.Filter = "テキストファイル(*.txt)|*.txt";
             if (dialog.ShowDialog() == DialogResult.OK)
             {
@@ -144,7 +130,8 @@ namespace マイメモ帳
                 SetTitle = dialog.FileName;
                 return 0;
             }
-            else { return -1; }
+
+            return -1;
         }
 
         private void 終了ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -189,7 +176,7 @@ namespace マイメモ帳
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
             Data.Load();
             text.Font = Data.TextFont;
@@ -197,6 +184,7 @@ namespace マイメモ帳
             ColorChange();
             if (!Data.ShowTitleBar) FormBorderStyle = FormBorderStyle.None;
             else タイトルバーTToolStripMenuItem.Checked = true;
+            Size = Data.FormSize;
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -344,12 +332,12 @@ namespace マイメモ帳
             }
         }
 
-        private void bingで検索SToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Bingで検索SToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Process.Start($@"https://www.bing.com/search?q={text.Text.Substring(text.SelectionStart, text.SelectionLength)}");
         }
 
-        private void text_KeyUp(object sender, KeyEventArgs e)
+        private void Text_KeyUp(object sender, KeyEventArgs e)
         {
             TextSelectedCheck();
         }
@@ -360,6 +348,11 @@ namespace マイメモ帳
             form1.ShowDialog();
             ColorChange();
             form1.Dispose();
+        }
+
+        private void MainForm_Resize(object sender, EventArgs e)
+        {
+            Data.FormSize = Size;
         }
     }
 
@@ -405,29 +398,25 @@ namespace マイメモ帳
         public int Undo()
         {
             if (HistoryNum == 0) { return -1; }
-            else
-            {
-                UseUndoRedo = true;
-                TxtMemo.Text = History[--HistoryNum];
-                TxtMemo.SelectionStart = CursorStartPosition[HistoryNum];
-                TxtMemo.SelectionLength = CursorLengthPosition[HistoryNum];
-                UseUndoRedo = false;
-                return 0;
-            }
+
+            UseUndoRedo = true;
+            TxtMemo.Text = History[--HistoryNum];
+            TxtMemo.SelectionStart = CursorStartPosition[HistoryNum];
+            TxtMemo.SelectionLength = CursorLengthPosition[HistoryNum];
+            UseUndoRedo = false;
+            return 0;
         }
 
         public int Redo()
         {
             if (HistoryNum == History.Count - 1) { return 0; }
-            else
-            {
-                UseUndoRedo = true;
-                TxtMemo.Text = History[++HistoryNum];
-                TxtMemo.SelectionStart = CursorStartPosition[HistoryNum];
-                TxtMemo.SelectionLength = CursorLengthPosition[HistoryNum];
-                UseUndoRedo = false;
-                return 0;
-            }
+
+            UseUndoRedo = true;
+            TxtMemo.Text = History[++HistoryNum];
+            TxtMemo.SelectionStart = CursorStartPosition[HistoryNum];
+            TxtMemo.SelectionLength = CursorLengthPosition[HistoryNum];
+            UseUndoRedo = false;
+            return 0;
         }
     }
 

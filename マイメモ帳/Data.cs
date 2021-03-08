@@ -14,6 +14,7 @@ namespace マイメモ帳
         internal Font TextFont { get; set; }
         internal bool ShowTitleBar { get; set; }
         internal Dictionary<string, Color> Colors { get; set; }
+        internal Size FormSize { get; set; }
 
         internal void Save()
         {
@@ -32,6 +33,7 @@ namespace マイメモ帳
                 xml.Elements("Color")
                     .Single(y => y.Attributes("name").Single().Value == color.Key).Value = Convert.ToString(color.Value.ToArgb(),16);
             }
+            xml.Elements("FormSize").Single().Value = $"{FormSize.Width},{FormSize.Height}";
 
             xml.Save(path);
         }
@@ -78,6 +80,10 @@ namespace マイメモ帳
                 var value = Color.FromArgb(Convert.ToInt32(color.Value, 16));
                 Colors.Add(key, value);
             }
+
+            var formSize=NodeExists(xml, "FormSize","822, 506").Split(',').Select(int.Parse);
+            var enumerable = formSize as int[] ?? formSize.ToArray();
+            FormSize = new Size(new Point(enumerable[0],enumerable[1]));
             xml.Save(path);
         }
 
