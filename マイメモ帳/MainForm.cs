@@ -50,20 +50,25 @@ namespace マイメモ帳
             set => base.Text = value;
         }
 
-        private static Color Set(string name)=> Data.Colors[name];
+        public static Color Set(string name, Color defaultColor)
+        {
+            if (Data.Colors.ContainsKey(name)) return Data.Colors[name];
+            Data.Colors.Add(name, defaultColor);
+            return defaultColor;
+        }
 
         internal void ColorChange()
         {
-            text.ForeColor = Set("textForeColor");
-            text.BackColor = Set("textBackColor");
-            menuStrip.ForeColor = Set("menuStripForeColor");
-            menuStrip.BackColor = Set("menuStripBackColor");
+            text.ForeColor = Set("textForeColor",Color.Black);
+            text.BackColor = Set("textBackColor",Color.White);
+            menuStrip.ForeColor = Set("menuStripForeColor", Color.Black);
+            menuStrip.BackColor = Set("menuStripBackColor",Color.White);
             foreach (ToolStripItem menuStripItem in menuStrip.Items)
             {
                 foreach (ToolStripItem dropDownItem in ((ToolStripMenuItem)menuStripItem).DropDownItems)
                 {
-                    dropDownItem.ForeColor = Set("menuStripForeColor");
-                    dropDownItem.BackColor = Set("menuStripBackColor");
+                    dropDownItem.ForeColor = Set("menuStripForeColor",Color.Black);
+                    dropDownItem.BackColor = Set("menuStripBackColor",Color.White);
                 }
             }
         }
@@ -344,10 +349,9 @@ namespace マイメモ帳
 
         private void 色CToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form1 = new 色();
-            form1.ShowDialog();
+            using (var form3 = new 色())
+                form3.ShowDialog();
             ColorChange();
-            form1.Dispose();
         }
 
         private void MainForm_Resize(object sender, EventArgs e)

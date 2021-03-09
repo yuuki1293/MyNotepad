@@ -41,6 +41,11 @@ namespace マイメモ帳
         internal void Load()
         {
             var path = Path.Combine(Application.UserAppDataPath, "usersetting.xml");
+            if (!File.Exists(path))
+            {
+                using var fs= File.CreateText(path);
+                fs.Write("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<Data>\n</Data>");
+            }
             var xml = XElement.Load(path);
             ShowTitleBar = Convert.ToBoolean(NodeExists(xml, "ShowTitleBar", "true"));
             try
@@ -71,9 +76,10 @@ namespace マイメモ帳
                 TextFont = new Font("MS UI Gothic", 12);
             }
 
-            if (!xml.Elements("Color").Any()) xml.Add(new XElement("Color"));
+            //if (!xml.Elements("Color").Any()) xml.Add(new XElement("Color"));
             var colors = xml.Elements("Color");
             Colors = new Dictionary<string, Color>();
+
             foreach (var color in colors)
             {
                 var key = color.FirstAttribute.Value;

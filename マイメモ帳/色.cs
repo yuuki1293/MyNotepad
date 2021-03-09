@@ -7,7 +7,6 @@ namespace マイメモ帳
     public partial class 色 : Form
     {
         private Dictionary<string, ColorSelectDialog> ColorSelectDialogs { get; } = new();
-        private Dictionary<string, Color> Colors { get; } = MainForm.Data.Colors;
 
         public 色()
         {
@@ -17,12 +16,12 @@ namespace マイメモ帳
         private void 色_Load(object sender, System.EventArgs e)
         {
             ColorChange();
-            BackColor = Colors["formBackColor"];
-            ForeColor = Colors["formForeColor"];
-            OKボタン.BackColor = Colors["buttonBackColor"];
-            OKボタン.ForeColor = Colors["buttonForeColor"];
-            キャンセルボタン.BackColor = Colors["buttonBackColor"];
-            キャンセルボタン.ForeColor = Colors["buttonForeColor"];
+            BackColor = MainForm.Set("formBackColor",Color.White);
+            ForeColor = MainForm.Set("formForeColor",Color.Black);
+            OKボタン.BackColor = MainForm.Set("buttonBackColor",Color.White);
+            OKボタン.ForeColor = MainForm.Set("buttonForeColor",Color.Black);
+            キャンセルボタン.BackColor = MainForm.Set("buttonBackColor",Color.White);
+            キャンセルボタン.ForeColor = MainForm.Set("buttonForeColor",Color.Black);
         }
 
         private void ColorChange()

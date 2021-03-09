@@ -28,30 +28,24 @@ namespace マイメモ帳
 
         internal void ColorChange()
         {
-            Color Set(string name)
-            {
-                var colorBaf = Convert.ToInt32(Value.Color.Default.ResourceManager.GetString(name), 16);
-                return Color.FromArgb(colorBaf);
-            }
-
-            BackColor = Set("formBackColor");
-            ForeColor = Set("formForeColor");
-            フォント名一覧.BackColor = Set("textBackColor");
-            スタイル一覧.BackColor = Set("textBackColor");
-            サイズ一覧.BackColor = Set("textBackColor");
-            ForeBrushes = new SolidBrush(Set("textForeColor"));
-            textBox1.BackColor = Set("textBackColor");
-            textBox2.BackColor = Set("textBackColor");
-            textBox3.BackColor = Set("textBackColor");
-            textBox1.ForeColor = Set("textForeColor");
-            textBox2.ForeColor = Set("textForeColor");
-            textBox3.ForeColor = Set("textForeColor");
-            OKボタン.BackColor = Set("buttonBackColor");
-            OKボタン.ForeColor = Set("buttonForeColor");
-            キャンセルボタン.BackColor = Set("buttonBackColor");
-            キャンセルボタン.ForeColor = Set("buttonForeColor");
-            サンプルテキスト.BackColor = Set("textBackColor");
-            サンプルテキスト.ForeColor = Set("textForeColor");
+            BackColor = MainForm.Set("formBackColor",Color.White);
+            ForeColor = MainForm.Set("formForeColor",Color.Black);
+            フォント名一覧.BackColor = MainForm.Set("textBackColor",Color.White);
+            スタイル一覧.BackColor = MainForm.Set("textBackColor",Color.White);
+            サイズ一覧.BackColor = MainForm.Set("textBackColor",Color.White);
+            ForeBrushes = new SolidBrush(MainForm.Set("textForeColor",Color.Black));
+            textBox1.BackColor = MainForm.Set("textBackColor",Color.White);
+            textBox2.BackColor = MainForm.Set("textBackColor",Color.White);
+            textBox3.BackColor = MainForm.Set("textBackColor",Color.White);
+            textBox1.ForeColor = MainForm.Set("textForeColor",Color.Black);
+            textBox2.ForeColor = MainForm.Set("textForeColor",Color.Black);
+            textBox3.ForeColor = MainForm.Set("textForeColor",Color.Black);
+            OKボタン.BackColor = MainForm.Set("buttonBackColor",Color.White);
+            OKボタン.ForeColor = MainForm.Set("buttonForeColor",Color.Black);
+            キャンセルボタン.BackColor = MainForm.Set("buttonBackColor",Color.White);
+            キャンセルボタン.ForeColor = MainForm.Set("buttonForeColor",Color.Black);
+            サンプルテキスト.BackColor = MainForm.Set("textBackColor",Color.White);
+            サンプルテキスト.ForeColor = MainForm.Set("textForeColor",Color.Black);
         }
 
         private void NewFontDialog_Load(object sender, EventArgs e)
