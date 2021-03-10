@@ -16,31 +16,30 @@ namespace マイメモ帳
         private void 色_Load(object sender, System.EventArgs e)
         {
             ColorChange();
-            BackColor = MainForm.Set("formBackColor",Color.White);
-            ForeColor = MainForm.Set("formForeColor",Color.Black);
-            OKボタン.BackColor = MainForm.Set("buttonBackColor",Color.White);
-            OKボタン.ForeColor = MainForm.Set("buttonForeColor",Color.Black);
-            キャンセルボタン.BackColor = MainForm.Set("buttonBackColor",Color.White);
-            キャンセルボタン.ForeColor = MainForm.Set("buttonForeColor",Color.Black);
+            BackColor = MainForm.Set("formBackColor", Color.White);
+            ForeColor = MainForm.Set("formForeColor", Color.Black);
+            OKボタン.BackColor = MainForm.Set("buttonBackColor", Color.White);
+            OKボタン.ForeColor = MainForm.Set("buttonForeColor", Color.Black);
+            キャンセルボタン.BackColor = MainForm.Set("buttonBackColor", Color.White);
+            キャンセルボタン.ForeColor = MainForm.Set("buttonForeColor", Color.Black);
         }
 
         private void ColorChange()
         {
-            static Color Set(string name)=> MainForm.Data.Colors[name];
-            var count=10;
+            var count = 10;
             foreach (var dataColor in MainForm.Data.Colors)
             {
-                ColorSelectDialogs.Add(dataColor.Key, new ColorSelectDialog { Text =dataColor.Key, Color = Set(dataColor.Key), Location = new Point(10, count) });
+                ColorSelectDialogs.Add(dataColor.Key, new ColorSelectDialog { Text = dataColor.Key, Color = MainForm.Data.Colors[dataColor.Key], Location = new Point(10, count) });
                 Controls.Add(ColorSelectDialogs[dataColor.Key]);
                 count += 25;
             }
-            Height = count*2;
+            Height = count * 2;
         }
 
         private void OKボタン_Click(object sender, System.EventArgs e)
         {
             string[] keys = new string[MainForm.Data.Colors.Count];
-            MainForm.Data.Colors.Keys.CopyTo(keys,0);
+            MainForm.Data.Colors.Keys.CopyTo(keys, 0);
             foreach (var dataColor in keys)
             {
                 MainForm.Data.Colors[dataColor] = ColorSelectDialogs[dataColor].Color;

@@ -27,11 +27,13 @@ namespace マイメモ帳
             xElements.Elements("Name").Single().Value = TextFont.Name;
             xElements.Elements("Size").Single().Value = TextFont.Size.ToString(CultureInfo.InvariantCulture);
             xElements.Elements("Bold").Single().Value = TextFont.Bold.ToString();
-            xElements.Elements("Italic").Single().Value = TextFont.Italic.ToString(); 
+            xElements.Elements("Italic").Single().Value = TextFont.Italic.ToString();
             foreach (var color in Colors)
             {
-                xml.Elements("Color")
-                    .Single(y => y.Attributes("name").Single().Value == color.Key).Value = Convert.ToString(color.Value.ToArgb(),16);
+                if (xml.Elements("Color").Any()&& (bool)xml.Elements("Color").Single(y => y.Attributes("xmlns").Any()))
+                    xml.Elements("Color")
+                        .Single(y => y.Attributes("xmlns").Single().Value == color.Key).Value = Convert.ToString(color.Value.ToArgb(), 16);
+                else xml.Add(new XElement(((XNamespace)color.Key) +"Color", Convert.ToString(color.Value.ToArgb(), 16)));
             }
             xml.Elements("FormSize").Single().Value = $"{FormSize.Width},{FormSize.Height}";
 
@@ -43,7 +45,7 @@ namespace マイメモ帳
             var path = Path.Combine(Application.UserAppDataPath, "usersetting.xml");
             if (!File.Exists(path))
             {
-                using var fs= File.CreateText(path);
+                using var fs = File.CreateText(path);
                 fs.Write("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<Data>\n</Data>");
             }
             var xml = XElement.Load(path);
@@ -87,9 +89,9 @@ namespace マイメモ帳
                 Colors.Add(key, value);
             }
 
-            var formSize=NodeExists(xml, "FormSize","822, 506").Split(',').Select(int.Parse);
+            var formSize = NodeExists(xml, "FormSize", "822, 506").Split(',').Select(int.Parse);
             var enumerable = formSize as int[] ?? formSize.ToArray();
-            FormSize = new Size(new Point(enumerable[0],enumerable[1]));
+            FormSize = new Size(new Point(enumerable[0], enumerable[1]));
             xml.Save(path);
         }
 
