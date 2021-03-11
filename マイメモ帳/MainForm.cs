@@ -67,8 +67,8 @@ namespace マイメモ帳
             {
                 foreach (ToolStripItem dropDownItem in ((ToolStripMenuItem)menuStripItem).DropDownItems)
                 {
-                    dropDownItem.ForeColor = Set("menuStripForeColor",Color.Black);
-                    dropDownItem.BackColor = Set("menuStripBackColor",Color.White);
+                    dropDownItem.ForeColor = Set("menuStripItemForeColor",Color.Black);
+                    dropDownItem.BackColor = Set("menuStripItemBackColor",Color.FromArgb(unchecked((int) 0xFFF2F2F2)));
                 }
             }
         }

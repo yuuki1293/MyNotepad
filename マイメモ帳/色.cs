@@ -16,11 +16,11 @@ namespace マイメモ帳
         private void 色_Load(object sender, System.EventArgs e)
         {
             ColorChange();
-            BackColor = MainForm.Set("formBackColor", Color.White);
+            BackColor = MainForm.Set("formBackColor", Color.FromArgb(unchecked((int) 0xFFF0F0F0)));
             ForeColor = MainForm.Set("formForeColor", Color.Black);
-            OKボタン.BackColor = MainForm.Set("buttonBackColor", Color.White);
+            OKボタン.BackColor = MainForm.Set("buttonBackColor", Color.FromArgb(unchecked((int)0xFFE1E1E1)));
             OKボタン.ForeColor = MainForm.Set("buttonForeColor", Color.Black);
-            キャンセルボタン.BackColor = MainForm.Set("buttonBackColor", Color.White);
+            キャンセルボタン.BackColor = MainForm.Set("buttonBackColor", Color.FromArgb(unchecked((int)0xFFE1E1E1)));
             キャンセルボタン.ForeColor = MainForm.Set("buttonForeColor", Color.Black);
         }
 

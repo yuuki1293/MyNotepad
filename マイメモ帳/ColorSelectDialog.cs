@@ -17,12 +17,10 @@ namespace マイメモ帳
         private void ColorButton_Click(object sender, EventArgs e)
         {
             colorDialog1.Color = Color;
-            if (colorDialog1.ShowDialog() == DialogResult.OK)
-            {
-                Color = colorDialog1.Color;
-                ColorButton.BackColor = Color;
-                maskedTextBox.Text = Convert.ToString(Color.ToArgb(),16);
-            }
+            if (colorDialog1.ShowDialog() != DialogResult.OK) return;
+            Color = colorDialog1.Color;
+            ColorButton.BackColor = Color;
+            maskedTextBox.Text = Convert.ToString(Color.ToArgb(),16);
         }
 
         private void maskedTextBox1_KeyDown(object sender, KeyEventArgs e)
@@ -50,7 +48,7 @@ namespace マイメモ帳
             ColorButton.BackColor = Color;
             label1.Text = Text;
             maskedTextBox.Text = Convert.ToString(Color.ToArgb(),16);
-            BackColor = MainForm.Set("formBackColor",Color.White);
+            BackColor = MainForm.Set("formBackColor",Color.FromArgb(unchecked((int) 0xFFf0f0f0)));
             ForeColor = MainForm.Set("formForeColor",Color.Black);
             label1.ForeColor = MainForm.Set("formForeColor",Color.Black);
             maskedTextBox.BackColor = MainForm.Set("textBackColor",Color.White);

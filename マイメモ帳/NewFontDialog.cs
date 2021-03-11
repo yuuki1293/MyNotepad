@@ -28,7 +28,7 @@ namespace マイメモ帳
 
         internal void ColorChange()
         {
-            BackColor = MainForm.Set("formBackColor",Color.White);
+            BackColor = MainForm.Set("formBackColor",Color.FromArgb(unchecked((int) 0xFFF0F0F0)));
             ForeColor = MainForm.Set("formForeColor",Color.Black);
             フォント名一覧.BackColor = MainForm.Set("textBackColor",Color.White);
             スタイル一覧.BackColor = MainForm.Set("textBackColor",Color.White);
@@ -40,9 +40,9 @@ namespace マイメモ帳
             textBox1.ForeColor = MainForm.Set("textForeColor",Color.Black);
             textBox2.ForeColor = MainForm.Set("textForeColor",Color.Black);
             textBox3.ForeColor = MainForm.Set("textForeColor",Color.Black);
-            OKボタン.BackColor = MainForm.Set("buttonBackColor",Color.White);
+            OKボタン.BackColor = MainForm.Set("buttonBackColor",Color.FromArgb(unchecked((int) 0xFFE1E1E1)));
             OKボタン.ForeColor = MainForm.Set("buttonForeColor",Color.Black);
-            キャンセルボタン.BackColor = MainForm.Set("buttonBackColor",Color.White);
+            キャンセルボタン.BackColor = MainForm.Set("buttonBackColor",Color.FromArgb(unchecked((int) 0xFFE1E1E1)));
             キャンセルボタン.ForeColor = MainForm.Set("buttonForeColor",Color.Black);
             サンプルテキスト.BackColor = MainForm.Set("textBackColor",Color.White);
             サンプルテキスト.ForeColor = MainForm.Set("textForeColor",Color.Black);
