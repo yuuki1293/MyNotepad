@@ -10,11 +10,12 @@ namespace マイメモ帳
 {
     public partial class NewFontDialog : Form
     {
-        private Dictionary<FontStyle, string> FontStyleToString { get; } = new(){
-            { FontStyle.Regular,"標準" },
-            { FontStyle.Bold,"太字" },
-            { FontStyle.Italic,"斜体" },
-            { (FontStyle.Bold|FontStyle.Italic),"太字 斜体" }
+        private Dictionary<FontStyle, string> FontStyleToString { get; } = new()
+        {
+            { FontStyle.Regular, "標準" },
+            { FontStyle.Bold, "太字" },
+            { FontStyle.Italic, "斜体" },
+            { (FontStyle.Bold | FontStyle.Italic), "太字 斜体" }
         };
         private bool FinLoad { get; set; }
         private SolidBrush ForeBrushes { get; set; }
@@ -28,24 +29,24 @@ namespace マイメモ帳
 
         internal void ColorChange()
         {
-            BackColor = MainForm.Set("formBackColor",Color.FromArgb(unchecked((int) 0xFFF0F0F0)));
-            ForeColor = MainForm.Set("formForeColor",Color.Black);
-            フォント名一覧.BackColor = MainForm.Set("textBackColor",Color.White);
-            スタイル一覧.BackColor = MainForm.Set("textBackColor",Color.White);
-            サイズ一覧.BackColor = MainForm.Set("textBackColor",Color.White);
-            ForeBrushes = new SolidBrush(MainForm.Set("textForeColor",Color.Black));
-            textBox1.BackColor = MainForm.Set("textBackColor",Color.White);
-            textBox2.BackColor = MainForm.Set("textBackColor",Color.White);
-            textBox3.BackColor = MainForm.Set("textBackColor",Color.White);
-            textBox1.ForeColor = MainForm.Set("textForeColor",Color.Black);
-            textBox2.ForeColor = MainForm.Set("textForeColor",Color.Black);
-            textBox3.ForeColor = MainForm.Set("textForeColor",Color.Black);
-            OKボタン.BackColor = MainForm.Set("buttonBackColor",Color.FromArgb(unchecked((int) 0xFFE1E1E1)));
-            OKボタン.ForeColor = MainForm.Set("buttonForeColor",Color.Black);
-            キャンセルボタン.BackColor = MainForm.Set("buttonBackColor",Color.FromArgb(unchecked((int) 0xFFE1E1E1)));
-            キャンセルボタン.ForeColor = MainForm.Set("buttonForeColor",Color.Black);
-            サンプルテキスト.BackColor = MainForm.Set("textBackColor",Color.White);
-            サンプルテキスト.ForeColor = MainForm.Set("textForeColor",Color.Black);
+            BackColor = MainForm.Set("formBackColor", Color.FromArgb(unchecked((int)0xFFF0F0F0)));
+            ForeColor = MainForm.Set("formForeColor", Color.Black);
+            フォント名一覧.BackColor = MainForm.Set("textBackColor", Color.White);
+            スタイル一覧.BackColor = MainForm.Set("textBackColor", Color.White);
+            サイズ一覧.BackColor = MainForm.Set("textBackColor", Color.White);
+            ForeBrushes = new SolidBrush(MainForm.Set("textForeColor", Color.Black));
+            textBox1.BackColor = MainForm.Set("textBackColor", Color.White);
+            textBox2.BackColor = MainForm.Set("textBackColor", Color.White);
+            textBox3.BackColor = MainForm.Set("textBackColor", Color.White);
+            textBox1.ForeColor = MainForm.Set("textForeColor", Color.Black);
+            textBox2.ForeColor = MainForm.Set("textForeColor", Color.Black);
+            textBox3.ForeColor = MainForm.Set("textForeColor", Color.Black);
+            OKボタン.BackColor = MainForm.Set("buttonBackColor", Color.FromArgb(unchecked((int)0xFFE1E1E1)));
+            OKボタン.ForeColor = MainForm.Set("buttonForeColor", Color.Black);
+            キャンセルボタン.BackColor = MainForm.Set("buttonBackColor", Color.FromArgb(unchecked((int)0xFFE1E1E1)));
+            キャンセルボタン.ForeColor = MainForm.Set("buttonForeColor", Color.Black);
+            サンプルテキスト.BackColor = MainForm.Set("textBackColor", Color.White);
+            サンプルテキスト.ForeColor = MainForm.Set("textForeColor", Color.Black);
         }
 
         private void NewFontDialog_Load(object sender, EventArgs e)
@@ -54,20 +55,20 @@ namespace マイメモ帳
             if (!Data.ShowTitleBar) FormBorderStyle = FormBorderStyle.None;
 
             var fonts = new InstalledFontCollection();
-            FontFamily[] ffArray = fonts.Families;
+            var ffArray = fonts.Families;
             foreach (var ff in ffArray)
                 フォント名一覧.Items.Add(ff.Name);
             フォント名一覧.SelectedItem = Font.Name;
-            
+
             foreach (var str in new[] { "標準", "太字", "斜体", "太字 斜体" })
                 スタイル一覧.Items.Add(str);
             スタイル一覧.SelectedItem = FontStyleToString[Font.Style];
-            
+
             float[] fontSize = { 8, 9, 10, 11, 12, 14, 16, 18, 20, 22, 24, 26, 28, 36, 48, 72 };
             foreach (var i in fontSize)
                 サイズ一覧.Items.Add(i);
             サイズ一覧.SelectedItem = Font.Size;
-            
+
             int locationListBox = textBox1.Location.Y + textBox1.Size.Height;
             フォント名一覧.Location = new Point(フォント名一覧.Location.X, locationListBox);
             スタイル一覧.Location = new Point(スタイル一覧.Location.X, locationListBox);
@@ -208,7 +209,7 @@ namespace マイメモ帳
             var find = スタイル一覧.FindString(textBox2.Text);
             if (find != ListBox.NoMatches)
             {
-                スタイル一覧.SelectedItem = スタイル一覧.Items[find]; 
+                スタイル一覧.SelectedItem = スタイル一覧.Items[find];
                 FontStyle fontStyle;
                 switch (スタイル一覧.SelectedItem.ToString())
                 {
