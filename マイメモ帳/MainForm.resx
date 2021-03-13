@@ -463,7 +463,7 @@
     <value>0, 0</value>
   </data>
   <data name="menuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>800, 33</value>
+    <value>800, 35</value>
   </data>
   <data name="menuStrip.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -541,7 +541,7 @@
     <value>Fill</value>
   </data>
   <data name="text.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 33</value>
+    <value>0, 35</value>
   </data>
   <data name="text.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -550,7 +550,7 @@
     <value>Both</value>
   </data>
   <data name="text.Size" type="System.Drawing.Size, System.Drawing">
-    <value>800, 417</value>
+    <value>800, 415</value>
   </data>
   <data name="text.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
