@@ -220,14 +220,14 @@ namespace マイメモ帳
             // 
             // コピーCToolStripMenuItem
             // 
-            this.コピーCToolStripMenuItem.Name = "コピーCToolStripMenuItem";
             resources.ApplyResources(this.コピーCToolStripMenuItem, "コピーCToolStripMenuItem");
+            this.コピーCToolStripMenuItem.Name = "コピーCToolStripMenuItem";
             this.コピーCToolStripMenuItem.Click += new System.EventHandler(this.コピーCToolStripMenuItem_Click);
             // 
             // 貼り付けPToolStripMenuItem
             // 
-            resources.ApplyResources(this.貼り付けPToolStripMenuItem, "貼り付けPToolStripMenuItem");
             this.貼り付けPToolStripMenuItem.Name = "貼り付けPToolStripMenuItem";
+            resources.ApplyResources(this.貼り付けPToolStripMenuItem, "貼り付けPToolStripMenuItem");
             this.貼り付けPToolStripMenuItem.Click += new System.EventHandler(this.貼り付けPToolStripMenuItem_Click);
             // 
             // 削除LToolStripMenuItem
