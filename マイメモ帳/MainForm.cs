@@ -27,6 +27,7 @@ namespace マイメモ帳
         private string FilePath { get; set; }
         private TextHistory TextHistory { get; set; }
         public static Data Data { get; set; } = new();
+        private string SearchText { get; set; }
 
         internal MainForm(IReadOnlyCollection<string> argv)
         {
@@ -89,18 +90,20 @@ namespace マイメモ帳
             var form = new CustomDialogBox(customMessageBoxInfo);
             form.ShowDialog();
             form.Dispose();
-            if (customMessageBoxInfo.Result == 0)
+            switch (customMessageBoxInfo.Result)
             {
-                if (FilePath == null)
+                case 0 when FilePath == null:
                 {
                     if (名前を付けて保存ToolStripMenuItem_Click() == 0) { return 0; }
 
                     return -1;
                 }
-
-                File.WriteAllText(FilePath, text.Text);
+                case 0:
+                    File.WriteAllText(FilePath, text.Text);
+                    break;
+                case 2:
+                    return -1;
             }
-            else if (customMessageBoxInfo.Result == 2) { return -1; }
             return 0;
         }
 
@@ -357,6 +360,13 @@ namespace マイメモ帳
         private void MainForm_Resize(object sender, EventArgs e)
         {
             Data.FormSize = Size;
+        }
+
+        private void 検索FToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (text.SelectedText != null) SearchText = text.SelectedText;
+            using (var 検索置換 = new 検索置換())
+                検索置換.ShowDialog();
         }
     }
 

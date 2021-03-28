@@ -15,8 +15,7 @@ namespace マイメモ帳
 
         private void 色_Load(object sender, System.EventArgs e)
         {
-            if (MainForm.Data.ShowTitleBar) FormBorderStyle = FormBorderStyle.FixedSingle;
-            else FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = MainForm.Data.ShowTitleBar ? FormBorderStyle.FixedSingle : FormBorderStyle.None;
             BackColor = MainForm.Set("formBackColor", Color.FromArgb(unchecked((int)0xFFF0F0F0)));
             ForeColor = MainForm.Set("formForeColor", Color.Black);
             OKボタン.BackColor = MainForm.Set("buttonBackColor", Color.FromArgb(unchecked((int)0xFFE1E1E1)));

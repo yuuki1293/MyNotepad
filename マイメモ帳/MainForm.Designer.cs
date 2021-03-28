@@ -55,7 +55,6 @@ namespace マイメモ帳
             this.検索FToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.次を検索NToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.前を検索VToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.置換ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.行へ移動GToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.すべて選択AToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -85,7 +84,6 @@ namespace マイメモ帳
             // menuStrip
             // 
             this.menuStrip.BackColor = System.Drawing.Color.White;
-            this.menuStrip.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ファイルToolStripMenuItem,
@@ -186,7 +184,6 @@ namespace マイメモ帳
             this.検索FToolStripMenuItem,
             this.次を検索NToolStripMenuItem,
             this.前を検索VToolStripMenuItem,
-            this.置換ToolStripMenuItem,
             this.行へ移動GToolStripMenuItem,
             this.toolStripSeparator5,
             this.すべて選択AToolStripMenuItem,
@@ -249,8 +246,9 @@ namespace マイメモ帳
             // 
             // 検索FToolStripMenuItem
             // 
-            resources.ApplyResources(this.検索FToolStripMenuItem, "検索FToolStripMenuItem");
             this.検索FToolStripMenuItem.Name = "検索FToolStripMenuItem";
+            resources.ApplyResources(this.検索FToolStripMenuItem, "検索FToolStripMenuItem");
+            this.検索FToolStripMenuItem.Click += new System.EventHandler(this.検索FToolStripMenuItem_Click);
             // 
             // 次を検索NToolStripMenuItem
             // 
@@ -261,11 +259,6 @@ namespace マイメモ帳
             // 
             resources.ApplyResources(this.前を検索VToolStripMenuItem, "前を検索VToolStripMenuItem");
             this.前を検索VToolStripMenuItem.Name = "前を検索VToolStripMenuItem";
-            // 
-            // 置換ToolStripMenuItem
-            // 
-            this.置換ToolStripMenuItem.Name = "置換ToolStripMenuItem";
-            resources.ApplyResources(this.置換ToolStripMenuItem, "置換ToolStripMenuItem");
             // 
             // 行へ移動GToolStripMenuItem
             // 
@@ -463,7 +456,6 @@ namespace マイメモ帳
         private System.Windows.Forms.ToolStripMenuItem 検索FToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 次を検索NToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 前を検索VToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 置換ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 行へ移動GToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem すべて選択AToolStripMenuItem;
