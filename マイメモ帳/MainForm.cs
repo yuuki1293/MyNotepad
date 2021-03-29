@@ -6,6 +6,7 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
+
 namespace マイメモ帳
 {
     public partial class MainForm : Form
@@ -372,8 +373,13 @@ namespace マイメモ帳
                 次を検索 = s =>
                 {
                     var result = text.Text.IndexOf(s, text.SelectionStart + text.SelectionLength, StringComparison.Ordinal);
-                    text.SelectionStart = result;
-                    text.SelectionLength = s.Length;
+                    if (result != -1)
+                    {
+                        text.SelectionStart = result;
+                        text.SelectionLength = s.Length;
+                    }
+                    else
+                        System.Media.SystemSounds.Beep.Play();
                 }
             };
             検索置換.Show();
