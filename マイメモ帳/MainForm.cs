@@ -27,7 +27,7 @@ namespace マイメモ帳
         private string FilePath { get; set; }
         private TextHistory TextHistory { get; set; }
         public static Data Data { get; set; } = new();
-        private string SearchText { get; set; }
+        public string SearchText { get; set; }
 
         internal MainForm(IReadOnlyCollection<string> argv)
         {
@@ -60,16 +60,16 @@ namespace マイメモ帳
 
         internal void ColorChange()
         {
-            text.ForeColor = Set("textForeColor",Color.Black);
-            text.BackColor = Set("textBackColor",Color.White);
+            text.ForeColor = Set("textForeColor", Color.Black);
+            text.BackColor = Set("textBackColor", Color.White);
             menuStrip.ForeColor = Set("menuStripForeColor", Color.Black);
-            menuStrip.BackColor = Set("menuStripBackColor",Color.White);
+            menuStrip.BackColor = Set("menuStripBackColor", Color.White);
             foreach (ToolStripItem menuStripItem in menuStrip.Items)
             {
                 foreach (ToolStripItem dropDownItem in ((ToolStripMenuItem)menuStripItem).DropDownItems)
                 {
-                    dropDownItem.ForeColor = Set("menuStripItemForeColor",Color.Black);
-                    dropDownItem.BackColor = Set("menuStripItemBackColor",Color.FromArgb(unchecked((int) 0xFFF2F2F2)));
+                    dropDownItem.ForeColor = Set("menuStripItemForeColor", Color.Black);
+                    dropDownItem.BackColor = Set("menuStripItemBackColor", Color.FromArgb(unchecked((int)0xFFF2F2F2)));
                 }
             }
         }
@@ -93,11 +93,11 @@ namespace マイメモ帳
             switch (customMessageBoxInfo.Result)
             {
                 case 0 when FilePath == null:
-                {
-                    if (名前を付けて保存ToolStripMenuItem_Click() == 0) { return 0; }
+                    {
+                        if (名前を付けて保存ToolStripMenuItem_Click() == 0) { return 0; }
 
-                    return -1;
-                }
+                        return -1;
+                    }
                 case 0:
                     File.WriteAllText(FilePath, text.Text);
                     break;
@@ -365,8 +365,18 @@ namespace マイメモ帳
         private void 検索FToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (text.SelectedText != null) SearchText = text.SelectedText;
-            using (var 検索置換 = new 検索置換())
-                検索置換.ShowDialog();
+            var 検索置換 = new 検索置換form
+            {
+                Owner = this,
+                SearchText = SearchText,
+                次を検索 = s =>
+                {
+                    var result = text.Text.IndexOf(s, text.SelectionStart + text.SelectionLength, StringComparison.Ordinal);
+                    text.SelectionStart = result;
+                    text.SelectionLength = s.Length;
+                }
+            };
+            検索置換.Show();
         }
     }
 

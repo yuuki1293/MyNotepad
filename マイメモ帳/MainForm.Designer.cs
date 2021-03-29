@@ -84,6 +84,7 @@ namespace マイメモ帳
             // menuStrip
             // 
             this.menuStrip.BackColor = System.Drawing.Color.White;
+            this.menuStrip.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ファイルToolStripMenuItem,
@@ -401,6 +402,7 @@ namespace マイメモ帳
             this.text.AcceptsReturn = true;
             this.text.AcceptsTab = true;
             resources.ApplyResources(this.text, "text");
+            this.text.HideSelection = false;
             this.text.Name = "text";
             this.text.TabStop = false;
             this.text.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Text_MouseClick);
